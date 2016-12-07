@@ -1,0 +1,524 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sale_forecast
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c-20160428\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-22 01:26+0000\n"
+"PO-Revision-Date: 2016-11-22 01:26+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_forecast
+#: model:ir.ui.view,arch_db:sale_forecast.sale_forecast_form
+msgid "Action"
+msgstr "Acción"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_action_qty
+msgid "Action Qty"
+msgstr "Cantidad"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_action_required
+msgid "Action Required"
+msgstr "Acción requerida"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_product_product_asset_category_id
+msgid "Asset Type"
+msgstr "Tipo de Activo"
+
+#. module: sale_forecast
+#: code:addons/sale_forecast/sale_forecast.py:188
+#, python-format
+msgid "Atleast one product should be selected!"
+msgstr "Debe seleccionar al menos un producto!"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_avg_qty
+msgid "Average Forecast Qty"
+msgstr "Cantidad promedio (pronosticada)"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_avg_sale_qty
+msgid "Average Sale Quantity"
+msgstr "Cantidad vendida promedio"
+
+#. module: sale_forecast
+#: selection:forecast.product,action_required:0
+msgid "Both"
+msgstr "Ambos"
+
+#. module: sale_forecast
+#: selection:forecast.product,action_required:0
+#: selection:sale.forecast,required_process:0
+msgid "Buy"
+msgstr "Compra"
+
+#. module: sale_forecast
+#: model:ir.ui.view,arch_db:sale_forecast.sale_forecast_form
+msgid "Calcular Quantity"
+msgstr "Calcular Cantidad"
+
+#. module: sale_forecast
+#: selection:sale.forecast,state:0
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: sale_forecast
+#: model:ir.ui.view,arch_db:sale_forecast.sale_forecast_form
+msgid "Confirmar"
+msgstr "Confirmar"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_period_create_uid
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_create_uid
+#: model:ir.model.fields,field_description:sale_forecast.field_sale_forecast_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_period_create_date
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_create_date
+#: model:ir.model.fields,field_description:sale_forecast.field_sale_forecast_create_date
+msgid "Created on"
+msgstr "Creado"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_product_product_deferred_revenue_category_id
+msgid "Deferred Revenue Type"
+msgstr "Tipo de Ingreso Diferido"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_product_product_quote_description
+msgid "Description for the quote"
+msgstr "Descripción de la cotización"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_period_display_name
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_display_name
+#: model:ir.model.fields,field_description:sale_forecast.field_sale_forecast_display_name
+msgid "Display Name"
+msgstr "Nombre Público"
+
+#. module: sale_forecast
+#: model:ir.ui.view,arch_db:sale_forecast.sale_forecast_form
+msgid "Do you really want to create action for process quantity?"
+msgstr "¿Realmente desea crear proceso de acción para la cantidad?"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_sale_forecast_create_action
+msgid "Do you want to create Supply for process quantity?"
+msgstr "¿Quieres crear Suministro de volumen de proceso?"
+
+#. module: sale_forecast
+#: selection:sale.forecast,state:0
+msgid "Done"
+msgstr "Realizado"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_period_end_date
+msgid "End Date"
+msgstr "Fecha Final"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_sale_forecast_forecast_filter_id
+msgid "Filter"
+msgstr "Filtrar"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_period_forecast_id
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_forecast_id
+#: model:ir.ui.view,arch_db:sale_forecast.sale_forecast_form
+msgid "Forecast"
+msgstr "Pronósticar"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_sale_forecast_forecast_product_ids
+msgid "Forecast Products"
+msgstr "Productos pronóstico"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_forecast_qty
+msgid "Forecast Qty"
+msgstr "Cantidad pronósticada"
+
+#. module: sale_forecast
+#: code:addons/sale_forecast/sale_forecast.py:108
+#, python-format
+msgid "Forecast Record Can not be Duplicated"
+msgstr "registros pronósticados no se pueden duplicar"
+
+#. module: sale_forecast
+#: model:ir.ui.view,arch_db:sale_forecast.sale_forecast_form
+msgid "Forecast Records"
+msgstr "Registros pronósticados"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_mrp_production_forecast_ref_mrp
+#: model:ir.model.fields,field_description:sale_forecast.field_purchase_order_forecast_ref_purchase
+msgid "Forecast Ref."
+msgstr "Referencia pronósticada."
+
+#. module: sale_forecast
+#: code:addons/sale_forecast/sale_forecast.py:348
+#, python-format
+msgid "Forecast State should be Confirmed"
+msgstr "El estado del pronóstico debe ser confirmado"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_procurement_order_forecast_ref_procurement
+msgid "Forecast ref"
+msgstr "Referencia pronóstico"
+
+#. module: sale_forecast
+#: model:ir.ui.view,arch_db:sale_forecast.sale_forecast_form
+msgid "Generar"
+msgstr "Generar"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_period_id
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_id
+#: model:ir.model.fields,field_description:sale_forecast.field_sale_forecast_id
+msgid "ID"
+msgstr "Identificador"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_incoming_qty
+msgid "Incoming Qty"
+msgstr "Cantidad entrante"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_product_product_landed_cost_ok
+msgid "Landed Costs"
+msgstr "Costos en el Destino"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_period___last_update
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product___last_update
+#: model:ir.model.fields,field_description:sale_forecast.field_sale_forecast___last_update
+msgid "Last Modified on"
+msgstr "Última Modificación el"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_last_period_qty
+msgid "Last Period Qty"
+msgstr "Último cantidad periodo"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_period_write_uid
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_write_uid
+#: model:ir.model.fields,field_description:sale_forecast.field_sale_forecast_write_uid
+msgid "Last Updated by"
+msgstr "Actualizado por"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_period_write_date
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_write_date
+#: model:ir.model.fields,field_description:sale_forecast.field_sale_forecast_write_date
+msgid "Last Updated on"
+msgstr "Actualizado"
+
+#. module: sale_forecast
+#: selection:forecast.product,action_required:0
+#: selection:sale.forecast,required_process:0
+msgid "Manufacture"
+msgstr "Manufactura"
+
+#. module: sale_forecast
+#: model:ir.model,name:sale_forecast.model_mrp_production
+msgid "Manufacturing Order"
+msgstr "Orden de Manufactura"
+
+#. module: sale_forecast
+#: selection:sale.forecast,period:0
+msgid "Month"
+msgstr "Mes"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_name
+#: model:ir.model.fields,field_description:sale_forecast.field_sale_forecast_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_sale_forecast_period_count
+msgid "No. of Periods"
+msgstr "Nro. de Periodos"
+
+#. module: sale_forecast
+#: selection:forecast.product,action_required:0
+msgid "Not Required"
+msgstr "No requerido"
+
+#. module: sale_forecast
+#: code:addons/sale_forecast/sale_forecast.py:183
+#, python-format
+msgid "Number of Periods should be grater than Zero"
+msgstr "Número de periodos deben ser mayor a cero."
+
+#. module: sale_forecast
+#: code:addons/sale_forecast/sale_forecast.py:123
+#, python-format
+msgid "Number of Periods should be grater than zero"
+msgstr "Número de periodos deben ser mayor a cero."
+
+#. module: sale_forecast
+#: code:addons/sale_forecast/sale_forecast.py:114
+#, python-format
+msgid "Number of Periods should not be less than zero"
+msgstr "Número de periodos no deben ser menor a cero."
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_onhand_qty
+msgid "Onhand Qty"
+msgstr "Cantidad en mano"
+
+#. module: sale_forecast
+#: selection:sale.forecast,state:0
+msgid "Open"
+msgstr "Abierto"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_outgoing_qty
+msgid "Outgoing Qty"
+msgstr "Cantidad salida"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_sale_forecast_past_record_ids
+#: model:ir.ui.view,arch_db:sale_forecast.sale_forecast_form
+msgid "Past Forecast Records"
+msgstr "Registros Pronóstico anterior"
+
+#. module: sale_forecast
+#: model:ir.ui.view,arch_db:sale_forecast.sale_forecast_form
+msgid "Past Forecast records"
+msgstr "Registros Pronóstico anterior"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_sale_forecast_past_sale_record_ids
+#: model:ir.ui.view,arch_db:sale_forecast.sale_forecast_form
+msgid "Past Sale Records"
+msgstr "registros anteriores de ventas"
+
+#. module: sale_forecast
+#: model:ir.ui.view,arch_db:sale_forecast.sale_forecast_form
+msgid "Past Sale records"
+msgstr "Registros de ventas anteriores"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_sale_forecast_period
+msgid "Period"
+msgstr "Periodo"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_period_p_date
+msgid "Period Date"
+msgstr "Fecha"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_period_name
+msgid "Period Name"
+msgstr "Nombre de periodo"
+
+#. module: sale_forecast
+#: model:ir.model,name:sale_forecast.model_procurement_order
+msgid "Procurement"
+msgstr "Abastecimiento"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_procurement_id
+msgid "Procurement id"
+msgstr "Identificador Abastecimiento"
+
+#. module: sale_forecast
+#: model:ir.model,name:sale_forecast.model_product_product
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_product_id
+#: model:ir.model.fields,field_description:sale_forecast.field_sale_forecast_product_ids
+msgid "Product"
+msgstr "Producto"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_product_product_alert_time
+msgid "Product Alert Time"
+msgstr "Tiempo de Alerta Producto"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_product_product_life_time
+msgid "Product Life Time"
+msgstr "Tiempo de Vida Producto"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_product_product_removal_time
+msgid "Product Removal Time"
+msgstr "Tiempo Eliminación Producto"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_product_product_use_time
+msgid "Product Use Time"
+msgstr "Duración del Producto"
+
+#. module: sale_forecast
+#: model:ir.model,name:sale_forecast.model_purchase_order
+msgid "Purchase Order"
+msgstr "Orden de Compra"
+
+#. module: sale_forecast
+#: selection:sale.forecast,period:0
+msgid "Quarter"
+msgstr "Trimestre"
+
+#. module: sale_forecast
+#: model:ir.ui.view,arch_db:sale_forecast.sale_forecast_form
+msgid "Re-open"
+msgstr "Re-abierto"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_sale_forecast_record_generated
+msgid "Record"
+msgstr "Registro"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_document_number
+msgid "Ref.Doc.No."
+msgstr "Ref.Doc.No."
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_sale_forecast_required_process
+#: model:ir.ui.view,arch_db:sale_forecast.sale_forecast_form
+msgid "Required Process"
+msgstr "Proceso requerido"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_rest_period_qty
+msgid "Rest Period Qty"
+msgstr "Cantidad de periodo de descanso"
+
+#. module: sale_forecast
+#: model:ir.actions.act_window,name:sale_forecast.sale_forecast_action
+#: model:ir.ui.menu,name:sale_forecast.sale_forecast_action_menu
+#: model:ir.ui.view,arch_db:sale_forecast.sale_forecast_form
+#: model:ir.ui.view,arch_db:sale_forecast.sale_forecast_tree
+msgid "Sale Forecast"
+msgstr "Venta pronóstico"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_sales_person
+#: model:ir.model.fields,field_description:sale_forecast.field_sale_forecast_sales_person_id
+msgid "Salesperson"
+msgstr "Vendedor"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_sec_last_period_qty
+msgid "Second Last Period Qty"
+msgstr "Segundo Último Período"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_sale_forecast_past_forecast_records
+msgid "Show Past Forecast Records"
+msgstr "Mostrar registros de pronósticos anteriores"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_sale_forecast_past_sales_records
+msgid "Show Past Sales Records"
+msgstr "Mostrar registros de ventas anteriores"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_product_product_split_method
+msgid "Split Method"
+msgstr "Método de División"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_period_start_date
+#: model:ir.model.fields,field_description:sale_forecast.field_sale_forecast_start_date
+msgid "Start Date"
+msgstr "Fecha de Inicio"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_sale_forecast_state
+msgid "State"
+msgstr "Estado"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_forecast_product_third_last_period_qty
+msgid "Third Last Period Qty"
+msgstr "Tercera Cantidad del último período"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_sale_forecast_warehouse_id
+msgid "Warehouse"
+msgstr "Almacén"
+
+#. module: sale_forecast
+#: code:addons/sale_forecast/sale_forecast.py:190
+#, python-format
+msgid "Warehouse should be selected!"
+msgstr "Almacén debe ser seleccionado!"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_mrp_production_website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del Sitio Web"
+
+#. module: sale_forecast
+#: model:ir.model.fields,help:sale_forecast.field_mrp_production_website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicación del sitio web"
+
+#. module: sale_forecast
+#: selection:sale.forecast,period:0
+msgid "Week"
+msgstr "Semana"
+
+#. module: sale_forecast
+#: model:ir.model.fields,help:sale_forecast.field_product_product_alert_time
+msgid "When a new a Serial Number is issued, this is the number of days before an alert should be notified."
+msgstr "Cuando un nuevo nº de serie se asigna, éste es el número de días antes de que se notifique una alerta."
+
+#. module: sale_forecast
+#: model:ir.model.fields,help:sale_forecast.field_product_product_life_time
+msgid "When a new a Serial Number is issued, this is the number of days before the goods may become dangerous and must not be consumed."
+msgstr "Cuando un nuevo nº de serie se asigna, éste es el número de días antes de que los bienes se conviertan en peligrosos y no deban ser consumidos."
+
+#. module: sale_forecast
+#: model:ir.model.fields,help:sale_forecast.field_product_product_removal_time
+msgid "When a new a Serial Number is issued, this is the number of days before the goods should be removed from the stock."
+msgstr "Cuando un nuevo nº de serie se asigna, éste es el número de días antes de que los bienes deban eliminarse del stock."
+
+#. module: sale_forecast
+#: model:ir.model.fields,help:sale_forecast.field_product_product_use_time
+msgid "When a new a Serial Number is issued, this is the number of days before the goods starts deteriorating, without being dangerous yet."
+msgstr "Cuando un nuevo nº de serie se asigna, éste es el número de días antes de que los bienes se empiecen a deteriorar, sin ser peligroso aún."
+
+#. module: sale_forecast
+#: selection:sale.forecast,period:0
+msgid "Year"
+msgstr "Año"
+
+#. module: sale_forecast
+#: model:ir.model.fields,field_description:sale_forecast.field_sale_forecast_filter_visible
+msgid "filter_visible"
+msgstr "filtro visible"
+
+#. module: sale_forecast
+#: model:ir.model,name:sale_forecast.model_forecast_period
+msgid "forecast.period"
+msgstr "forecast.period"
+
+#. module: sale_forecast
+#: model:ir.model,name:sale_forecast.model_forecast_product
+msgid "forecast.product"
+msgstr "forecast.product"
+
+#. module: sale_forecast
+#: model:ir.model,name:sale_forecast.model_sale_forecast
+msgid "sale.forecast"
+msgstr "sale.forecast"
+

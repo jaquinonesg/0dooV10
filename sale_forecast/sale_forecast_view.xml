@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        
+        <record id="sale_forecast_form" model="ir.ui.view">
+            <field name="name">sale.forecast.form</field>
+            <field name="model">sale.forecast</field>
+            <field name="arch" type="xml">
+                <form string="Sale Forecast" >
+                    <header>
+                        <button name="set_confirm" string="Confirm" type="object" states="open" class="oe_highlight"/>
+                        <button name="set_open" string="Re-open" type="object" states="confirm" class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_colors='{"pending":"blue"}' readonly="1"/>
+                    </header>
+                    <sheet >
+                        <h1>
+                            <field name="name" attrs="{'readonly': [('state','in',['done'])]}"/>
+                        </h1>
+                       <group>
+                            <field name="start_date" attrs="{'readonly': [('state','in',['done'])]}"/>
+                            <field name="period" attrs="{'readonly': [('state','in',['done'])]}" />
+                            <field name="period_count" context="{'active_rec_id':active_id}" attrs="{'readonly': [('state','in',['done'])]}"/>
+                            <field name="product_ids" widget="char_domain" options="{'model': 'product.product'}" attrs="{'readonly': [('state','in',['done'])]}"/>
+                            <field name="warehouse_id" options="{'no_create': True, 'no_create_edit':True}" widget="selection" attrs="{'readonly': [('state','in',['done'])]}"/>
+                            <!--<field name="sales_team_id" options="{'no_create': True, 'no_create_edit':True}" widget="selection" on_change="onchange_sales_team_id(sales_team_id)" attrs="{'readonly': [('state','in',['done'])]}"/>-->
+                            <field name="sales_person_id" options="{'no_create': True, 'no_create_edit':True}" widget="selection" on_change="onchange_sales_person_id(sales_person_id)" attrs="{'readonly': [('state','in',['done'])]}"/>
+
+                            <field name="filter_visible" invisible="1"/>
+                            <field name="record_generated" invisible="1" />
+                            <field name="required_process" string="Required Process" on_change="onchange_required_process(required_process)" attrs="{'invisible': [('filter_visible','=',False)],'readonly':[('state','in',['done'])]}"/>
+                            <field name="create_action" attrs="{'readonly': [('state','in',['done'])]}"/>
+
+                            <field name="forecast_filter_id"  domain="[('forecast_id', '=', active_id)]" attrs="{'invisible': [('filter_visible','=',False)],'readonly':[('state','in',['done'])]}" options="{'no_create': True, 'no_create_edit':True, 'no_open':True}" on_change="onchange_forecast_filter(forecast_filter_id)" />
+                           <field name="past_forecast_records"/>
+                           <field name="past_sales_records"/>
+                           <newline/>
+                        </group>
+                        <group>
+                            <div>
+<!--                                 <button name='generate_forecast' type='object' string='Generate' attrs="{'invisible': [('filter_visible','=',True)]}"/> -->
+                                <button name='generate_forecast' type='object' string='Generate' attrs="{'invisible': [('state','in',['done'])]}" />
+                                <button name='update_action_qty' type='object' string='Calculate Quantity' attrs="{'invisible': ['|', ('filter_visible','=',False),('state','in',['done'])]}"/>
+                                <button name='perform_action' type='object' string='Action' confirm="Do you really want to create action for process quantity?" attrs="{'invisible': ['|', ('create_action','=',False),('state','in',['done'])]}"/>
+
+                            </div>
+                        </group>
+
+                        <notebook>
+                            <page name="past_sale_records" string="Past Sale Records" attrs="{'invisible': [('past_sales_records','=',False)]}">
+                                <field name="past_sale_record_ids" nolabel='1' context="{'active_rec_id':active_id}" domain="[('period_start_date','=', forecast_filter_id)]" attrs="{'readonly': [('state','in',['done'])]}">
+                                    <tree string= "Past Sale records" editable="top" delete="false" create="false">
+                                        <field name= "product_id" readonly='1'/>
+                                        <!-- <field name="id" invisible='1'/> -->
+                                        <field name= "period_start_date" readonly='1'/>
+                                        <field name= "period_end_date" readonly='1'/>
+                                         <!--<field name="sales_team" options="{'no_create': True,'no_create_edit':True, 'no_open':True}" on_change="onchange_sales_team(sales_team)"/>-->
+                                        <field name="sales_person" options="{'no_create': True,'no_create_edit':True,'no_open':True}"/>
+                                        <!--<field name="forecast_qty"/>-->
+                                        <!--<field name="onhand_qty" readonly='1' />-->
+                                        <!--<field name="incoming_qty" readonly='1' />-->
+                                        <!--<field name="outgoing_qty" readonly='1' />-->
+                                        <!--<field name="action_qty" readonly='1'/>-->
+                                        <!--<field name="action_required"/>-->
+                                        <!--<field name="document_number" readonly='1'/>-->
+                                        <!--<field name="procurement_id" invisible='1'/>-->
+                                        <field name="avg_sale_qty" readonly='1'/>
+                                        <!--<field name="sec_last_period_qty" readonly='1'/>-->
+                                        <!--<field name="third_last_period_qty" readonly='1'/>-->
+                                        <!--<field name="avg_qty"/>-->
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="past_forecast_records" string="Past Forecast Records" attrs="{'invisible': [('past_forecast_records','=',False)]}">
+                                <field name="past_record_ids" nolabel='1' context="{'active_rec_id':active_id}" domain="[('period_start_date','=', forecast_filter_id)]" attrs="{'readonly': [('state','in',['done'])]}">
+                                    <tree string= "Past Forecast records" editable="top" delete="false" create="false">
+                                        <field name= "product_id" readonly='1'/>
+                                        <!-- <field name="id" invisible='1'/> -->
+                                        <field name= "period_start_date" readonly='1'/>
+                                        <field name= "period_end_date" readonly='1'/>
+                                         <!--<field name="sales_team" options="{'no_create': True,'no_create_edit':True, 'no_open':True}" on_change="onchange_sales_team(sales_team)"/>-->
+                                        <field name="sales_person" options="{'no_create': True,'no_create_edit':True,'no_open':True}"/>
+                                        <!--<field name="forecast_qty"/>-->
+                                        <!--<field name="onhand_qty" readonly='1' />-->
+                                        <!--<field name="incoming_qty" readonly='1' />-->
+                                        <!--<field name="outgoing_qty" readonly='1' />-->
+                                        <!--<field name="action_qty" readonly='1'/>-->
+                                        <!--<field name="action_required"/>-->
+                                        <!--<field name="document_number" readonly='1'/>-->
+                                        <!--<field name="procurement_id" invisible='1'/>-->
+                                        <field name="last_period_qty" readonly='1'/>
+                                        <field name="sec_last_period_qty" readonly='1'/>
+                                        <field name="third_last_period_qty" readonly='1'/>
+                                        <field name="avg_qty"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="forecast_records" string="Forecast Records">
+                                <field name="forecast_product_ids" nolabel='1' context="{'active_rec_id':active_id}" domain="[('period_start_date','=', forecast_filter_id)]" attrs="{'readonly': [('state','in',['done'])]}">
+                                    <tree string= "Forecast" editable="top" delete="false" create="false">
+                                        <field name= "product_id" readonly='1'/>
+                                        <!-- <field name="id" invisible='1'/> -->
+                                        <field name= "period_start_date" readonly='1'/>
+                                        <field name= "period_end_date" readonly='1'/>
+                                         <!--<field name="sales_team" options="{'no_create': True,'no_create_edit':True, 'no_open':True}" on_change="onchange_sales_team(sales_team)"/>-->
+                                        <field name="sales_person" options="{'no_create': True,'no_create_edit':True,'no_open':True}"/>
+                                        <field name="forecast_qty"/>
+                                        <field name="onhand_qty" readonly='1' />
+                                        <field name="incoming_qty" readonly='1' />
+                                        <field name="outgoing_qty" readonly='1' />
+                                        <field name="action_qty" readonly='1'/>
+                                        <field name="action_required"/>
+                                        <field name="document_number" readonly='1'/>
+                                        <field name="procurement_id" invisible='1'/>
+
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sale_forecast_tree" model="ir.ui.view">
+            <field name="name">sale.forecast.tree</field>
+            <field name="model">sale.forecast</field>
+            <field name="arch" type="xml">
+                <tree string="Sale Forecast">
+                    <field name="name"/>
+                    <field name="period"/>
+                    <field name="period_count"/>
+                    <field name="start_date"/>
+                </tree>
+            </field>
+        </record>
+
+         <record model="ir.actions.act_window" id="sale_forecast_action">
+            <field name="name">Sale Forecast</field>
+            <field name="res_model">sale.forecast</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem action="sale_forecast_action" id="sale_forecast_action_menu" name="Sale Forecast" parent="base.menu_sales" sequence="8"/>
+
+        <record model="ir.ui.view" id="inherit_view_purchase_order">
+            <field name="name">inherit.view.purchase.order</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/group/group[1]/field[@name='partner_ref']" position="after">
+                    <!--<field name="forecast_ref_purchase" attrs="{'invisible': [('forecast_ref_purchase', '=', False)]}"/>-->
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="inherit_view_procurement_order">
+            <field name="name">inherit.view.procurement.order</field>
+            <field name="model">procurement.order</field>
+            <field name="inherit_id" ref="procurement.procurement_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_uom']" position="after">
+                    <field name="forecast_ref_procurement" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="inherit_view_mrp_production">
+            <field name="name">inherit.view.mrp.production</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/group/group[1]/field[@name='date_planned']" position="after">
+                    <field name="forecast_ref_mrp" attrs="{'invisible': [('forecast_ref_mrp', '=', False)]}"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>
+

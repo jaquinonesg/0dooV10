@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+        <!-- Chart Template -->
+        <record id="l10n_co_chart_template_comercial" model="account.chart.template">
+            <field name="name">Colombia - PUC COMERCIAL</field>
+            <field name="account_root_id" ref="co_puc_com_root"/>
+            <field name="bank_account_view_id" ref="co_puc_com_111005"/>
+            <field name="property_account_receivable" ref="co_puc_com_130505"/>
+            <field name="transfer_account_id" ref="co_puc_com_130505"/>
+            <field name="property_account_payable" ref="co_puc_com_220505"/>
+            <field name="property_account_expense_categ" ref="co_puc_com_613595"/>
+            <field name="property_account_income_categ" ref="co_puc_com_413595"/>
+            <field name="currency_id" ref="base.COP"/>
+        </record>
+        <record id="l10n_co_chart_template_solidario" model="account.chart.template">
+            <field name="name">Colombia - PUC SOLIDARIO</field>
+            <field name="account_root_id" ref="co_puc_sol_root"/>
+            <field name="bank_account_view_id" ref="co_puc_sol_111005"/>
+            <field name="property_account_receivable" ref="co_puc_sol_169095"/>
+            <field name="property_account_payable" ref="co_puc_sol_243505"/>
+            <field name="transfer_account_id" ref="co_puc_com_130505"/>
+            <field name="property_account_expense_categ" ref="co_puc_sol_529595"/>
+            <field name="property_account_income_categ" ref="co_puc_sol_413595"/>
+            <field name="currency_id" ref="base.COP"/>
+        </record>
+        <record id="l10n_co_chart_template_financiero" model="account.chart.template">
+            <field name="name">Colombia - PUC FINANCIERO</field>
+            <field name="account_root_id" ref="co_puc_fin_root"/>
+            <field name="bank_account_view_id" ref="co_puc_fin_111005"/>
+            <field name="transfer_account_id" ref="co_puc_com_130505"/>
+            <field name="currency_id" ref="base.COP"/>
+        </record>
+        <record id="l10n_co_chart_template_niif" model="account.chart.template">
+            <field name="name">Colombia - NIIF FINANCIERO</field>
+            <field name="account_root_id" ref="co_niif_fin_root"/>
+            <field name="bank_account_view_id" ref="co_niif_fin_111005"/>
+            <field name="transfer_account_id" ref="co_puc_com_130505"/>
+            <field name="currency_id" ref="base.COP"/>
+        </record>
+    </data>
+</openerp>

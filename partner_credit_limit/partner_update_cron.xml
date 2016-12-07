@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+	
+		<record id="ir_cron_update_cron_warning_type" model="ir.cron">
+			<field name="name">Cron Update Avisos nos Clientes</field>
+			<field name="interval_number">23</field>
+			<field name="interval_type">hours</field>
+			<field name="numbercall">-1</field>
+			<field eval="False" name="doall"/>
+			<field eval="'res.partner'" name="model"/>
+			<field eval="'update_cron_warning_type'" name="function"/>
+			<field eval="'()'" name="args"/>
+			<field name="active" eval="True" />
+		</record>
+		
+    </data>
+</openerp>

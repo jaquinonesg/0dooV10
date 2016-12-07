@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- make readonly for everyone 
+        <record id="view_credit_readonly_partner_form" model="ir.ui.view">
+            <field name="name">res.partner.partner_credit_limit.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form[@string='Partners']//field[@name='credit_limit']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </xpath>
+            </field>
+        </record>-->
+        <!-- Make not readonly for user_edit_credit_limit  
+        <record id="view_credit_editable_partner_form" model="ir.ui.view">
+            <field name="name">res.partner.partner_credit_limit.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="partner_credit_limit.view_credit_readonly_partner_form"/>
+            <field name="groups_id" eval="[(6, 0, [ref('partner_credit_limit.credit_config')])]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form[@string='Partners']//field[@name='credit_limit']" position="attributes">
+                    <attribute name="readonly">0</attribute>
+                </xpath>
+            </field>
+        </record>-->
+        
+        <record id="view_campo_credito_partner_form" model="ir.ui.view">
+            <field name="name">campo.credito.parceiro</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="mail.view_emails_partner_info_form"/>
+            <field name="arch" type="xml">
+                <field name="opt_out" position="after">
+                   <field name="warning_type" position="after"/>
+                   <field name="credit_limit" position="after" attrs="{'invisible': [('warning_type', '=', 'none')]}"/>
+                   <field name="credit_limit_days" position="after" attrs="{'invisible': [('warning_type', '=', 'none')]}"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

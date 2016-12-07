@@ -1,0 +1,437 @@
+id,description,tag_ids/id,chart_template_id:id,type_tax_use,name,sequence,amount,price_include,amount_type,children_tax_ids:id,account_id:id,refund_account_id:id,active
+tax_iinc_04sv,Inc04S>,tag_1,l10n_co_chart_template_generic,sale,INC   4% SERV - OUT,310,4,,percent,,co_puc_249510,co_puc_249510,t
+tax_iinc_08sv,Inc08S>,tag_2,l10n_co_chart_template_generic,sale,INC   8% SERV - OUT,311,8,,percent,,co_puc_249510,co_puc_249510,t
+tax_iinc_08bv,Inc08B>,tag_3,l10n_co_chart_template_generic,sale,INC   8% BIEN - OUT,312,8,,percent,,co_puc_249510,co_puc_249510,t
+tax_iinc_16sv,Inc16S>,tag_4,l10n_co_chart_template_generic,sale,INC  16% SERV - OUT,313,16,,percent,,co_puc_249510,co_puc_249510,t
+tax_iinc_16bv,Inc16B>,tag_5,l10n_co_chart_template_generic,sale,INC  16% BIEN - OUT,314,16,,percent,,co_puc_249510,co_puc_249510,t
+tax_iinc_04sc,Inc04S<,tag_6,l10n_co_chart_template_generic,purchase,INC   4% SERV - IN,320,4,,percent,,,,t
+tax_iinc_08sc,Inc08S<,tag_7,l10n_co_chart_template_generic,purchase,INC   8% SERV - IN,321,8,,percent,,,,t
+tax_iinc_08bc,Inc08B<,tag_8,l10n_co_chart_template_generic,purchase,INC   8% BIEN - IN,322,8,,percent,,,,t
+tax_iinc_16sc,Inc16S<,tag_9,l10n_co_chart_template_generic,purchase,INC  16% SERV - IN,323,16,,percent,,,,t
+tax_iinc_16bc,Inc16B<,tag_10,l10n_co_chart_template_generic,purchase,INC  16% BIEN - IN,324,16,,percent,,,,t
+tax_iinc_08bc_IMP,Inc08B<IM,tag_11,l10n_co_chart_template_generic,purchase,INC   8% BIEN - IMP,325,8,,percent,,,,t
+tax_iinc_16bc_IMP,Inc16B<IM,tag_12,l10n_co_chart_template_generic,purchase,INC  16% BIEN - IMP,326,16,,percent,,,,t
+tax_arcree_004v_AR,Cre04>\,tag_13,l10n_co_chart_template_generic,none,CREE  4 ‰ AUTORET,351,0.4,,percent,,co_puc_236575,co_puc_236575,t
+tax_arcree_004v_CP,Cre04>/,tag_14,l10n_co_chart_template_generic,none,CREE  4 ‰ CONTRAP,352,-0.4,,percent,,co_puc_135595,co_puc_135595,t
+tax_arcree_004v,Cre04>,tag_15,l10n_co_chart_template_generic,sale,CREE  4 ‰,350,1,,group,"tax_arcree_004v_AR,tax_arcree_004v_CP",,,t
+tax_arcree_008v_AR,Cre08>\,tag_16,l10n_co_chart_template_generic,none,CREE  8 ‰ AUTORET,354,0.8,,percent,,co_puc_236575,co_puc_236575,t
+tax_arcree_008v_CP,Cre08>/,tag_17,l10n_co_chart_template_generic,none,CREE  8 ‰ CONTRAP,355,-0.8,,percent,,co_puc_135595,co_puc_135595,t
+tax_arcree_008v,Cre08>,tag_18,l10n_co_chart_template_generic,sale,CREE  8 ‰,353,1,,group,"tax_arcree_008v_AR,tax_arcree_008v_CP",,,t
+tax_arcree_016v_AR,Cre16>\,tag_19,l10n_co_chart_template_generic,none,CREE 16 ‰ AUTORET,357,1.6,,percent,,co_puc_236575,co_puc_236575,t
+tax_arcree_016v_CP,Cre16>/,tag_20,l10n_co_chart_template_generic,none,CREE 16 ‰ CONTRAP,358,-1.6,,percent,,co_puc_135595,co_puc_135595,t
+tax_arcree_016v,Cre16>,tag_21,l10n_co_chart_template_generic,sale,CREE 16 ‰,356,1,,group,"tax_arcree_016v_AR,tax_arcree_016v_CP",,,t
+tax_iiva_05bv,Iva05B>,tag_22,l10n_co_chart_template_generic,sale,IVA   5%  BIEN - OUT,100,5,,percent,,co_puc_240805,co_puc_240805,t
+tax_iiva_05bv_EXT,Iva05B>EX,tag_23,l10n_co_chart_template_generic,sale,IVA ( 5%) BIEN EXTERIOR -> 0% - OUT,110,0,,percent,,,,t
+tax_iiva_05bv_ZFR,Iva05B>ZF,tag_24,l10n_co_chart_template_generic,sale,IVA ( 5%) BIEN ZONA FRANCA -> 0% - OUT,120,0,,percent,,,,t
+tax_iiva_05bv_SCI,Iva05B>SI,tag_25,l10n_co_chart_template_generic,sale,IVA ( 5%) BIEN SOCEDAD COMMERCIO INTERNACIONAL -> 0% - OUT,130,0,,percent,,,,t
+tax_iiva_05sv,Iva05S>,tag_26,l10n_co_chart_template_generic,sale,IVA   5%  SERV - OUT,101,5,,percent,,co_puc_240805,co_puc_240805,t
+tax_iiva_05sv_EXT,Iva05S>EX,tag_27,l10n_co_chart_template_generic,sale,IVA ( 5%) SERV EXTERIOR -> 0% - OUT,111,0,,percent,,,,t
+tax_iiva_05sv_ZFR,Iva05S>ZF,tag_28,l10n_co_chart_template_generic,sale,IVA ( 5%) SERV ZONA FRANCA -> 0% - OUT,121,0,,percent,,,,t
+tax_iiva_05sv_SCI,Iva05S>SI,tag_29,l10n_co_chart_template_generic,sale,IVA ( 5%) SERV SOCEDAD COMMERCIO INTERNACIONAL -> 0% - OUT,131,0,,percent,,,,t
+tax_iiva_16bv,Iva16b>,tag_30,l10n_co_chart_template_generic,sale,IVA  16%  BIEN - OUT,102,16,,percent,,co_puc_240805,co_puc_240805,t
+tax_iiva_16bv_EXT,Iva16b>EX,tag_31,l10n_co_chart_template_generic,sale,IVA (16%) BIEN EXTERIOR -> 0% - OUT,112,0,,percent,,,,t
+tax_iiva_16bv_ZFR,Iva16b>ZF,tag_32,l10n_co_chart_template_generic,sale,IVA (16%) BIEN ZONA FRANCA -> 0% - OUT,122,0,,percent,,,,t
+tax_iiva_16bv_SCI,Iva16b>SI,tag_33,l10n_co_chart_template_generic,sale,IVA (16%) BIEN SOCEDAD COMMERCIO INTERNACIONAL -> 0% - OUT,132,0,,percent,,,,t
+tax_iiva_16sv,Iva16S>,tag_34,l10n_co_chart_template_generic,sale,IVA  16%  SERV - OUT,103,16,,percent,,co_puc_240805,co_puc_240805,t
+tax_iiva_16sv_EXT,Iva16S>EX,tag_35,l10n_co_chart_template_generic,sale,IVA (16%) SERV EXTERIOR -> 0% - OUT,113,0,,percent,,,,t
+tax_iiva_16sv_ZFR,Iva16S>ZF,tag_36,l10n_co_chart_template_generic,sale,IVA (16%) SERV ZONA FRANCA -> 0% - OUT,123,0,,percent,,,,t
+tax_iiva_16sv_SCI,Iva16S>SI,tag_37,l10n_co_chart_template_generic,sale,IVA (16%) SERV SOCEDAD COMMERCIO INTERNACIONAL -> 0% - OUT,133,0,,percent,,,,t
+tax_iiva_exe_bv,IvaE0B>,tag_38,l10n_co_chart_template_generic,sale,IVA EXENT BIEN - OUT,104,0,,percent,,,,t
+tax_iiva_exe_bv_EXT,IvaE0B>EX,tag_39,l10n_co_chart_template_generic,sale,IVA EXENT BIEN EXTERIOR - OUT,114,0,,percent,,,,t
+tax_iiva_exe_bv_ZFR,IvaE0B>ZF,tag_40,l10n_co_chart_template_generic,sale,IVA EXENT BIEN ZONA FRANCA - OUT,124,0,,percent,,,,t
+tax_iiva_exe_bv_SCI,IvaE0B>SI,tag_41,l10n_co_chart_template_generic,sale,IVA EXENT BIEN SOCEDAD COMMERCIO INTERNACIONAL - OUT,134,0,,percent,,,,t
+tax_iiva_exe_sv,IvaE0S>,tag_42,l10n_co_chart_template_generic,sale,IVA EXENT SERV - OUT,105,0,,percent,,,,t
+tax_iiva_exe_sv_EXT,IvaE0S>EX,tag_43,l10n_co_chart_template_generic,sale,IVA EXENT SERV EXTERIOR - OUT,115,0,,percent,,,,t
+tax_iiva_exe_sv_ZFR,IvaE0S>ZF,tag_44,l10n_co_chart_template_generic,sale,IVA EXENT SERV ZONA FRANCA - OUT,125,0,,percent,,,,t
+tax_iiva_exe_sv_SCI,IvaE0S>SI,tag_45,l10n_co_chart_template_generic,sale,IVA EXENT SERV SOCEDAD COMMERCIO INTERNACIONAL - OUT,135,0,,percent,,,,t
+tax_iiva_exc_bv,IvaX0B>,tag_46,l10n_co_chart_template_generic,sale,IVA EXCLU BIEN - OUT,106,0,,percent,,,,t
+tax_iiva_exc_bv_EXT,IvaX0B>EX,tag_47,l10n_co_chart_template_generic,sale,IVA EXCLU BIEN EXTERIOR - OUT,116,0,,percent,,,,t
+tax_iiva_exc_bv_ZFR,IvaX0B>ZF,tag_48,l10n_co_chart_template_generic,sale,IVA EXCLU BIEN ZONA FRANCA - OUT,126,0,,percent,,,,t
+tax_iiva_exc_bv_SCI,IvaX0B>SI,tag_49,l10n_co_chart_template_generic,sale,IVA EXCLU BIEN SOCEDAD COMMERCIO INTERNACIONAL - OUT,136,0,,percent,,,,t
+tax_iiva_exc_sv,IvaX0S>,tag_50,l10n_co_chart_template_generic,sale,IVA EXCLU SERV - OUT,107,0,,percent,,,,t
+tax_iiva_exc_sv_EXT,IvaX0S>EX,tag_51,l10n_co_chart_template_generic,sale,IVA EXCLU SERV EXTERIOR - OUT,117,0,,percent,,,,t
+tax_iiva_exc_sv_ZFR,IvaX0S>ZF,tag_52,l10n_co_chart_template_generic,sale,IVA EXCLU SERV ZONA FRANCA - OUT,127,0,,percent,,,,t
+tax_iiva_exc_sv_SCI,IvaX0S>SI,tag_53,l10n_co_chart_template_generic,sale,IVA EXCLU SERV SOCEDAD COMMERCIO INTERNACIONAL - OUT,137,0,,percent,,,,t
+tax_iiva_no__bv,IvaG0B>,tag_54,l10n_co_chart_template_generic,sale,IVA NOGRA BIEN - OUT,108,0,,percent,,,,t
+tax_iiva_no__bv_EXT,IvaG0B>EX,tag_55,l10n_co_chart_template_generic,sale,IVA NOGRA BIEN EXTERIOR - OUT,118,0,,percent,,,,t
+tax_iiva_no__bv_ZFR,IvaG0B>ZF,tag_56,l10n_co_chart_template_generic,sale,IVA NOGRA BIEN ZONA FRANCA - OUT,128,0,,percent,,,,t
+tax_iiva_no__bv_SCI,IvaG0B>SI,tag_57,l10n_co_chart_template_generic,sale,IVA NOGRA BIEN SOCEDAD COMMERCIO INTERNACIONAL - OUT,138,0,,percent,,,,t
+tax_iiva_no__sv,IvaG0S>,tag_58,l10n_co_chart_template_generic,sale,IVA NOGRA SERV - OUT,109,0,,percent,,,,t
+tax_iiva_no__sv_EXT,IvaG0S>EX,tag_59,l10n_co_chart_template_generic,sale,IVA NOGRA SERV EXTERIOR - OUT,119,0,,percent,,,,t
+tax_iiva_no__sv_ZFR,IvaG0S>ZF,tag_60,l10n_co_chart_template_generic,sale,IVA NOGRA SERV ZONA FRANCA - OUT,129,0,,percent,,,,t
+tax_iiva_no__sv_SCI,IvaG0S>SI,tag_61,l10n_co_chart_template_generic,sale,IVA NOGRA SERV SOCEDAD COMMERCIO INTERNACIONAL - OUT,139,0,,percent,,,,t
+tax_iiva_05bc_D,Iva05Bd<,tag_62,l10n_co_chart_template_generic,purchase,IVA 5% DIRECTO BIEN - IN,200,5,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_05bc_EXT_D,Iva05Bd<EX,tag_63,l10n_co_chart_template_generic,purchase,IVA 5% DIRECTO BIEN EXTERIOR - IN,220,5,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_05bc_ZFR_D,Iva05Bd<ZF,tag_64,l10n_co_chart_template_generic,purchase,IVA 5% DIRECTO BIEN ZONA FRANCA - IN,240,5,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_05bc_SCI_D,Iva05Bd<SI,tag_65,l10n_co_chart_template_generic,purchase,IVA 5% DIRECTO BIEN SOCEDAD COMMERCIO INTERNACIONAL - IN,260,5,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_05sc_D,Iva05Sd<,tag_66,l10n_co_chart_template_generic,purchase,IVA 5% DIRECTO SERV - IN,201,5,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_05sc_EXT_D,Iva05Sd<EX,tag_67,l10n_co_chart_template_generic,purchase,IVA 5% DIRECTO SERV EXTERIOR - IN,221,5,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_05sc_ZFR_D,Iva05Sd<ZF,tag_68,l10n_co_chart_template_generic,purchase,IVA 5% DIRECTO SERV ZONA FRANCA - IN,241,5,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_05sc_SCI_D,Iva05Sd<SI,tag_69,l10n_co_chart_template_generic,purchase,IVA 5% DIRECTO SERV SOCEDAD COMMERCIO INTERNACIONAL - IN,261,5,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_16bc_D,Iva16Bd<,tag_70,l10n_co_chart_template_generic,purchase,IVA 16% DIRECTO BIEN - IN,202,16,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_16bc_EXT_D,Iva16Bd<EX,tag_71,l10n_co_chart_template_generic,purchase,IVA 16% DIRECTO BIEN EXTERIOR - IN,222,16,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_16bc_ZFR_D,Iva16Bd<ZF,tag_72,l10n_co_chart_template_generic,purchase,IVA 16% DIRECTO BIEN ZONA FRANCA - IN,242,16,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_16bc_SCI_D,Iva16Bd<SI,tag_73,l10n_co_chart_template_generic,purchase,IVA 16% DIRECTO BIEN SOCEDAD COMMERCIO INTERNACIONAL - IN,262,16,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_16sc_D,Iva16Sd<,tag_74,l10n_co_chart_template_generic,purchase,IVA 16% DIRECTO SERV - IN,203,16,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_16sc_EXT_D,Iva16Sd<EX,tag_75,l10n_co_chart_template_generic,purchase,IVA 16% DIRECTO SERV EXTERIOR - IN,223,16,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_16sc_ZFR_D,Iva16Sd<ZF,tag_76,l10n_co_chart_template_generic,purchase,IVA 16% DIRECTO SERV ZONA FRANCA - IN,243,16,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_16sc_SCI_D,Iva16Sd<SI,tag_77,l10n_co_chart_template_generic,purchase,IVA 16% DIRECTO SERV SOCEDAD COMMERCIO INTERNACIONAL - IN,263,16,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_05bc_C,Iva05Bc<,tag_78,l10n_co_chart_template_generic,purchase,IVA 5% COMMUN BIEN NACIONAL - IN,204,5,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_05bc_EXT_C,Iva05Bc<EX,tag_79,l10n_co_chart_template_generic,purchase,IVA 5% COMMUN BIEN EXTERIOR - IN,224,5,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_05bc_ZFR_C,Iva05Bc<ZF,tag_80,l10n_co_chart_template_generic,purchase,IVA 5% COMMUN BIEN ZONA FRANCA - IN,244,5,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_05bc_SCI_C,Iva05Bc<SI,tag_81,l10n_co_chart_template_generic,purchase,IVA 5% COMMUN BIEN SOCEDAD COMMERCIO INTERNACIONAL - IN,264,5,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_05sc_C,Iva05Sc<,tag_82,l10n_co_chart_template_generic,purchase,IVA 5% COMMUN SERV - IN,205,5,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_05sc_EXT_C,Iva05Sc<EX,tag_83,l10n_co_chart_template_generic,purchase,IVA 5% COMMUN SERV EXTERIOR - IN,225,5,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_05sc_ZFR_C,Iva05Sc<ZF,tag_84,l10n_co_chart_template_generic,purchase,IVA 5% COMMUN SERV ZONA FRANCA - IN,245,5,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_05sc_SCI_C,Iva05Sc<SI,tag_85,l10n_co_chart_template_generic,purchase,IVA 5% COMMUN SERV SOCEDAD COMMERCIO INTERNACIONAL - IN,265,5,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_16bc_C,Iva16Bc<,tag_86,l10n_co_chart_template_generic,purchase,IVA 16% COMMUN BIEN - IN,206,16,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_16bc_EXT_C,Iva16Bc<EX,tag_87,l10n_co_chart_template_generic,purchase,IVA 16% COMMUN BIEN EXTERIOR - IN,226,16,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_16bc_ZFR_C,Iva16Bc<ZF,tag_88,l10n_co_chart_template_generic,purchase,IVA 16% COMMUN BIEN ZONA FRANCA - IN,246,16,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_16bc_SCI_C,Iva16Bc<SI,tag_89,l10n_co_chart_template_generic,purchase,IVA 16% COMMUN BIEN SOCEDAD COMMERCIO INTERNACIONAL - IN,266,16,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_16sc_C,Iva16Sc<,tag_90,l10n_co_chart_template_generic,purchase,IVA 16% COMMUN SERV - IN,207,16,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_16sc_EXT_C,Iva16Sc<EX,tag_91,l10n_co_chart_template_generic,purchase,IVA 16% COMMUN SERV EXTERIOR - IN,227,16,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_16sc_ZFR_C,Iva16Sc<ZF,tag_92,l10n_co_chart_template_generic,purchase,IVA 16% COMMUN SERV ZONA FRANCA - IN,247,16,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_16sc_SCI_C,Iva16Sc<SI,tag_93,l10n_co_chart_template_generic,purchase,IVA 16% COMMUN SERV SOCEDAD COMMERCIO INTERNACIONAL - IN,267,16,,percent,,co_puc_240810,co_puc_240810,t
+tax_iiva_05bc_N,Iva05Bn<,tag_94,l10n_co_chart_template_generic,purchase,IVA 5% NO DESCONTABLE BIEN NACIONAL - IN,208,5,,percent,,,,t
+tax_iiva_05bc_EXT_N,Iva05Bn<EX,tag_95,l10n_co_chart_template_generic,purchase,IVA 5% NO DESCONTABLE BIEN EXTERIOR - IN,228,5,,percent,,,,t
+tax_iiva_05bc_ZFR_N,Iva05Bn<ZF,tag_96,l10n_co_chart_template_generic,purchase,IVA 5% NO DESCONTABLE BIEN ZONA FRANCA - IN,248,5,,percent,,,,t
+tax_iiva_05bc_SCI_N,Iva05Bn<SI,tag_97,l10n_co_chart_template_generic,purchase,IVA 5% NO DESCONTABLE BIEN SOCEDAD COMMERCIO INTERNACIONAL - IN,268,5,,percent,,,,t
+tax_iiva_05sc_N,Iva05Sn<,tag_98,l10n_co_chart_template_generic,purchase,IVA 5% NO DESCONTABLE SERV - IN,209,5,,percent,,,,t
+tax_iiva_05sc_EXT_N,Iva05Sn<EX,tag_99,l10n_co_chart_template_generic,purchase,IVA 5% NO DESCONTABLE SERV EXTERIOR - IN,229,5,,percent,,,,t
+tax_iiva_05sc_ZFR_N,Iva05Sn<ZF,tag_100,l10n_co_chart_template_generic,purchase,IVA 5% NO DESCONTABLE SERV ZONA FRANCA - IN,249,5,,percent,,,,t
+tax_iiva_05sc_SCI_N,Iva05Sn<SI,tag_101,l10n_co_chart_template_generic,purchase,IVA 5% NO DESCONTABLE SERV SOCEDAD COMMERCIO INTERNACIONAL - IN,269,5,,percent,,,,t
+tax_iiva_16bc_N,Iva16Bn<,tag_102,l10n_co_chart_template_generic,purchase,IVA 16% NO DESCONTABLE BIEN - IN,210,16,,percent,,,,t
+tax_iiva_16bc_EXT_N,Iva16Bn<EX,tag_103,l10n_co_chart_template_generic,purchase,IVA 16% NO DESCONTABLE BIEN EXTERIOR - IN,230,16,,percent,,,,t
+tax_iiva_16bc_ZFR_N,Iva16Bn<ZF,tag_104,l10n_co_chart_template_generic,purchase,IVA 16% NO DESCONTABLE BIEN ZONA FRANCA - IN,250,16,,percent,,,,t
+tax_iiva_16bc_SCI_N,Iva16Bn<SI,tag_105,l10n_co_chart_template_generic,purchase,IVA 16% NO DESCONTABLE BIEN SOCEDAD COMMERCIO INTERNACIONAL - IN,270,16,,percent,,,,t
+tax_iiva_16sc_N,Iva16Sn<,tag_106,l10n_co_chart_template_generic,purchase,IVA 16% NO DESCONTABLE SERV - IN,211,16,,percent,,,,t
+tax_iiva_16sc_EXT_N,Iva16Sn<EX,tag_107,l10n_co_chart_template_generic,purchase,IVA 16% NO DESCONTABLE SERV EXTERIOR - IN,231,16,,percent,,,,t
+tax_iiva_16sc_ZFR_N,Iva16Sn<ZF,tag_108,l10n_co_chart_template_generic,purchase,IVA 16% NO DESCONTABLE SERV ZONA FRANCA - IN,251,16,,percent,,,,t
+tax_iiva_16sc_SCI_N,Iva16Sn<SI,tag_109,l10n_co_chart_template_generic,purchase,IVA 16% NO DESCONTABLE SERV SOCEDAD COMMERCIO INTERNACIONAL - IN,271,16,,percent,,,,t
+tax_iiva_exe bc,IvaE0B<,tag_110,l10n_co_chart_template_generic,purchase,IVA EXENT BIEN - IN,212,0,,percent,,,,t
+tax_iiva_exe bc_EXT,IvaE0B<EX,tag_111,l10n_co_chart_template_generic,purchase,IVA EXENT BIEN EXTERIOR - IN,232,0,,percent,,,,t
+tax_iiva_exe bc_ZFR,IvaE0B<ZF,tag_112,l10n_co_chart_template_generic,purchase,IVA EXENT BIEN ZONA FRANCA - IN,252,0,,percent,,,,t
+tax_iiva_exe bc_SCI,IvaE0B<SI,tag_113,l10n_co_chart_template_generic,purchase,IVA EXENT BIEN SOCEDAD COMMERCIO INTERNACIONAL - IN,272,0,,percent,,,,t
+tax_iiva_exe sc,IvaE0S<,tag_114,l10n_co_chart_template_generic,purchase,IVA EXENT SERV - IN,213,0,,percent,,,,t
+tax_iiva_exe sc_EXT,IvaE0S<EX,tag_115,l10n_co_chart_template_generic,purchase,IVA EXENT SERV EXTERIOR - IN,233,0,,percent,,,,t
+tax_iiva_exe sc_ZFR,IvaE0S<ZF,tag_116,l10n_co_chart_template_generic,purchase,IVA EXENT SERV ZONA FRANCA - IN,253,0,,percent,,,,t
+tax_iiva_exe sc_SCI,IvaE0S<SI,tag_117,l10n_co_chart_template_generic,purchase,IVA EXENT SERV SOCEDAD COMMERCIO INTERNACIONAL - IN,273,0,,percent,,,,t
+tax_iiva_exc bc,IvaX0B<,tag_118,l10n_co_chart_template_generic,purchase,IVA EXCLU BIEN - IN,214,0,,percent,,,,t
+tax_iiva_exc bc_EXT,IvaX0B<EX,tag_119,l10n_co_chart_template_generic,purchase,IVA EXCLU BIEN EXTERIOR - IN,234,0,,percent,,,,t
+tax_iiva_exc bc_ZFR,IvaX0B<ZF,tag_120,l10n_co_chart_template_generic,purchase,IVA EXCLU BIEN ZONA FRANCA - IN,254,0,,percent,,,,t
+tax_iiva_exc bc_SCI,IvaX0B<SI,tag_121,l10n_co_chart_template_generic,purchase,IVA EXCLU BIEN SOCEDAD COMMERCIO INTERNACIONAL - IN,274,0,,percent,,,,t
+tax_iiva_exc sc,IvaX0S<,tag_122,l10n_co_chart_template_generic,purchase,IVA EXCLU SERV - IN,215,0,,percent,,,,t
+tax_iiva_exc sc_EXT,IvaX0S<EX,tag_123,l10n_co_chart_template_generic,purchase,IVA EXCLU SERV EXTERIOR - IN,235,0,,percent,,,,t
+tax_iiva_exc sc_ZFR,IvaX0S<ZF,tag_124,l10n_co_chart_template_generic,purchase,IVA EXCLU SERV ZONA FRANCA - IN,255,0,,percent,,,,t
+tax_iiva_exc sc_SCI,IvaX0S<SI,tag_125,l10n_co_chart_template_generic,purchase,IVA EXCLU SERV SOCEDAD COMMERCIO INTERNACIONAL - IN,275,0,,percent,,,,t
+tax_iiva_no  bc,IvaG0B<,tag_126,l10n_co_chart_template_generic,purchase,IVA NOGRA BIEN - IN,216,0,,percent,,,,t
+tax_iiva_no  bc_EXT,IvaG0B<EX,tag_127,l10n_co_chart_template_generic,purchase,IVA NOGRA BIEN EXTERIOR - IN,236,0,,percent,,,,t
+tax_iiva_no  bc_ZFR,IvaG0B<ZF,tag_128,l10n_co_chart_template_generic,purchase,IVA NOGRA BIEN ZONA FRANCA - IN,256,0,,percent,,,,t
+tax_iiva_no  bc_SCI,IvaG0B<SI,tag_129,l10n_co_chart_template_generic,purchase,IVA NOGRA BIEN SOCEDAD COMMERCIO INTERNACIONAL - IN,276,0,,percent,,,,t
+tax_iiva_no  sc,IvaG0S<,tag_130,l10n_co_chart_template_generic,purchase,IVA NOGRA SERV - IN,217,0,,percent,,,,t
+tax_iiva_no  sc_EXT,IvaG0S<EX,tag_131,l10n_co_chart_template_generic,purchase,IVA NOGRA SERV EXTERIOR - IN,237,0,,percent,,,,t
+tax_iiva_no  sc_ZFR,IvaG0S<ZF,tag_132,l10n_co_chart_template_generic,purchase,IVA NOGRA SERV ZONA FRANCA - IN,257,0,,percent,,,,t
+tax_iiva_no  sc_SCI,IvaG0S<SI,tag_133,l10n_co_chart_template_generic,purchase,IVA NOGRA SERV SOCEDAD COMMERCIO INTERNACIONAL - IN,277,0,,percent,,,,t
+tax_riva_240_rc_v,rIva2.4>,tag_134,l10n_co_chart_template_generic,sale,R IVA 2.4%,140,-2.4,,percent,,co_puc_135517,co_puc_135517,t
+tax_riva_075_rc_v,rIva7.5>,tag_135,l10n_co_chart_template_generic,sale,R IVA 0.75%,141,-0.75,,percent,,co_puc_135517,co_puc_135517,t
+tax_riva_240_rc_c,rIva2.4<,tag_136,l10n_co_chart_template_generic,purchase,R IVA 2.4% AL REGIMEN COMMUN,280,-2.4,,percent,,co_puc_236705,co_puc_236705,t
+tax_riva_075_rc_c,rIva7.5<,tag_137,l10n_co_chart_template_generic,purchase,R IVA 0.75% AL REGIMEN COMMUN,281,-0.75,,percent,,co_puc_236705,co_puc_236705,t
+tax_riva_240_rs_c_asum_D,rIva2.4A<\,tag_138,l10n_co_chart_template_generic,none,R IVA 2.4% DIRECTO - AL RS ASUMIDO,283,-2.4,,percent,,co_puc_236705,co_puc_236705,t
+tax_riva_240_rs_c_cp_D,rIva2.4A</,tag_139,l10n_co_chart_template_generic,none,R IVA 2.4% DIRECTO - AL RS CONTRAPARTIDA,284,2.4,,percent,,co_puc_240825,co_puc_240825,t
+tax_riva_240_rs_c_D,rIva2.4A<,tag_140,l10n_co_chart_template_generic,purchase,R IVA 2.4% DIRECTO - AL RS,282,1,,group,"tax_riva_240_rs_c_asum_D,tax_riva_240_rs_c_cp_D",,,t
+tax_riva_075_rs_c_asum_D,rIva7.5A<\,tag_141,l10n_co_chart_template_generic,none,R IVA 0.75% DIRECTO - AL RS ASUMIDO,286,-0.75,,percent,,co_puc_236705,co_puc_236705,t
+tax_riva_075_rs_c_cp_D,rIva7.5A</,tag_142,l10n_co_chart_template_generic,none,R IVA 0.75% DIRECTO - AL RS CONTRAPARTIDA,287,0.75,,percent,,co_puc_240825,co_puc_240825,t
+tax_riva_075_rs_c_D,rIva7.5A<,tag_143,l10n_co_chart_template_generic,purchase,R IVA 0.75% DIRECTO - AL RS,285,1,,group,"tax_riva_075_rs_c_asum_D,tax_riva_075_rs_c_cp_D",,,t
+tax_riva_16_nd_c_asum_D,rIva16D<EX\,tag_144,l10n_co_chart_template_generic,none,R IVA 16% DIRECTO - SERVICIO NACIONAL DE UN NO DOMICILIADO ASSUMID0,289,-16,,percent,,co_puc_236705,co_puc_236705,t
+tax_riva_16_nd_c_cp_D,rIva16D<EX/,tag_145,l10n_co_chart_template_generic,none,R IVA 16% DIRECTO - SERVICIO NACIONAL DE UN NO DOMICILIADO CONTRAPARTIDA,290,16,,percent,,co_puc_240810,co_puc_240810,t
+tax_riva_16_nd_c_D,rIva16D<EX,tag_146,l10n_co_chart_template_generic,purchase,R IVA 16% DIRECTO - SERVICIO NACIONAL DE UN NO DOMICILIADO,288,1,,group,"tax_riva_16_nd_c_asum_D,tax_riva_16_nd_c_cp_D",,,t
+tax_riva_240_rs_c_asum_C,rIva24C<RS\,tag_147,l10n_co_chart_template_generic,none,R IVA 2.4% COMMUN - AL RS ASUMIDO,292,-2.4,,percent,,co_puc_236705,co_puc_236705,f
+tax_riva_240_rs_c_cp_C,rIva24C<RS/,tag_148,l10n_co_chart_template_generic,none,R IVA 2.4% COMMUN - AL RS CONTRAPARTIDA,293,2.4,,percent,,co_puc_240820,co_puc_240820,f
+tax_riva_240_rs_c_C,rIva24C<RS,tag_149,l10n_co_chart_template_generic,purchase,R IVA 2.4% COMMUN - AL RS,291,1,,group,"tax_riva_240_rs_c_asum_C,tax_riva_240_rs_c_cp_C",,,f
+tax_riva_075_rs_c_asum_C,rIva75C<RS\,tag_150,l10n_co_chart_template_generic,none,R IVA 0.75% COMMUN - AL RS ASUMIDO,295,-0.75,,percent,,co_puc_236705,co_puc_236705,f
+tax_riva_075_rs_c_cp_C,rIva75C<RS/,tag_151,l10n_co_chart_template_generic,none,R IVA 0.75% COMMUN - AL RS CONTRAPARTIDA,296,0.75,,percent,,co_puc_240820,co_puc_240820,f
+tax_riva_075_rs_c_C,rIva75C<RS,tag_152,l10n_co_chart_template_generic,purchase,R IVA 0.75% COMMUN - AL RS,294,1,,group,"tax_riva_075_rs_c_asum_C,tax_riva_075_rs_c_cp_C",,,f
+tax_riva_16_nd_c_asum_C,rIva16C<EX\,tag_153,l10n_co_chart_template_generic,none,R IVA 16% COMMUN - SERVICIO NACIONAL DE UN NO DOMICILIADO ASUMIDO,298,-16,,percent,,co_puc_236705,co_puc_236705,f
+tax_riva_16_nd_c_cp_C,rIva16C<EX/,tag_154,l10n_co_chart_template_generic,none,R IVA 16% COMMUN - SERVICIO NACIONAL DE UN NO DOMICILIADO CONTRAPARTIDA,299,16,,percent,,co_puc_240815,co_puc_240815,f
+tax_riva_16_nd_c_C,rIva16C<EX,tag_155,l10n_co_chart_template_generic,purchase,R IVA 16% COMMUN - SERVICIO NACIONAL DE UN NO DOMICILIADO,297,1,,group,"tax_riva_16_nd_c_asum_C,tax_riva_16_nd_c_cp_C",,,f
+tax_riva_240_rs_c_asum_N,rIva2.4N<\,tag_156,l10n_co_chart_template_generic,none,R IVA 2.4% NO DESCONTABLE - AL RS ASUMIDO,301,-2.4,,percent,,co_puc_236705,co_puc_236705,f
+tax_riva_240_rs_c_cp_N,rIva2.4N</,tag_157,l10n_co_chart_template_generic,none,R IVA 2.4% NO DESCONTABLE - AL RS CONTRAPARTIDA,302,2.4,,percent,,,,f
+tax_riva_240_rs_c_N,rIva2.4N<,tag_158,l10n_co_chart_template_generic,purchase,R IVA 2.4% NO DESCONTABLE - AL RS,300,1,,group,"tax_riva_240_rs_c_asum_N,tax_riva_240_rs_c_cp_N",,,f
+tax_riva_075_rs_c_asum_N,rIva7.5N<\,tag_159,l10n_co_chart_template_generic,none,R IVA 0.75% NO DESCONTABLE - AL RS ASUMIDO,304,-0.75,,percent,,co_puc_236705,co_puc_236705,f
+tax_riva_075_rs_c_cp_N,rIva7.5N</,tag_160,l10n_co_chart_template_generic,none,R IVA 0.75% NO DESCONTABLE - AL RS CONTRAPARTIDA,305,0.75,,percent,,,,f
+tax_riva_075_rs_c_N,rIva7.5N<,tag_161,l10n_co_chart_template_generic,purchase,R IVA 0.75% NO DESCONTABLE - AL RS,303,1,,group,"tax_riva_075_rs_c_asum_N,tax_riva_075_rs_c_cp_N",,,f
+tax_riva_16_nd_c_asum_N,rIva16N<EX\,tag_162,l10n_co_chart_template_generic,none,R IVA 16% NO DESCONTABLE - SERVICIO NACIONAL DE UN NO DOMICILIADO ASUMIDO,307,-16,,percent,,co_puc_236705,co_puc_236705,f
+tax_riva_16_nd_c_cp_N,rIva16N<EX/,tag_163,l10n_co_chart_template_generic,none,R IVA 16% NO DESCONTABLE - SERVICIO NACIONAL DE UN NO DOMICILIADO CONTRAPARTIDA,308,16,,percent,,,,f
+tax_riva_16_nd_c_N,rIva16N<EX,tag_164,l10n_co_chart_template_generic,purchase,R IVA 16% NO DESCONTABLE - SERVICIO NACIONAL DE UN NO DOMICILIADO,306,1,,group,"tax_riva_16_nd_c_asum_N,tax_riva_16_nd_c_cp_N",,,f
+tax_rrenta_ENAJE_01act,rFte01>,tag_165,l10n_co_chart_template_generic,purchase,R REN C Enajenación de activos fijos  vendedor pers. natural no agente,600,-1,,percent,,co_puc_236560,co_puc_236560,t
+tax_rrenta_ENAJE_01pas,rFte01<,tag_166,l10n_co_chart_template_generic,sale,R REN V Enajenación de activos fijos  vendedor pers. natural no agente,500,-1,,percent,,co_puc_135515,co_puc_135515,t
+tax_rrenta_ENAJE_01pasext,rFte01E>EX,tag_167,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Enajenación de activos fijos  vendedor pers. natural no agente,700,-1,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_ENAJE_01paspf,rFte33>,tag_168,l10n_co_chart_template_generic,purchase,R REN PARAISO Enajenación de activos fijos  vendedor pers. natural no agente,800,-33,,percent,,co_puc_236550,co_puc_236550,t
+tax_rrenta_ADQUI_02act,rFte2.5>,tag_169,l10n_co_chart_template_generic,purchase,R REN C Adquisición de Bienes Raíces no vivienda agente,601,-2.5,,percent,,co_puc_236540,co_puc_236540,t
+tax_rrenta_ADQUI_02pas,rFte2.5<,tag_170,l10n_co_chart_template_generic,sale,R REN V Adquisición de Bienes Raíces no vivienda agente,501,-2.5,,percent,,co_puc_135515,co_puc_135515,t
+tax_rrenta_ADQUI_02actext,rFteadqRAIC>EX,tag_171,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Adquisición de Bienes Raíces no vivienda agente,701,-2.5,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_ADQUI_02actpf,rFteadqRAIC>PF,tag_172,l10n_co_chart_template_generic,purchase,R REN PARAISO Adquisición de Bienes Raíces no vivienda agente,801,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_ADQUI_02pasauto_ASU,rFte2.5A<\,tag_173,l10n_co_chart_template_generic,none,AR REN - Adquisición de Bienes Raíces no vivienda agente ASIMUDO,901,2.5,,percent,,co_puc_236575,co_puc_236575,t
+tax_rrenta_ADQUI_02pasauto_CP,rFte2.5A</,tag_174,l10n_co_chart_template_generic,none,AR REN - Adquisición de Bienes Raíces no vivienda agente CONTRAPARTIDA,902,-2.5,,percent,,co_puc_521595,co_puc_521595,t
+tax_rrenta_ADQUI_02pasauto,rFte2.5A<,tag_175,l10n_co_chart_template_generic,sale,AR REN - Adquisición de Bienes Raíces no vivienda agente,900,1,,group,"tax_rrenta_ADQUI_02pasauto_ASU,tax_rrenta_ADQUI_02pasauto_CP",,,t
+tax_rrenta_ADQUI_03act,rFteadqVIVIa>,tag_176,l10n_co_chart_template_generic,purchase,R REN C Adquisición de Bienes Raíces vidienda primeras 20.000 UVT,602,-1,,percent,,co_puc_236540,co_puc_236540,f
+tax_rrenta_ADQUI_03pas,rFteadqVIVIa<,tag_177,l10n_co_chart_template_generic,sale,R REN V Adquisición de Bienes Raíces vidienda primeras 20.000 UVT,502,-1,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_ADQUI_03actext,rFteadqVIVIa>EX,tag_178,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Adquisición de Bienes Raíces vidienda primeras 20.000 UVT,702,-1,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_ADQUI_03actpf,rFteadqVIVIa>PF,tag_179,l10n_co_chart_template_generic,purchase,R REN PARAISO Adquisición de Bienes Raíces vidienda primeras 20.000 UVT,802,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_ADQUI_03pasauto_ASU,rFte01A<\,tag_180,l10n_co_chart_template_generic,none,AR REN - Adquisición de Bienes Raíces vidienda primeras 20.000 UVT ASIMUDO,904,1,,percent,,co_puc_236575,co_puc_236575,t
+tax_rrenta_ADQUI_03pasauto_CP,rFte01A</,tag_181,l10n_co_chart_template_generic,none,AR REN - Adquisición de Bienes Raíces vidienda primeras 20.000 UVT CONTRAPARTIDA,905,-1,,percent,,co_puc_521595,co_puc_521595,t
+tax_rrenta_ADQUI_03pasauto,rFte01A<,tag_182,l10n_co_chart_template_generic,sale,AR REN - Adquisición de Bienes Raíces vidienda primeras 20.000 UVT,903,1,,group,"tax_rrenta_ADQUI_03pasauto_ASU,tax_rrenta_ADQUI_03pasauto_CP",,,t
+tax_rrenta_ADQUI_04act,rFteadqVIVIb>,tag_183,l10n_co_chart_template_generic,purchase,R REN C Adquisición de Bienes Raíces vivienda sobrante de 20.000 UVT,603,-2.5,,percent,,co_puc_236540,co_puc_236540,f
+tax_rrenta_ADQUI_04pas,rFteadqVIVIb<,tag_184,l10n_co_chart_template_generic,sale,R REN V Adquisición de Bienes Raíces vivienda sobrante de 20.000 UVT,503,-2.5,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_ADQUI_04actext,rFteadqVIVIb>EX,tag_185,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Adquisición de Bienes Raíces vivienda sobrante de 20.000 UVT,703,-2.5,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_ADQUI_04actpf,rFteadqVIVIb>PF,tag_186,l10n_co_chart_template_generic,purchase,R REN PARAISO Adquisición de Bienes Raíces vivienda sobrante de 20.000 UVT,803,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_ADQUI_04pasauto_ASU,rFteadqVIVIb<AR\,tag_187,l10n_co_chart_template_generic,none,AR REN - Adquisición de Bienes Raíces vivienda sobrante de 20.000 UVT ASIMUDO,907,2.5,,percent,,co_puc_236575,co_puc_236575,f
+tax_rrenta_ADQUI_04pasauto_CP,rFteadqVIVIb<AR/,tag_188,l10n_co_chart_template_generic,none,AR REN - Adquisición de Bienes Raíces vivienda sobrante de 20.000 UVT CONTRAPARTIDA,908,-2.5,,percent,,co_puc_521595,co_puc_521595,f
+tax_rrenta_ADQUI_04pasauto,rFteadqVIVIb<AR,tag_189,l10n_co_chart_template_generic,sale,AR REN - Adquisición de Bienes Raíces vivienda sobrante de 20.000 UVT,906,1,,group,"tax_rrenta_ADQUI_04pasauto_ASU,tax_rrenta_ADQUI_04pasauto_CP",,,f
+tax_rrenta_ADQUI_05act,rFteadqVEHI>,tag_190,l10n_co_chart_template_generic,purchase,R REN C Adquisición de vehículos ,604,-1,,percent,,co_puc_236540,co_puc_236540,f
+tax_rrenta_ADQUI_05pas,rFteadqVEHI<,tag_191,l10n_co_chart_template_generic,sale,R REN V Adquisición de vehículos ,504,-1,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_ADQUI_05actext,rFteadqVEHI>EX,tag_192,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Adquisición de vehículos ,704,-1,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_ADQUI_05actpf,rFteadqVEHI>PF,tag_193,l10n_co_chart_template_generic,purchase,R REN PARAISO Adquisición de vehículos ,804,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_ADQUI_05pasauto_ASU,rFteadqVEHI<AR\,tag_194,l10n_co_chart_template_generic,none,AR REN - Adquisición de vehículos  ASIMUDO,910,1,,percent,,co_puc_236575,co_puc_236575,f
+tax_rrenta_ADQUI_05pasauto_CP,rFteadqVEHI<AR/,tag_195,l10n_co_chart_template_generic,none,AR REN - Adquisición de vehículos  CONTRAPARTIDA,911,-1,,percent,,co_puc_521595,co_puc_521595,f
+tax_rrenta_ADQUI_05pasauto,rFteadqVEHI<AR,tag_196,l10n_co_chart_template_generic,sale,AR REN - Adquisición de vehículos ,909,1,,group,"tax_rrenta_ADQUI_05pasauto_ASU,tax_rrenta_ADQUI_05pasauto_CP",,,f
+tax_rrenta_ARREN_06act,rFte04>,tag_197,l10n_co_chart_template_generic,purchase,R REN C Arrendamiento de bienes muebles,605,-4,,percent,,co_puc_236530,co_puc_236530,t
+tax_rrenta_ARREN_06pas,rFte04<,tag_198,l10n_co_chart_template_generic,sale,R REN V Arrendamiento de bienes muebles,533,-4,,percent,,co_puc_135515,co_puc_135515,t
+tax_rrenta_ARREN_06actext,rFtearrMUEB>EX,tag_199,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Arrendamiento de bienes muebles,705,-4,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_ARREN_06actpf,rFtearrMUEB>PF,tag_200,l10n_co_chart_template_generic,purchase,R REN PARAISO Arrendamiento de bienes muebles,805,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_ARREN_06pasauto_ASU,rFte04A<\,tag_201,l10n_co_chart_template_generic,none,AR REN - Arrendamiento de bienes muebles ASIMUDO,913,4,,percent,,co_puc_236575,co_puc_236575,t
+tax_rrenta_ARREN_06pasauto_CP,rFte04A</,tag_202,l10n_co_chart_template_generic,none,AR REN - Arrendamiento de bienes muebles CONTRAPARTIDA,914,-4,,percent,,co_puc_521595,co_puc_521595,t
+tax_rrenta_ARREN_06pasauto,rFte04A<,tag_203,l10n_co_chart_template_generic,sale,AR REN - Arrendamiento de bienes muebles,912,1,,group,"tax_rrenta_ARREN_06pasauto_ASU,tax_rrenta_ARREN_06pasauto_CP",,,t
+tax_rrenta_ARREN_07act,rFtearrRAICd>,tag_204,l10n_co_chart_template_generic,purchase,R REN C Arrendamiento de bienes raíces declarante,606,-2.5,,percent,,co_puc_236530,co_puc_236530,f
+tax_rrenta_ARREN_07pas,rFtearrRAICd<,tag_205,l10n_co_chart_template_generic,sale,R REN V Arrendamiento de bienes raíces declarante,540,-2.5,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_ARREN_07actext,rFtearrRAICd>EX,tag_206,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Arrendamiento de bienes raíces declarante,706,-2.5,,percent,,co_puc_236530,co_puc_236530,f
+tax_rrenta_ARREN_07actpf,rFtearrRAICd>PF,tag_207,l10n_co_chart_template_generic,purchase,R REN PARAISO Arrendamiento de bienes raíces declarante,806,-33,,percent,,co_puc_236530,co_puc_236530,f
+tax_rrenta_ARREN_07pasauto_ASU,rFtearrRAICd<AR\,tag_208,l10n_co_chart_template_generic,none,AR REN - Arrendamiento de bienes raíces declarante ASIMUDO,916,2.5,,percent,,co_puc_236575,co_puc_236575,f
+tax_rrenta_ARREN_07pasauto_CP,rFtearrRAICd<AR/,tag_209,l10n_co_chart_template_generic,none,AR REN - Arrendamiento de bienes raíces declarante CONTRAPARTIDA,917,-2.5,,percent,,co_puc_521595,co_puc_521595,f
+tax_rrenta_ARREN_07pasauto,rFtearrRAICd<AR,tag_210,l10n_co_chart_template_generic,sale,AR REN - Arrendamiento de bienes raíces declarante,915,1,,group,"tax_rrenta_ARREN_07pasauto_ASU,tax_rrenta_ARREN_07pasauto_CP",,,f
+tax_rrenta_ARREN_08act,RFte3.5>,tag_211,l10n_co_chart_template_generic,purchase,R REN C Arrendamiento de bienes raíces no declarante,607,-3.5,,percent,,co_puc_236530,co_puc_236530,t
+tax_rrenta_ARREN_08pas,RFte3.5<,tag_212,l10n_co_chart_template_generic,sale,R REN V Arrendamiento de bienes raíces no declarante,547,-3.5,,percent,,co_puc_135515,co_puc_135515,t
+tax_rrenta_ARREN_08actext,rFtearrRAICn>EX,tag_213,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Arrendamiento de bienes raíces no declarante,707,-3.5,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_ARREN_08actpf,rFtearrRAICn>PF,tag_214,l10n_co_chart_template_generic,purchase,R REN PARAISO Arrendamiento de bienes raíces no declarante,807,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_COMIS_09act,rFte11>,tag_215,l10n_co_chart_template_generic,purchase,R REN C Comisiones en el sector financiero,608,-11,,percent,,co_puc_236520,co_puc_236520,t
+tax_rrenta_COMIS_09pas,rFte11<,tag_216,l10n_co_chart_template_generic,sale,R REN V Comisiones en el sector financiero,505,-11,,percent,,co_puc_135515,co_puc_135515,t
+tax_rrenta_COMIS_09actext,rFtecmsSX0F>EX,tag_217,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Comisiones en el sector financiero,708,-11,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_COMIS_09actpf,rFtecmsSX0F>PF,tag_218,l10n_co_chart_template_generic,purchase,R REN PARAISO Comisiones en el sector financiero,808,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_COMIS_09pasauto_ASU,rFtecmsSX0F<AR\,tag_219,l10n_co_chart_template_generic,none,AR REN - Comisiones en el sector financiero ASIMUDO,919,11,,percent,,co_puc_236575,co_puc_236575,f
+tax_rrenta_COMIS_09pasauto_CP,rFtecmsSX0F<AR/,tag_220,l10n_co_chart_template_generic,none,AR REN - Comisiones en el sector financiero CONTRAPARTIDA,920,-11,,percent,,co_puc_521595,co_puc_521595,f
+tax_rrenta_COMIS_09pasauto,rFtecmsSX0F<AR,tag_221,l10n_co_chart_template_generic,sale,AR REN - Comisiones en el sector financiero,918,1,,group,"tax_rrenta_COMIS_09pasauto_ASU,tax_rrenta_COMIS_09pasauto_CP",,,f
+tax_rrenta_COMIS_10act,rFte03>,tag_222,l10n_co_chart_template_generic,purchase,R REN C Comisiones en operaciones realizadas en bolsa de valores,609,-3,,percent,,co_puc_236520,co_puc_236520,t
+tax_rrenta_COMIS_10pas,rFte03<,tag_223,l10n_co_chart_template_generic,sale,R REN V Comisiones en operaciones realizadas en bolsa de valores,506,-3,,percent,,co_puc_135515,co_puc_135515,t
+tax_rrenta_COMIS_10actext,rFtecmsBOLS>EX,tag_224,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Comisiones en operaciones realizadas en bolsa de valores,709,-3,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_COMIS_10actpf,rFtecmsBOLS>PF,tag_225,l10n_co_chart_template_generic,purchase,R REN PARAISO Comisiones en operaciones realizadas en bolsa de valores,809,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_COMIS_10pasauto_ASU,rFte03A<\,tag_226,l10n_co_chart_template_generic,none,AR REN - Comisiones en operaciones realizadas en bolsa de valores ASIMUDO,922,3,,percent,,co_puc_236575,co_puc_236575,t
+tax_rrenta_COMIS_10pasauto_CP,rFte03A</,tag_227,l10n_co_chart_template_generic,none,AR REN - Comisiones en operaciones realizadas en bolsa de valores CONTRAPARTIDA,923,-3,,percent,,co_puc_521595,co_puc_521595,t
+tax_rrenta_COMIS_10pasauto,rFte03A<,tag_228,l10n_co_chart_template_generic,sale,AR REN - Comisiones en operaciones realizadas en bolsa de valores,921,1,,group,"tax_rrenta_COMIS_10pasauto_ASU,tax_rrenta_COMIS_10pasauto_CP",,,t
+tax_rrenta_COMPR_11act,rFte0.5>,tag_229,l10n_co_chart_template_generic,purchase,R REN C Compra de café pergamino o cereza,610,-0.5,,percent,,co_puc_236540,co_puc_236540,t
+tax_rrenta_COMPR_11pas,rFte0.5<,tag_230,l10n_co_chart_template_generic,sale,R REN V Compra de café pergamino o cereza,507,-0.5,,percent,,co_puc_135515,co_puc_135515,t
+tax_rrenta_COMPR_11actext,rFtecmpCAFE>EX,tag_231,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Compra de café pergamino o cereza,710,-0.5,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_COMPR_11actpf,rFtecmpCAFE>PF,tag_232,l10n_co_chart_template_generic,purchase,R REN PARAISO Compra de café pergamino o cereza,810,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_COMPR_11pasauto_ASU,rFte0.5A<\,tag_233,l10n_co_chart_template_generic,none,AR REN - Compra de café pergamino o cereza ASIMUDO,925,0.5,,percent,,co_puc_236575,co_puc_236575,t
+tax_rrenta_COMPR_11pasauto_CP,rFte0.5A</,tag_234,l10n_co_chart_template_generic,none,AR REN - Compra de café pergamino o cereza CONTRAPARTIDA,926,-0.5,,percent,,co_puc_521595,co_puc_521595,t
+tax_rrenta_COMPR_11pasauto,rFte0.5A<,tag_235,l10n_co_chart_template_generic,sale,AR REN - Compra de café pergamino o cereza,924,1,,group,"tax_rrenta_COMPR_11pasauto_ASU,tax_rrenta_COMPR_11pasauto_CP",,,t
+tax_rrenta_COMPR_12act,rFte1.5>,tag_236,l10n_co_chart_template_generic,purchase,R REN C Compra de productos  agrícolas o pecuarios sin procesamiento industrial ,611,-1.5,,percent,,co_puc_236540,co_puc_236540,t
+tax_rrenta_COMPR_12pas,rFte1.5<,tag_237,l10n_co_chart_template_generic,sale,R REN V Compra de productos  agrícolas o pecuarios sin procesamiento industrial ,508,-1.5,,percent,,co_puc_135515,co_puc_135515,t
+tax_rrenta_COMPR_12actext,rFtecmpAGRO>EX,tag_238,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Compra de productos  agrícolas o pecuarios sin procesamiento industrial ,711,-1.5,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_COMPR_12actpf,rFtecmpAGRO>PF,tag_239,l10n_co_chart_template_generic,purchase,R REN PARAISO Compra de productos  agrícolas o pecuarios sin procesamiento industrial ,811,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_COMPR_12pasauto_ASU,rFte1.5A<\,tag_240,l10n_co_chart_template_generic,none,AR REN - Compra de productos  agrícolas o pecuarios sin procesamiento industrial  ASIMUDO,928,1.5,,percent,,co_puc_236575,co_puc_236575,t
+tax_rrenta_COMPR_12pasauto_CP,rFte1.5A</,tag_241,l10n_co_chart_template_generic,none,AR REN - Compra de productos  agrícolas o pecuarios sin procesamiento industrial  CONTRAPARTIDA,929,-1.5,,percent,,co_puc_521595,co_puc_521595,t
+tax_rrenta_COMPR_12pasauto,rFte1.5A<,tag_242,l10n_co_chart_template_generic,sale,AR REN - Compra de productos  agrícolas o pecuarios sin procesamiento industrial ,927,1,,group,"tax_rrenta_COMPR_12pasauto_ASU,tax_rrenta_COMPR_12pasauto_CP",,,t
+tax_rrenta_COMPR_13act,rFte0.1>,tag_243,l10n_co_chart_template_generic,purchase,R REN C Compra de combustible y derivados del petróleo,612,-0.1,,percent,,co_puc_236540,co_puc_236540,t
+tax_rrenta_COMPR_13pas,rFte0.1<,tag_244,l10n_co_chart_template_generic,sale,R REN V Compra de combustible y derivados del petróleo,509,-0.1,,percent,,co_puc_135515,co_puc_135515,t
+tax_rrenta_COMPR_13actext,rFtecmpPETR>EX,tag_245,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Compra  de combustible y derivados del petróleo,712,-0.1,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_COMPR_13actpf,rFtecmpPETR>PF,tag_246,l10n_co_chart_template_generic,purchase,R REN PARAISO Compra  de combustible y derivados del petróleo,812,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_COMPR_13pasauto_ASU,rFte0.1A<\,tag_247,l10n_co_chart_template_generic,none,AR REN - Compra  de combustible y derivados del petróleo ASIMUDO,931,0.1,,percent,,co_puc_236575,co_puc_236575,t
+tax_rrenta_COMPR_13pasauto_CP,rFte0.1A</,tag_248,l10n_co_chart_template_generic,none,AR REN - Compra  de combustible y derivados del petróleo CONTRAPARTIDA,932,-0.1,,percent,,co_puc_521595,co_puc_521595,t
+tax_rrenta_COMPR_13pasauto,rFte0.1A<,tag_249,l10n_co_chart_template_generic,sale,AR REN - Compra  de combustible y derivados del petróleo,930,1,,group,"tax_rrenta_COMPR_13pasauto_ASU,tax_rrenta_COMPR_13pasauto_CP",,,t
+tax_rrenta_CONSU_14act,rFte02>,tag_250,l10n_co_chart_template_generic,purchase,R REN C Consultoría en obras públicas ,613,-2,,percent,,co_puc_236515,co_puc_236515,t
+tax_rrenta_CONSU_14pas,rFte02<,tag_251,l10n_co_chart_template_generic,sale,R REN V Consultoría en obras públicas ,510,-2,,percent,,co_puc_135515,co_puc_135515,t
+tax_rrenta_CONSU_14actext,rFtecsuPUBL>EX,tag_252,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Consultoría en obras públicas ,713,-2,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_CONSU_14actpf,rFtecsuPUBL>PF,tag_253,l10n_co_chart_template_generic,purchase,R REN PARAISO Consultoría en obras públicas ,813,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_CONSU_14pasauto_ASU,rFte02A<\,tag_254,l10n_co_chart_template_generic,none,AR REN - Consultoría en obras públicas  ASIMUDO,934,2,,percent,,co_puc_236575,co_puc_236575,t
+tax_rrenta_CONSU_14pasauto_CP,rFte02A</,tag_255,l10n_co_chart_template_generic,none,AR REN - Consultoría en obras públicas  CONTRAPARTIDA,935,-2,,percent,,co_puc_521595,co_puc_521595,t
+tax_rrenta_CONSU_14pasauto,rFte02A<,tag_256,l10n_co_chart_template_generic,sale,AR REN - Consultoría en obras públicas ,933,1,,group,"tax_rrenta_CONSU_14pasauto_ASU,tax_rrenta_CONSU_14pasauto_CP",,,t
+tax_rrenta_CONSU_15act,rFte06>,tag_257,l10n_co_chart_template_generic,purchase,R REN C Contratos de consultoría en ingeniería de proyectos declarante,614,-6,,percent,,co_puc_236515,co_puc_236515,t
+tax_rrenta_CONSU_15pas,rFte06<,tag_258,l10n_co_chart_template_generic,sale,R REN V Contratos de consultoría en ingeniería de proyectos declarante,511,-6,,percent,,co_puc_135515,co_puc_135515,t
+tax_rrenta_CONSU_15actext,rFtecsuINFRd>EX,tag_259,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Contratos de consultoría en ingeniería de proyectos declarante,714,-6,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_CONSU_15actpf,rFtecsuINFRd>PF,tag_260,l10n_co_chart_template_generic,purchase,R REN PARAISO Contratos de consultoría en ingeniería de proyectos declarante,814,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_CONSU_15pasauto_ASU,rFte06A<\,tag_261,l10n_co_chart_template_generic,none,AR REN - Contratos de consultoría en ingeniería de proyectos declarante,937,6,,percent,,co_puc_236575,co_puc_236575,t
+tax_rrenta_CONSU_15pasauto_CP,rFte06A</,tag_262,l10n_co_chart_template_generic,none,AR REN - Contratos de consultoría en ingeniería de proyectos declarante 2,938,-6,,percent,,co_puc_521595,co_puc_521595,t
+tax_rrenta_CONSU_15pasauto,rFte06A<,tag_263,l10n_co_chart_template_generic,sale,AR REN - Contratos de consultoría en ingeniería de proyectos declarante 3,936,1,,group,"tax_rrenta_CONSU_15pasauto_ASU,tax_rrenta_CONSU_15pasauto_CP",,,t
+tax_rrenta_CONSU_16act,rFtecsuINFRnA>,tag_264,l10n_co_chart_template_generic,purchase,R REN C Contratos de consultoría en ingeniería de proyectos no declarante Tarifa 6%,615,-6,,percent,,co_puc_236515,co_puc_236515,f
+tax_rrenta_CONSU_16pas,rFtecsuINFRnA<,tag_265,l10n_co_chart_template_generic,sale,R REN V Contratos de consultoría en ingeniería de proyectos no declarante Tarifa 6%,512,-6,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_CONSU_16actext,rFtecsuINFRnA>EX,tag_266,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Contratos de consultoría en ingeniería de proyectos no declarante Tarifa 6%,715,-6,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_CONSU_17act,rFte10>,tag_267,l10n_co_chart_template_generic,purchase,R REN C Contratos de consultoría en ingeniería de proyectos no declarante Tarifa 10%,616,-10,,percent,,co_puc_236515,co_puc_236515,f
+tax_rrenta_CONSU_17pas,rFte10<,tag_268,l10n_co_chart_template_generic,sale,R REN V Contratos de consultoría en ingeniería de proyectos no declarante Tarifa 10%,513,-10,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_CONSU_17actext,rFtecsuINFRnB>EX,tag_269,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Contratos de consultoría en ingeniería de proyectos no declarante Tarifa 10%,716,-10,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_CONSU_17actpf,rFtecsuINFRnB>PF,tag_270,l10n_co_chart_template_generic,purchase,R REN PARAISO Contratos de consultoría en ingeniería de proyectos no declarante,815,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_CONTR_18act,rFtectrCSTR>,tag_271,l10n_co_chart_template_generic,purchase,R REN C Contratos de construcción  y urbanización,617,-2,,percent,,co_puc_236525,co_puc_236525,f
+tax_rrenta_CONTR_18pas,rFtectrCSTR<,tag_272,l10n_co_chart_template_generic,sale,R REN V Contratos de construcción  y urbanización,514,-2,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_CONTR_18actext,rFtectrCSTR>EX,tag_273,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Contratos de construcción  y urbanización,717,-2,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_CONTR_18actpf,rFtectrCSTR>PF,tag_274,l10n_co_chart_template_generic,purchase,R REN PARAISO Contratos de construcción  y urbanización,816,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_CONTR_18pasauto_ASU,rFtectrCSTR<AR\,tag_275,l10n_co_chart_template_generic,none,AR REN - Contratos de construcción  y urbanización ASIMUDO,940,2,,percent,,co_puc_236575,co_puc_236575,f
+tax_rrenta_CONTR_18pasauto_CP,rFtectrCSTR<AR/,tag_276,l10n_co_chart_template_generic,none,AR REN - Contratos de construcción  y urbanización CONTRAPARTIDA,941,-2,,percent,,co_puc_521595,co_puc_521595,f
+tax_rrenta_CONTR_18pasauto,rFtectrCSTR<AR,tag_277,l10n_co_chart_template_generic,sale,AR REN - Contratos de construcción  y urbanización,939,1,,group,"tax_rrenta_CONTR_18pasauto_ASU,tax_rrenta_CONTR_18pasauto_CP",,,f
+tax_rrenta_SERV_19act,rFteserPROGd>,tag_278,l10n_co_chart_template_generic,purchase,R REN C Web y Programas declarantes de renta ,618,-3.5,,percent,,co_puc_236515,co_puc_236515,f
+tax_rrenta_SERV_19pas,rFteserPROGd<,tag_279,l10n_co_chart_template_generic,sale,R REN V Web y Programas declarantes de renta ,515,-3.5,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_SERV_19actext,rFteserPROGd>EX,tag_280,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Web y Programas declarantes de renta ,718,-3.5,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_SERV_19actpf,rFteserPROGd>PF,tag_281,l10n_co_chart_template_generic,purchase,R REN PARAISO Web y Programas declarantes de renta ,817,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_SERV_19pasauto_ASU,rFteserPROGd<AR\,tag_282,l10n_co_chart_template_generic,none,AR REN - Web y Programas declarantes de renta ASIMUDO,943,3.5,,percent,,co_puc_236575,co_puc_236575,f
+tax_rrenta_SERV_19pasauto_CP,rFteserPROGd<AR/,tag_283,l10n_co_chart_template_generic,none,AR REN - Web y Programas declarantes de renta CONTRAPARTIDA,944,-3.5,,percent,,co_puc_521595,co_puc_521595,f
+tax_rrenta_SERV_19pasauto,rFteserPROGd<AR,tag_284,l10n_co_chart_template_generic,sale,AR REN - Web y Programas declarantes de renta ,942,1,,group,"tax_rrenta_SERV_19pasauto_ASU,tax_rrenta_SERV_19pasauto_CP",,,f
+tax_rrenta_EXPT_20pasauto_ASU,rFteexpHIDR<AR\,tag_285,l10n_co_chart_template_generic,none,AR REN - Exportación de Hidrocarburos ASIMUDO,946,1.5,,percent,,co_puc_236575,co_puc_236575,f
+tax_rrenta_EXPT_20pasauto_CP,rFteexpHIDR<AR/,tag_286,l10n_co_chart_template_generic,none,AR REN - Exportación de Hidrocarburos CONTRAPARTIDA,947,-1.5,,percent,,co_puc_521595,co_puc_521595,f
+tax_rrenta_EXPT_20pasauto,rFteexpHIDR<AR,tag_287,l10n_co_chart_template_generic,sale,AR REN - Exportación de Hidrocarburos,945,1,,group,"tax_rrenta_EXPT_20pasauto_ASU,tax_rrenta_EXPT_20pasauto_CP",,,f
+tax_rrenta_EXPT_21pasauto_ASU,rFteexpMINE<AR\,tag_288,l10n_co_chart_template_generic,none,"AR REN - Exportación de demás productor mineros, incluido el oro  ASIMUDO",949,1,,percent,,co_puc_236575,co_puc_236575,f
+tax_rrenta_EXPT_21pasauto_CP,rFteexpMINE<AR/,tag_289,l10n_co_chart_template_generic,none,"AR REN - Exportación de demás productor mineros, incluido el oro  CONTRAPARTIDA",950,-1,,percent,,co_puc_521595,co_puc_521595,f
+tax_rrenta_EXPT_21pasauto,rFteexpMINE<AR,tag_290,l10n_co_chart_template_generic,sale,"AR REN - Exportación de demás productor mineros, incluido el oro ",948,1,,group,"tax_rrenta_EXPT_21pasauto_ASU,tax_rrenta_EXPT_21pasauto_CP",,,f
+tax_rrenta_HONOR_22act,rFtehonNATU>,tag_291,l10n_co_chart_template_generic,purchase,R REN C Honorarios persona natural Tarifa 11%,619,-11,,percent,,co_puc_236515,co_puc_236515,f
+tax_rrenta_HONOR_22pas,rFtehonNATU<,tag_292,l10n_co_chart_template_generic,sale,R REN V Honorarios persona natural Tarifa 11%,516,-11,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_HONOR_22actext,rFtehonNATU>EX,tag_293,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Honorarios persona natural Tarifa 11%,719,-11,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_HONOR_23act,rFtehonJURI>,tag_294,l10n_co_chart_template_generic,purchase,R REN C Honorarios persona natural Tarifa 10%,620,-10,,percent,,co_puc_236515,co_puc_236515,f
+tax_rrenta_HONOR_23pas,rFtehonJURI<,tag_295,l10n_co_chart_template_generic,sale,R REN V Honorarios persona natural Tarifa 10%,517,-10,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_HONOR_23actext,rFtehonJURI>EX,tag_296,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Honorarios persona natural Tarifa 10%,720,-10,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_HONOR_23actpf,rFtehonJURI>PF,tag_297,l10n_co_chart_template_generic,purchase,R REN PARAISO Honorarios persona natural,818,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_HONOR_24act,rFtehonJURI>,tag_298,l10n_co_chart_template_generic,purchase,R REN C Honorarios persona juridica,621,-11,,percent,,co_puc_236515,co_puc_236515,f
+tax_rrenta_HONOR_24pas,rFtehonJURI<,tag_299,l10n_co_chart_template_generic,sale,R REN V Honorarios persona juridica,518,-11,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_HONOR_24actext,rFtehonJURI>EX,tag_300,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Honorarios persona juridica,721,-11,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_HONOR_24actpf,rFtehonJURI>PF,tag_301,l10n_co_chart_template_generic,purchase,R REN PARAISO Honorarios persona juridica,819,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_HONOR_24pasauto_ASU,rFte11A<\,tag_302,l10n_co_chart_template_generic,none,AR REN - Honorarios persona juridica ASIMUDO,952,11,,percent,,co_puc_236575,co_puc_236575,t
+tax_rrenta_HONOR_24pasauto_CP,rFte11A</,tag_303,l10n_co_chart_template_generic,none,AR REN - Honorarios persona juridica CONTRAPARTIDA,953,-11,,percent,,co_puc_521595,co_puc_521595,t
+tax_rrenta_HONOR_24pasauto,rFte11A<,tag_304,l10n_co_chart_template_generic,sale,AR REN - Honorarios persona juridica,951,1,,group,"tax_rrenta_HONOR_24pasauto_ASU,tax_rrenta_HONOR_24pasauto_CP",,,t
+tax_rrenta_COMIS_22act,rFtecmsNATU>,tag_305,l10n_co_chart_template_generic,purchase,R REN C Comisiones persona natural  Tarifa 11%,622,-11,,percent,,co_puc_236520,co_puc_236520,f
+tax_rrenta_COMIS_22pas,rFtecmsNATU<,tag_306,l10n_co_chart_template_generic,sale,R REN V Comisiones persona natural Tarifa 11%,519,-11,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_COMIS_22actext,rFtecmsNATU>EX,tag_307,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Comisiones persona natural Tarifa 11%,722,-11,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_COMIS_22actpf,rFtecmsNATU>PF,tag_308,l10n_co_chart_template_generic,purchase,R REN PARAISO Comisiones persona natural,820,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_COMIS_23act,rFtecmsJURI>,tag_309,l10n_co_chart_template_generic,purchase,R REN C Comisiones persona natural Tarifa 10%,623,-10,,percent,,co_puc_236520,co_puc_236520,f
+tax_rrenta_COMIS_23pas,rFtecmsJURI<,tag_310,l10n_co_chart_template_generic,sale,R REN V Comisiones persona natural Tarifa 10%,520,-10,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_COMIS_23actext,rFtecmsJURI>EX,tag_311,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Comisiones persona natural Tarifa 10%,723,-10,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_COMIS_24act,rFtecmsJURI>,tag_312,l10n_co_chart_template_generic,purchase,R REN C Comisiones persona juridica,624,-11,,percent,,co_puc_236520,co_puc_236520,f
+tax_rrenta_COMIS_24pas,rFtecmsJURI<,tag_313,l10n_co_chart_template_generic,sale,R REN V Comisiones persona juridica,521,-11,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_COMIS_24actext,rFtecmsJURI>EX,tag_314,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Comisiones persona juridica,724,-11,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_COMIS_24actpf,rFtecmsJURI>PF,tag_315,l10n_co_chart_template_generic,purchase,R REN PARAISO Comisiones persona juridica,821,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_COMIS_24pasauto_ASU,rFtecmsJURI<AR\,tag_316,l10n_co_chart_template_generic,none,AR REN - Comisiones persona juridica ASIMUDO,955,11,,percent,,co_puc_236575,co_puc_236575,f
+tax_rrenta_COMIS_24pasauto_CP,rFtecmsJURI<AR/,tag_317,l10n_co_chart_template_generic,none,AR REN - Comisiones persona juridica CONTRAPARTIDA,956,-11,,percent,,co_puc_521595,co_puc_521595,f
+tax_rrenta_COMIS_24pasauto,rFtecmsJURI<AR,tag_318,l10n_co_chart_template_generic,sale,AR REN - Comisiones persona juridica,954,1,,group,"tax_rrenta_COMIS_24pasauto_ASU,tax_rrenta_COMIS_24pasauto_CP",,,f
+tax_rrenta_RENDI_25pasauto_ASU,rFteFteFINA<AR\,tag_319,l10n_co_chart_template_generic,none,AR REN - Rendimiento de instrumentos financieros y derivados  ASIMUDO,958,2.5,,percent,,co_puc_236575,co_puc_236575,f
+tax_rrenta_RENDI_25pasauto_CP,rFteFteFINA<AR/,tag_320,l10n_co_chart_template_generic,none,AR REN - Rendimiento de instrumentos financieros y derivados  CONTRAPARTIDA,959,-2.5,,percent,,co_puc_521595,co_puc_521595,f
+tax_rrenta_RENDI_25pasauto,rFteFteFINA<AR,tag_321,l10n_co_chart_template_generic,sale,AR REN - Rendimiento de instrumentos financieros y derivados ,957,1,,group,"tax_rrenta_RENDI_25pasauto_ASU,tax_rrenta_RENDI_25pasauto_CP",,,f
+tax_rrenta_RENDI_26pasauto_ASU,rFteFteMUTU<AR\,tag_322,l10n_co_chart_template_generic,none,AR REN - Rendimiento de mutuo comercial  ASIMUDO,961,2.5,,percent,,co_puc_236575,co_puc_236575,f
+tax_rrenta_RENDI_26pasauto_CP,rFteFteMUTU<AR/,tag_323,l10n_co_chart_template_generic,none,AR REN - Rendimiento de mutuo comercial  CONTRAPARTIDA,962,-2.5,,percent,,co_puc_521595,co_puc_521595,f
+tax_rrenta_RENDI_26pasauto,rFteFteMUTU<AR,tag_324,l10n_co_chart_template_generic,sale,AR REN - Rendimiento de mutuo comercial ,960,1,,group,"tax_rrenta_RENDI_26pasauto_ASU,tax_rrenta_RENDI_26pasauto_CP",,,f
+tax_rrenta_AZAR_27act,rFteazaRIFA>,tag_325,l10n_co_chart_template_generic,purchase,"R REN C Loterías, Rifas, Apuestas y similares",625,-20,,percent,,co_puc_236545,co_puc_236545,f
+tax_rrenta_AZAR_27pas,rFteazaRIFA<,tag_326,l10n_co_chart_template_generic,sale,"R REN V Loterías, Rifas, Apuestas y similares",522,-20,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_AZAR_27actext,rFteazaRIFA>EX,tag_327,l10n_co_chart_template_generic,purchase,"R REN EXTERIOR Loterías, Rifas, Apuestas y similares",725,-20,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_AZAR_27actpf,rFteazaRIFA>PF,tag_328,l10n_co_chart_template_generic,purchase,"R REN PARAISO Loterías, Rifas, Apuestas y similares",822,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_AZAR_27pasauto_ASU,rFteazaRIFA<AR\,tag_329,l10n_co_chart_template_generic,none,"AR REN - Loterías, Rifas, Apuestas y similares ASIMUDO",964,20,,percent,,co_puc_236575,co_puc_236575,f
+tax_rrenta_AZAR_27pasauto_CP,rFteazaRIFA<AR/,tag_330,l10n_co_chart_template_generic,none,"AR REN - Loterías, Rifas, Apuestas y similares CONTRAPARTIDA",965,-20,,percent,,co_puc_521595,co_puc_521595,f
+tax_rrenta_AZAR_27pasauto,rFteazaRIFA<AR,tag_331,l10n_co_chart_template_generic,sale,"AR REN - Loterías, Rifas, Apuestas y similares",963,1,,group,"tax_rrenta_AZAR_27pasauto_ASU,tax_rrenta_AZAR_27pasauto_CP",,,f
+tax_rrenta_COMPR_28act,rFtecmpOTROd>,tag_332,l10n_co_chart_template_generic,purchase,R REN C Otras Compras declarantes,626,-2.5,,percent,,co_puc_236540,co_puc_236540,f
+tax_rrenta_COMPR_28pas,rFtecmpOTROd<,tag_333,l10n_co_chart_template_generic,sale,R REN V Otras Compras declarantes,523,-2.5,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_COMPR_28actext,rFtecmpOTROd>EX,tag_334,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Otras Compras declarantes,726,-2.5,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_COMPR_28actpf,rFtecmpOTROd>PF,tag_335,l10n_co_chart_template_generic,purchase,R REN PARAISO Otras Compras declarantes,823,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_COMPR_28pasauto_ASU,rFtecmpOTROd<AR\,tag_336,l10n_co_chart_template_generic,none,AR REN - Otras Compras declarantes ASIMUDO,967,2.5,,percent,,co_puc_236575,co_puc_236575,f
+tax_rrenta_COMPR_28pasauto_CP,rFtecmpOTROd<AR/,tag_337,l10n_co_chart_template_generic,none,AR REN - Otras Compras declarantes CONTRAPARTIDA,968,-2.5,,percent,,co_puc_521595,co_puc_521595,f
+tax_rrenta_COMPR_28pasauto,rFtecmpOTROd<AR,tag_338,l10n_co_chart_template_generic,sale,AR REN - Otras Compras declarantes,966,1,,group,"tax_rrenta_COMPR_28pasauto_ASU,tax_rrenta_COMPR_28pasauto_CP",,,f
+tax_rrenta_COMPR_29act,rFtecmpOTROn>,tag_339,l10n_co_chart_template_generic,purchase,R REN C Otras Compras no declarantes,627,-3.5,,percent,,co_puc_236570,co_puc_236570,f
+tax_rrenta_COMPR_29pas,rFtecmpOTROn<,tag_340,l10n_co_chart_template_generic,sale,R REN V Otras Compras no declarantes,524,-3.5,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_COMPR_29actext,rFtecmpOTROn>EX,tag_341,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Otras Compras no declarantes,727,-3.5,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_COMPR_29actpf,rFtecmpOTROn>PF,tag_342,l10n_co_chart_template_generic,purchase,R REN PARAISO Otras Compras no declarantes,824,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_OTORS_28act,rFteotrIG0Rd>,tag_343,l10n_co_chart_template_generic,purchase,R REN C Otros ingresos declarantes,628,-2.5,,percent,,co_puc_236570,co_puc_236570,f
+tax_rrenta_OTORS_28pas,rFteotrIG0Rd<,tag_344,l10n_co_chart_template_generic,sale,R REN V Otros ingresos declarantes,525,-2.5,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_OTORS_28actext,rFteotrIG0Rd>EX,tag_345,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Otros ingresos declarantes,728,-2.5,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_OTORS_28actpf,rFteotrIG0Rd>PF,tag_346,l10n_co_chart_template_generic,purchase,R REN PARAISO Otros ingresos declarantes,825,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_OTORS_28pasauto_ASU,rFteotrIG0Rd<AR\,tag_347,l10n_co_chart_template_generic,none,AR REN - Otros ingresos declarantes ASIMUDO,970,2.5,,percent,,co_puc_236575,co_puc_236575,f
+tax_rrenta_OTORS_28pasauto_CP,rFteotrIG0Rd<AR/,tag_348,l10n_co_chart_template_generic,none,AR REN - Otros ingresos declarantes CONTRAPARTIDA,971,-2.5,,percent,,co_puc_521595,co_puc_521595,f
+tax_rrenta_OTORS_28pasauto,rFteotrIG0Rd<AR,tag_349,l10n_co_chart_template_generic,sale,AR REN - Otros ingresos declarantes,969,1,,group,"tax_rrenta_OTORS_28pasauto_ASU,tax_rrenta_OTORS_28pasauto_CP",,,f
+tax_rrenta_OTORS_29act,rFteotrIG0Rn>,tag_350,l10n_co_chart_template_generic,purchase,R REN C Otros ingresos no declarantes,629,-3.5,,percent,,co_puc_236570,co_puc_236570,f
+tax_rrenta_OTORS_29pas,rFteotrIG0Rn<,tag_351,l10n_co_chart_template_generic,sale,R REN V Otros ingresos no declarantes,526,-3.5,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_OTORS_29actext,rFteotrIG0Rn>EX,tag_352,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Otros ingresos no declarantes,729,-3.5,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_OTORS_29actpf,rFteotrIG0Rn>PF,tag_353,l10n_co_chart_template_generic,purchase,R REN PARAISO Otros ingresos no declarantes,826,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_PAGOS_30actext,rFtepagARRI>EX,tag_354,l10n_co_chart_template_generic,purchase,"R REN EXTERIOR Pago al exterior por arrendamiento de maquinaria para construcción, reparación y mantenimiento de obras civiles ",630,-2,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_PAGOS_30actpf,rFtepagARRI>PF,tag_355,l10n_co_chart_template_generic,purchase,"R REN PARAISO Pago al exterior por arrendamiento de maquinaria para construcción, reparación y mantenimiento de obras civiles ",827,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_EMOLU_31act,rFteotrX0LEd>,tag_356,l10n_co_chart_template_generic,purchase,R REN C Emolumentos eclesiásticos persona natural declarante,631,-4,,percent,,co_puc_236540,co_puc_236540,f
+tax_rrenta_EMOLU_31pas,rFteotrX0LEd<,tag_357,l10n_co_chart_template_generic,sale,R REN V Emolumentos eclesiásticos persona natural declarante,527,-4,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_EMOLU_31actext,rFteotrX0LEd>EX,tag_358,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Emolumentos eclesiásticos persona natural declarante,632,-4,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_EMOLU_31actpf,rFteotrX0LEd>PF,tag_359,l10n_co_chart_template_generic,purchase,R REN PARAISO Emolumentos eclesiásticos persona natural declarante,828,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_EMOLU_32act,rFteotrX0LEn>,tag_360,l10n_co_chart_template_generic,purchase,R REN C Emolumentos eclesiásticos persona natural no declarante,633,-3.5,,percent,,co_puc_236540,co_puc_236540,f
+tax_rrenta_EMOLU_32pas,rFteotrX0LEn<,tag_361,l10n_co_chart_template_generic,sale,R REN V Emolumentos eclesiásticos persona natural no declarante,528,-3.5,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_EMOLU_32actext,rFteotrX0LEn>EX,tag_362,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Emolumentos eclesiásticos persona natural no declarante,634,-3.5,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_EMOLU_32actpf,rFteotrX0LEn>PF,tag_363,l10n_co_chart_template_generic,purchase,R REN PARAISO Emolumentos eclesiásticos persona natural no declarante,829,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_RENDI_33act,rFteFteFIJO>,tag_364,l10n_co_chart_template_generic,purchase,R REN C Rendimientos Financieros Provenientes de títulos de renta fija,635,-4,,percent,,co_puc_236535,co_puc_236535,f
+tax_rrenta_RENDI_33pas,rFteFteFIJO<,tag_365,l10n_co_chart_template_generic,sale,R REN V Rendimientos Financieros Provenientes de títulos de renta fija,700,-4,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_RENDI_33actext,rFteFteFIJO>EX,tag_366,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Rendimientos Financieros Provenientes de títulos de renta fija,636,-4,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_RENDI_33actpf,rFteFteFIJO>PF,tag_367,l10n_co_chart_template_generic,purchase,R REN PARAISO Rendimientos Financieros Provenientes de títulos de renta fija,637,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_RENDI_33pasauto_ASU,rFteFteFIJO<AR\,tag_368,l10n_co_chart_template_generic,none,AR REN - Rendimientos Financieros Provenientes de títulos de renta fija ASIMUDO,973,4,,percent,,co_puc_236575,co_puc_236575,f
+tax_rrenta_RENDI_33pasauto_CP,rFteFteFIJO<AR/,tag_369,l10n_co_chart_template_generic,none,AR REN - Rendimientos Financieros Provenientes de títulos de renta fija CONTRAPARTIDA,974,-4,,percent,,co_puc_521595,co_puc_521595,f
+tax_rrenta_RENDI_33pasauto,rFteFteFIJO<AR,tag_370,l10n_co_chart_template_generic,sale,AR REN - Rendimientos Financieros Provenientes de títulos de renta fija,972,1,,group,"tax_rrenta_RENDI_33pasauto_ASU,tax_rrenta_RENDI_33pasauto_CP",,,f
+tax_rrenta_AZAR_34act,rFteazaINDE>,tag_371,l10n_co_chart_template_generic,purchase,R REN C Retención en colocación independiente de juegos de suerte y azar ,638,-3,,percent,,co_puc_236545,co_puc_236545,f
+tax_rrenta_AZAR_34pas,rFteazaINDE<,tag_372,l10n_co_chart_template_generic,sale,R REN V Retención en colocación independiente de juegos de suerte y azar ,707,-3,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_AZAR_34actext,rFteazaINDE>EX,tag_373,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Retención en colocación independiente de juegos de suerte y azar ,639,-3,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_AZAR_34actpf,rFteazaINDE>PF,tag_374,l10n_co_chart_template_generic,purchase,R REN PARAISO Retención en colocación independiente de juegos de suerte y azar ,640,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_AZAR_34pasauto_ASU,rFteazaINDE<AR\,tag_375,l10n_co_chart_template_generic,none,AR REN - Retención en colocación independiente de juegos de suerte y azar  ASIMUDO,976,3,,percent,,co_puc_236575,co_puc_236575,f
+tax_rrenta_AZAR_34pasauto_CP,rFteazaINDE<AR/,tag_376,l10n_co_chart_template_generic,none,AR REN - Retención en colocación independiente de juegos de suerte y azar  CONTRAPARTIDA,977,-3,,percent,,co_puc_521595,co_puc_521595,f
+tax_rrenta_AZAR_34pasauto,rFteazaINDE<AR,tag_377,l10n_co_chart_template_generic,sale,AR REN - Retención en colocación independiente de juegos de suerte y azar ,975,1,,group,"tax_rrenta_AZAR_34pasauto_ASU,tax_rrenta_AZAR_34pasauto_CP",,,f
+tax_rrenta_SALAR_383_35,rFtesalE383>,tag_378,l10n_co_chart_template_generic,purchase,R REN C (ET383) PM efectuados a la categoría de empleados,641,0,,percent,,co_puc_236505,co_puc_236505,f
+tax_rrenta_SALAR_383_36,rFtesalR383>,tag_379,l10n_co_chart_template_generic,purchase,"R REN C (ET383) Pagos gravables, originados en la relación laboral o legal y reglamentaria.",642,0,,percent,,co_puc_236505,co_puc_236505,f
+tax_rrenta_SALAR_383_37,rFtesalI383>,tag_380,l10n_co_chart_template_generic,purchase,"R REN C (ET383) Indemnizaciones derivadas de una relación laboral, legal o reglamentaria superiores a 20.000 UVT ",643,-20,,percent,,co_puc_236505,co_puc_236505,f
+tax_rrenta_SALAR_384_35,rFtesalE384>,tag_381,l10n_co_chart_template_generic,purchase,R REN C (ET384) PM efectuados a la categoría de empleados,644,0,,percent,,co_puc_236505,co_puc_236505,f
+tax_rrenta_SALAR_384_36,rFtesalR384>,tag_382,l10n_co_chart_template_generic,purchase,"R REN C (ET384) Pagos gravables, originados en la relación laboral o legal y reglamentaria.",645,0,,percent,,co_puc_236505,co_puc_236505,f
+tax_rrenta_SALAR_384_37,rFtesalI384>,tag_383,l10n_co_chart_template_generic,purchase,"R REN C (ET384) Indemnizaciones derivadas de una relación laboral, legal o reglamentaria superiores a 20.000 UVT ",646,-20,,percent,,co_puc_236505,co_puc_236505,f
+tax_rrenta_SERVI_38act,rFteserVIGI>,tag_384,l10n_co_chart_template_generic,purchase,R REN C Servicios de aseo y vigilancia (la base será el 100% del A.I.U. siempre que sea mayor o igual a 4 UVT),647,-2,,percent,,co_puc_236525,co_puc_236525,f
+tax_rrenta_SERVI_38pas,rFteserVIGI<,tag_385,l10n_co_chart_template_generic,sale,R REN V Servicios de aseo y vigilancia (la base será el 100% del A.I.U. siempre que sea mayor o igual a 4 UVT),720,-2,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_SERVI_38actext,rFteserVIGI>EX,tag_386,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Servicios de aseo y vigilancia (la base será el 100% del A.I.U. siempre que sea mayor o igual a 4 UVT),648,-2,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_SERVI_38actpf,rFteserVIGI>PF,tag_387,l10n_co_chart_template_generic,purchase,R REN PARAISO Servicios de aseo y vigilancia (la base será el 100% del A.I.U. siempre que sea mayor o igual a 4 UVT),649,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_SERVI_38pasauto_ASU,rFteserVIGI<AR\,tag_388,l10n_co_chart_template_generic,none,AR REN - Servicios de aseo y vigilancia (la base será el 100% del A.I.U. siempre que sea mayor o igual a 4 UVT) ASIMUDO,979,2,,percent,,co_puc_236575,co_puc_236575,f
+tax_rrenta_SERVI_38pasauto_CP,rFteserVIGI<AR/,tag_389,l10n_co_chart_template_generic,none,AR REN - Servicios de aseo y vigilancia (la base será el 100% del A.I.U. siempre que sea mayor o igual a 4 UVT) CONTRAPARTIDA,980,-2,,percent,,co_puc_521595,co_puc_521595,f
+tax_rrenta_SERVI_38pasauto,rFteserVIGI<AR,tag_390,l10n_co_chart_template_generic,sale,AR REN - Servicios de aseo y vigilancia (la base será el 100% del A.I.U. siempre que sea mayor o igual a 4 UVT),978,1,,group,"tax_rrenta_SERVI_38pasauto_ASU,tax_rrenta_SERVI_38pasauto_CP",,,f
+tax_rrenta_SERVI_39act,rFteserRESTd>,tag_391,l10n_co_chart_template_generic,purchase,"R REN C Servicios de hoteles, restaurantes y hospedajes; declarante",650,-2.5,,percent,,co_puc_236525,co_puc_236525,f
+tax_rrenta_SERVI_39pas,rFteserRESTd<,tag_392,l10n_co_chart_template_generic,sale,"R REN V Servicios de hoteles, restaurantes y hospedajes; declarante",727,-2.5,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_SERVI_39actext,rFteserRESTd>EX,tag_393,l10n_co_chart_template_generic,purchase,"R REN EXTERIOR Servicios de hoteles, restaurantes y hospedajes; declarante",651,-2.5,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_SERVI_39actpf,rFteserRESTd>PF,tag_394,l10n_co_chart_template_generic,purchase,"R REN PARAISO Servicios de hoteles, restaurantes y hospedajes; declarante",652,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_SERVI_39pasauto_ASU,rFteserRESTd<AR\,tag_395,l10n_co_chart_template_generic,none,"AR REN - Servicios de hoteles, restaurantes y hospedajes; declarante ASIMUDO",982,2.5,,percent,,co_puc_236575,co_puc_236575,f
+tax_rrenta_SERVI_39pasauto_CP,rFteserRESTd<AR/,tag_396,l10n_co_chart_template_generic,none,"AR REN - Servicios de hoteles, restaurantes y hospedajes; declarante CONTRAPARTIDA",983,-2.5,,percent,,co_puc_521595,co_puc_521595,f
+tax_rrenta_SERVI_39pasauto,rFteserRESTd<AR,tag_397,l10n_co_chart_template_generic,sale,"AR REN - Servicios de hoteles, restaurantes y hospedajes; declarante",981,1,,group,"tax_rrenta_SERVI_39pasauto_ASU,tax_rrenta_SERVI_39pasauto_CP",,,f
+tax_rrenta_SERVI_40act,rFteserTCARG>,tag_398,l10n_co_chart_template_generic,purchase,R REN C Servicios de transporte nacional de carga,653,-1,,percent,,co_puc_236525,co_puc_236525,f
+tax_rrenta_SERVI_40pas,rFteserTCARG<,tag_399,l10n_co_chart_template_generic,sale,R REN V Servicios de transporte nacional de carga,529,-1,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_SERVI_40actext,rFteserTCARG>EX,tag_400,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Servicios de transporte nacional de carga,654,-1,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_SERVI_40actpf,rFteserTCARG>PF,tag_401,l10n_co_chart_template_generic,purchase,R REN PARAISO Servicios de transporte nacional de carga,655,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_SERVI_40pasauto_ASU,rFteserTCARG<AR\,tag_402,l10n_co_chart_template_generic,none,AR REN - Servicios de transporte nacional de carga ASIMUDO,985,1,,percent,,co_puc_236575,co_puc_236575,f
+tax_rrenta_SERVI_40pasauto_CP,rFteserTCARG<AR/,tag_403,l10n_co_chart_template_generic,none,AR REN - Servicios de transporte nacional de carga CONTRAPARTIDA,986,-1,,percent,,co_puc_521595,co_puc_521595,f
+tax_rrenta_SERVI_40pasauto,rFteserTCARG<AR,tag_404,l10n_co_chart_template_generic,sale,AR REN - Servicios de transporte nacional de carga,984,1,percent,group,"tax_rrenta_SERVI_40pasauto_ASU,tax_rrenta_SERVI_40pasauto_CP",,,f
+tax_rrenta_SERVI_41act,rFteserTPERSd>,tag_405,l10n_co_chart_template_generic,purchase,R REN C Servicios de transporte terrestre nacional de pasajeros declarantes,656,-2.5,,percent,,co_puc_236525,co_puc_236525,f
+tax_rrenta_SERVI_41pas,rFteserTPERSd<,tag_406,l10n_co_chart_template_generic,sale,R REN V Servicios de transporte terrestre nacional de pasajeros declarantes,530,-2.5,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_SERVI_41actext,rFteserTPERSd>EX,tag_407,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Servicios de transporte terrestre nacional de pasajeros declarantes,657,-2.5,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_SERVI_41actpf,rFteserTPERSd>PF,tag_408,l10n_co_chart_template_generic,purchase,R REN PARAISO Servicios de transporte terrestre nacional de pasajeros declarantes,658,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_SERVI_41pasauto_ASU,rFteserTPERSd<AR\,tag_409,l10n_co_chart_template_generic,none,AR REN - Servicios de transporte terrestre nacional de pasajeros declarantes ASIMUDO,988,2.5,,percent,,co_puc_236575,co_puc_236575,f
+tax_rrenta_SERVI_41pasauto_CP,rFteserTPERSd<AR/,tag_410,l10n_co_chart_template_generic,none,AR REN - Servicios de transporte terrestre nacional de pasajeros declarantes CONTRAPARTIDA,989,-2.5,,percent,,co_puc_521595,co_puc_521595,f
+tax_rrenta_SERVI_41pasauto,rFteserTPERSd<AR,tag_411,l10n_co_chart_template_generic,sale,AR REN - Servicios de transporte terrestre nacional de pasajeros declarantes,987,1,,group,"tax_rrenta_SERVI_41pasauto_ASU,tax_rrenta_SERVI_41pasauto_CP",,,f
+tax_rrenta_SERVI_42act,rFteserGENEd>,tag_412,l10n_co_chart_template_generic,purchase,R REN C Servicios en general declarantes,659,-4,,percent,,co_puc_236525,co_puc_236525,f
+tax_rrenta_SERVI_42pas,rFteserGENEd<,tag_413,l10n_co_chart_template_generic,sale,R REN V Servicios en general declarantes,531,-4,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_SERVI_42actext,rFteserGENEd>EX,tag_414,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Servicios en general declarantes,660,-4,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_SERVI_42actpf,rFteserGENEd>PF,tag_415,l10n_co_chart_template_generic,purchase,R REN PARAISO Servicios en general declarantes,661,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_SERVI_42pasauto_ASU,rFteserGENEd<AR\,tag_416,l10n_co_chart_template_generic,none,AR REN - Servicios en general declarantes ASIMUDO,991,4,,percent,,co_puc_236575,co_puc_236575,f
+tax_rrenta_SERVI_42pasauto_CP,rFteserGENEd<AR/,tag_417,l10n_co_chart_template_generic,none,AR REN - Servicios en general declarantes CONTRAPARTIDA,992,-4,,percent,,co_puc_521595,co_puc_521595,f
+tax_rrenta_SERVI_42pasauto,rFteserGENEd<AR,tag_418,l10n_co_chart_template_generic,sale,AR REN - Servicios en general declarantes,990,1,,group,"tax_rrenta_SERVI_42pasauto_ASU,tax_rrenta_SERVI_42pasauto_CP",,,f
+tax_rrenta_SERVI_43act,rFteserGENEn>,tag_419,l10n_co_chart_template_generic,purchase,R REN C Servicios en general persona natural no declarante,662,-6,,percent,,co_puc_236525,co_puc_236525,f
+tax_rrenta_SERVI_43pas,rFteserGENEn<,tag_420,l10n_co_chart_template_generic,sale,R REN V Servicios en general persona natural no declarante,532,-6,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_SERVI_43actext,rFteserGENEn>EX,tag_421,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Servicios en general persona natural no declarante,663,-6,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_SERVI_43actpf,rFteserGENEn>PF,tag_422,l10n_co_chart_template_generic,purchase,R REN PARAISO Servicios en general persona natural no declarante,664,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_SERVI_44act,rFteserTEMP>,tag_423,l10n_co_chart_template_generic,purchase,R REN C Servicios temporales de empleo (la base será el 100% del A.I.U. siempre que sea mayor o igual a 4 UVT),665,-1,,percent,,co_puc_236525,co_puc_236525,f
+tax_rrenta_SERVI_44pas,rFteserTEMP<,tag_424,l10n_co_chart_template_generic,sale,R REN V Servicios temporales de empleo (la base será el 100% del A.I.U. siempre que sea mayor o igual a 4 UVT),533,-1,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_SERVI_44actext,rFteserTEMP>EX,tag_425,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Servicios temporales de empleo (la base será el 100% del A.I.U. siempre que sea mayor o igual a 4 UVT),666,-1,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_SERVI_44actpf,rFteserTEMP>PF,tag_426,l10n_co_chart_template_generic,purchase,R REN PARAISO Servicios temporales de empleo (la base será el 100% del A.I.U. siempre que sea mayor o igual a 4 UVT),667,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_SERVI_44pasauto_ASU,rFteserTEMP<AR\,tag_427,l10n_co_chart_template_generic,none,AR REN - Servicios temporales de empleo (la base será el 100% del A.I.U. siempre que sea mayor o igual a 4 UVT) ASIMUDO,994,10,,percent,,co_puc_236575,co_puc_236575,f
+tax_rrenta_SERVI_44pasauto_CP,rFteserTEMP<AR/,tag_428,l10n_co_chart_template_generic,none,AR REN - Servicios temporales de empleo (la base será el 100% del A.I.U. siempre que sea mayor o igual a 4 UVT) CONTRAPARTIDA,995,-10,,percent,,co_puc_521595,co_puc_521595,f
+tax_rrenta_SERVI_44pasauto,rFteserTEMP<AR,tag_429,l10n_co_chart_template_generic,sale,AR REN - Servicios temporales de empleo (la base será el 100% del A.I.U. siempre que sea mayor o igual a 4 UVT),993,1,,group,"tax_rrenta_SERVI_44pasauto_ASU,tax_rrenta_SERVI_44pasauto_CP",,,f
+tax_rrenta_SERVI_45act,rFteserSISM>,tag_430,l10n_co_chart_template_generic,purchase,R REN C Servicios de sísmica para el sector de hidrocarburos declarantes,668,-6,,percent,,co_puc_236525,co_puc_236525,f
+tax_rrenta_SERVI_45pas,rFteserSISM<,tag_431,l10n_co_chart_template_generic,sale,R REN V Servicios de sísmica para el sector de hidrocarburos declarantes,534,-6,,percent,,co_puc_135515,co_puc_135515,f
+tax_rrenta_SERVI_45actext,rFteserSISM>EX,tag_432,l10n_co_chart_template_generic,purchase,R REN EXTERIOR Servicios de sísmica para el sector de hidrocarburos declarantes,669,-6,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_SERVI_45actpf,rFteserSISM>PF,tag_433,l10n_co_chart_template_generic,purchase,R REN PARAISO Servicios de sísmica para el sector de hidrocarburos declarantes,670,-33,,percent,,co_puc_236550,co_puc_236550,f
+tax_rrenta_SERVI_45pasauto_ASU,rFteserSISM<AR\,tag_434,l10n_co_chart_template_generic,none,AR REN - Servicios de sísmica para el sector de hidrocarburos declarantes ASIMUDO,997,6,,percent,,co_puc_236575,co_puc_236575,f
+tax_rrenta_SERVI_45pasauto_CP,rFteserSISM<AR/,tag_435,l10n_co_chart_template_generic,none,AR REN - Servicios de sísmica para el sector de hidrocarburos declarantes CONTRAPARTIDA,998,-6,,percent,,co_puc_521595,co_puc_521595,f
+tax_rrenta_SERVI_45pasauto,rFteserSISM<AR,tag_436,l10n_co_chart_template_generic,sale,AR REN - Servicios de sísmica para el sector de hidrocarburos declarantes,996,1,percent,group,"tax_rrenta_SERVI_45pasauto_ASU,tax_rrenta_SERVI_45pasauto_CP",,,f

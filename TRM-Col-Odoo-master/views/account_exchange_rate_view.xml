@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<openerp>
+  <data noupdate="1">
+    <record model="ir.cron" id="ir_cron_trm_check_every_half_hour">
+      <field name="name">TRM Col: Check for Update</field>
+      <field name="interval_number">24</field>
+      <field name="interval_type">hours</field>
+      <field name="numbercall">-1</field>
+      <field name="doall" eval="False"/>
+      <field name="model" eval="'res.currency.rate'"/>
+      <field name="function" eval="'get_colombian_trm'"/>
+      <field name="args" eval="'()'"/>
+    </record>
+  </data>
+</openerp>

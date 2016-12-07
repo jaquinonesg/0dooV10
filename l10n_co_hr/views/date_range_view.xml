@@ -1,0 +1,51 @@
+<openerp>
+  <data>
+    <record model="ir.ui.view" id="view_date_range_tree_attributes">
+      <field name="name">date.range.tree.attributes</field>
+      <field name="model">date.range</field>
+      <field name="inherit_id" ref="date_range.view_date_range_tree" />
+      <field name="arch" type="xml">
+        <xpath expr="//tree" position="attributes" >
+          <attribute name="editable"/>
+        </xpath>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_date_range_form_view_attributes">
+      <field name="name">date.range.form.attributes</field>
+      <field name="model">date.range</field>
+      <field name="inherit_id" ref="date_range.view_date_range_form_view" />
+      <field name="arch" type="xml">
+        <xpath expr="//form" position="replace" >
+          <form string="Date Range">
+            <sheet>
+              <div class="oe_title">
+                <label for="name" class="oe_edit_only"/>
+                <h1>
+                  <field name="name" placeholder="Range's Name"/>
+                </h1>
+                <group>
+                  <group string="Date Range Information">
+                    <field name="type_id"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                    <field name="active"/>
+                  </group>
+                  <group string="Attributes">
+                    <field name="attributes_ids" nolabel="1" widget="one2many_list" mode="tree">
+                      <tree string="Invoice Lines" editable="bottom">
+                        <field name="name" />
+                        <field name="value" />
+                      </tree>
+                    </field>
+                  </group>
+                </group>
+              </div>
+            </sheet>
+          </form>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</openerp>
