@@ -141,7 +141,7 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem action="sale_forecast_action" id="sale_forecast_action_menu" name="Sale Forecast" parent="base.menu_sales" sequence="8"/>
+        <menuitem action="sale_forecast_action" id="sale_forecast_action_menu" name="Sale Forecast" parent="sales_team.menu_sales" sequence="8"/>
 
         <record model="ir.ui.view" id="inherit_view_purchase_order">
             <field name="name">inherit.view.purchase.order</field>
@@ -170,9 +170,11 @@
             <field name="model">mrp.production</field>
             <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
             <field name="arch" type="xml">
-                <xpath expr="//form/sheet/group/group[1]/field[@name='date_planned']" position="after">
+                <!--<xpath expr="//form/sheet/group/group[1]/field[@name='date_planned_start']" position="after">-->
+                <field name="date_planned_start" position="after">
                     <field name="forecast_ref_mrp" attrs="{'invisible': [('forecast_ref_mrp', '=', False)]}"/>
-                </xpath>
+                </field>
+                <!--</xpath>-->
             </field>
         </record>
 

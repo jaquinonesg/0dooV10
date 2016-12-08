@@ -28,7 +28,7 @@ class sale_forecast(models.Model):
     past_sale_record_ids = fields.One2many('forecast.product', 'forecast_id', string='Past Sale Records', default=False)
     forecast_filter_id = fields.Many2one('forecast.period',string="Filter", edit=False)
     filter_visible = fields.Boolean('filter_visible' ,defalut=False)
-    warehouse_id = fields.Many2one('stock.warehouse', string="Warehouse",select=True, required=True)
+    warehouse_id = fields.Many2one('stock.warehouse', string="Warehouse",index=True, required=True)
     create_action = fields.Boolean(string="Do you want to create Supply for process quantity?", default=False)
     required_process = fields.Selection([('buy','Buy'),('manufacture','Manufacture')],'Required Process', copy=False)
     record_generated = fields.Boolean('Record' ,defalut=False)
@@ -47,8 +47,10 @@ class sale_forecast(models.Model):
     def set_open(self):
         return self.write({'state':'open'})
 
-    @api.v7
-    def onchange_forecast_filter(self, cr, uid, ids, forecast_filter_id, context=None):
+    def onchange_forecast_filter(self, forecast_filter_id):
+        cr = self._cr
+        uid = self.id
+        ids = None
         f_period_obj = self.pool.get('forecast.period')
         f_product_obj = self.pool.get('forecast.product')
         if not ids:
@@ -64,8 +66,10 @@ class sale_forecast(models.Model):
             'domain': {'forecast_product_ids': ['id' ,'in', s_rec]},
         }
 
-    @api.v7
-    def onchange_required_process(self, cr, uid, ids, required_process, context=None):
+    def onchange_required_process(self, required_process):
+        cr = self._cr
+        uid = self.id
+        ids = None
 
         forecast_product_obj = self.pool.get('forecast.product')
         if not ids:
@@ -84,9 +88,10 @@ class sale_forecast(models.Model):
         self.write(cr, uid, ids[0], {'forecast_product_ids': line_list}, context= context)
         return {'value': {'forecast_product_ids': line_list}}
 
-    @api.v7
-    def onchange_sales_person_id(self, cr, uid, ids, sales_person_id, context=None):
-
+    def onchange_sales_person_id(self, sales_person_id):
+        cr = self._cr
+        uid = self.id
+        ids = None
         forecast_product_obj = self.pool.get('forecast.product')
         if not ids:
             return {}

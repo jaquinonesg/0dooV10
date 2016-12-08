@@ -43,7 +43,7 @@
 
 <!-- Menu entry under Sales > Config > Address Book > Localization -->
 <menuitem id="map_website_menu" action="map_website_action"
-    parent="base.menu_localisation" sequence="50"/>
+    parent="account.menu_finance_configuration" sequence="50"/>
 
 </data>
 </openerp>

@@ -19,36 +19,19 @@
 #
 ##############################################################################
 
-import logging
-import time
+#import logging
+#import time
+#from openerp.tools.translate import _
+#import openerp.addons.decimal_precision as dp
+#import openerp.addons.product.product
+#import base64
 
-from openerp import tools
-from openerp.osv import fields, osv
-from openerp.tools.translate import _
+from openerp import models, fields #, api, _
+#from openerp import tools
 
-import openerp.addons.decimal_precision as dp
-import openerp.addons.product.product
-import base64
+#_logger = logging.getLogger(__name__)
 
-_logger = logging.getLogger(__name__)
+class pos_config(models.Model):
+    _inherit = 'pos.config'   
 
-class pos_config(osv.osv):
-    _inherit = 'pos.config'    
-        
-    _columns = {
-        'show_qty_on_pos':fields.boolean('Display Stock in POS'),
-    }
-    _defaults ={
-        'show_qty_on_pos':True,
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
+    show_qty_on_pos = fields.Boolean(string='Display Stock in POS', default=True)
