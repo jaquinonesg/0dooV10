@@ -1,0 +1,338 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* bioxsolutions_reports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c-20160923\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-12 02:55+0000\n"
+"PO-Revision-Date: 2016-10-12 02:55+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bioxsolutions_reports
+#: selection:bx.reports.execute.params,type:0
+#: selection:bx.reports.params,type:0
+msgid "Boolean"
+msgstr "Boleano"
+
+#. module: bioxsolutions_reports
+#: model:ir.ui.view,arch_db:bioxsolutions_reports.report_export_wizard_view
+msgid "Cancelar"
+msgstr "Cancelar"
+
+#. module: bioxsolutions_reports
+#: selection:bx.reports.execute.params,type:0
+#: selection:bx.reports.params,type:0
+msgid "Char"
+msgstr "Caracter"
+
+#. module: bioxsolutions_reports
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_params_code
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_params_code
+msgid "Code"
+msgstr "Código"
+
+#. module: bioxsolutions_reports
+#: code:addons/bioxsolutions_reports/models/reports.py:300
+#, python-format
+msgid "Compose Email"
+msgstr "Redactar Correo"
+
+#. module: bioxsolutions_reports
+#: model:ir.ui.menu,name:bioxsolutions_reports.menu_reports_conf
+#: model:res.groups,name:bioxsolutions_reports.configuration_reports
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: bioxsolutions_reports
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_create_uid
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_create_uid
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_params_create_uid
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_params_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: bioxsolutions_reports
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_create_date
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_create_date
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_params_create_date
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_params_create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: bioxsolutions_reports
+#: selection:bx.reports.execute.params,type:0
+#: selection:bx.reports.params,type:0
+msgid "Date"
+msgstr "Date"
+
+#. module: bioxsolutions_reports
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_display_name
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_display_name
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_params_display_name
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_params_display_name
+msgid "Display Name"
+msgstr "Nombre Público"
+
+#. module: bioxsolutions_reports
+#: selection:bx.reports,state:0
+#: selection:bx.reports.execute,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: bioxsolutions_reports
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_state
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_state
+msgid "Estado"
+msgstr "Estado"
+
+#. module: bioxsolutions_reports
+#: model:res.groups,name:bioxsolutions_reports.execute_reports
+msgid "Execute"
+msgstr "Ejecutar"
+
+#. module: bioxsolutions_reports
+#: model:ir.ui.view,arch_db:bioxsolutions_reports.report_export_wizard_view
+msgid "Export"
+msgstr "Exportar"
+
+#. module: bioxsolutions_reports
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_field_sql
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_field_sql
+msgid "Fields (Order)"
+msgstr "Fields (Order)"
+
+#. module: bioxsolutions_reports
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_format
+msgid "Format"
+msgstr "Formato"
+
+#. module: bioxsolutions_reports
+#: model:ir.ui.view,arch_db:bioxsolutions_reports.reports_view_tree_generate
+msgid "Generar"
+msgstr "Generar"
+
+#. module: bioxsolutions_reports
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_id
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_params_id
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_id
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_params_id
+msgid "ID"
+msgstr "Identificador"
+
+#. module: bioxsolutions_reports
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports___last_update
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute___last_update
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_params___last_update
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_params___last_update
+msgid "Last Modified on"
+msgstr "Última Modificación el"
+
+#. module: bioxsolutions_reports
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_params_write_uid
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_write_uid
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_params_write_uid
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_write_uid
+msgid "Last Updated by"
+msgstr "Actualizado por"
+
+#. module: bioxsolutions_reports
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_params_write_date
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_write_date
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_params_write_date
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_write_date
+msgid "Last Updated on"
+msgstr "Actualizado el"
+
+#. module: bioxsolutions_reports
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_name
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_params_name
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_name
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_params_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: bioxsolutions_reports
+#: selection:bx.reports.execute.params,type:0
+#: selection:bx.reports.params,type:0
+msgid "Numeric"
+msgstr "Numerico"
+
+#. module: bioxsolutions_reports
+#: selection:bx.reports.execute,format:0
+msgid "PDF"
+msgstr "PDF"
+
+#. module: bioxsolutions_reports
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_params_ids
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_params_ids
+#: model:ir.ui.view,arch_db:bioxsolutions_reports.report_export_wizard_view
+msgid "Parameters"
+msgstr "Parámetros"
+
+#. module: bioxsolutions_reports
+#: model:ir.ui.view,arch_db:bioxsolutions_reports.reports_view_form
+msgid "Parametros"
+msgstr "Parametros"
+
+#. module: bioxsolutions_reports
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_partner_ids
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_partner_ids
+msgid "Partner"
+msgstr "Asociado"
+
+#. module: bioxsolutions_reports
+#: selection:bx.reports,send_mail:0
+#: selection:bx.reports.execute,send_mail:0
+msgid "Partner Generate"
+msgstr "Tercero (Generar)"
+
+#. module: bioxsolutions_reports
+#: selection:bx.reports,send_mail:0
+#: selection:bx.reports.execute,send_mail:0
+msgid "Partner Manual"
+msgstr "Tercero (Manual)"
+
+#. module: bioxsolutions_reports
+#: model:ir.ui.view,arch_db:bioxsolutions_reports.reports_view_form
+msgid "Parámetros"
+msgstr "Parámetros"
+
+#. module: bioxsolutions_reports
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_report_id
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_params_report_id
+msgid "Report"
+msgstr "Reporte"
+
+#. module: bioxsolutions_reports
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_params_report_id
+msgid "Report execute"
+msgstr "Ejecutar reporte"
+
+#. module: bioxsolutions_reports
+#: model:ir.actions.act_window,name:bioxsolutions_reports.act_reports
+#: model:ir.ui.menu,name:bioxsolutions_reports.menu_reports
+#: model:ir.ui.menu,name:bioxsolutions_reports.menu_reports_conf_reports
+#: model:ir.ui.menu,name:bioxsolutions_reports.menu_reports_reports
+#: model:ir.ui.view,arch_db:bioxsolutions_reports.reports_view_form
+#: model:ir.ui.view,arch_db:bioxsolutions_reports.reports_view_tree
+#: model:ir.ui.view,arch_db:bioxsolutions_reports.reports_view_tree_generate
+msgid "Reports"
+msgstr "Informes"
+
+#. module: bioxsolutions_reports
+#: model:ir.module.category,name:bioxsolutions_reports.category_reports
+msgid "Reports Generator"
+msgstr "Generador de informes"
+
+#. module: bioxsolutions_reports
+#: model:ir.actions.act_window,name:bioxsolutions_reports.act_reports_export
+#: model:ir.ui.view,arch_db:bioxsolutions_reports.report_export_wizard_view
+msgid "Reports export"
+msgstr "Exportar reporte"
+
+#. module: bioxsolutions_reports
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_sql
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_sql
+msgid "SQL"
+msgstr "SQL"
+
+#. module: bioxsolutions_reports
+#: selection:bx.reports.execute.params,type:0
+#: selection:bx.reports.params,type:0
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_params_selection
+msgid "Selection"
+msgstr "Selección"
+
+#. module: bioxsolutions_reports
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_send_mail
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_send_mail
+#: model:ir.ui.view,arch_db:bioxsolutions_reports.report_export_wizard_view
+msgid "Send mail"
+msgstr "Enviar correo"
+
+#. module: bioxsolutions_reports
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_template_id
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_template_id
+msgid "Template"
+msgstr "Plantilla"
+
+#. module: bioxsolutions_reports
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_titles_sql
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_titles_sql
+msgid "Titles"
+msgstr "Titulo"
+
+#. module: bioxsolutions_reports
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_params_type
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_params_type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: bioxsolutions_reports
+#: selection:bx.reports,state:0
+#: selection:bx.reports.execute,state:0
+#: model:ir.ui.view,arch_db:bioxsolutions_reports.reports_view_form
+msgid "Validated"
+msgstr "Validado"
+
+#. module: bioxsolutions_reports
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_params_value
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_params_value
+msgid "Value Char"
+msgstr "Valor (Caracter)"
+
+#. module: bioxsolutions_reports
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_params_dates
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_params_dates
+msgid "Value date"
+msgstr "Valor (Fecha)"
+
+#. module: bioxsolutions_reports
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_params_logic
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_params_logic
+msgid "Value logic"
+msgstr "Valor (Lógico)"
+
+#. module: bioxsolutions_reports
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_execute_params_numerics
+#: model:ir.model.fields,field_description:bioxsolutions_reports.field_bx_reports_params_numerics
+msgid "Value numeric"
+msgstr "valor (Númerico)"
+
+#. module: bioxsolutions_reports
+#: selection:bx.reports.execute,format:0
+msgid "XLSX"
+msgstr "XLSX"
+
+#. module: bioxsolutions_reports
+#: model:ir.model,name:bioxsolutions_reports.model_bx_reports
+msgid "bx.reports"
+msgstr "bx.reports"
+
+#. module: bioxsolutions_reports
+#: model:ir.model,name:bioxsolutions_reports.model_bx_reports_execute
+msgid "bx.reports.execute"
+msgstr "bx.reports.execute"
+
+#. module: bioxsolutions_reports
+#: model:ir.model,name:bioxsolutions_reports.model_bx_reports_execute_params
+msgid "bx.reports.execute.params"
+msgstr "bx.reports.execute.params"
+
+#. module: bioxsolutions_reports
+#: model:ir.model,name:bioxsolutions_reports.model_bx_reports_params
+msgid "bx.reports.params"
+msgstr "bx.reports.params"
+
+#. module: bioxsolutions_reports
+#: model:ir.ui.view,arch_db:bioxsolutions_reports.reports_view_form
+msgid "draft"
+msgstr "draft"
+

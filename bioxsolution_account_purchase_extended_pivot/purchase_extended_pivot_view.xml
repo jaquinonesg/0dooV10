@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_purchase_line_tree" model="ir.ui.view">
+            <field name="name">purchase.order.line.tree</field>
+            <field name="model">purchase.order.line</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Purchase line">
+                    <field name="date_planned"/>
+                    <field name="partner_id" string="Proveedor"/>
+                    <field name="product_id"/>
+                    <field name="product_qty"/>
+                    <field name="qty_received"/>
+                    <field name="qty_invoiced"/>
+                    <field name="price_subtotal" widget="monetary"/>
+                    <field name="price_tax"/>
+                    <field name="price_total"/>
+                    <field groups="product.group_uom" name="product_uom"/>
+                    <field name="order_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_purchase_line_graph" model="ir.ui.view">
+            <field name="name">account.order.graph</field>
+            <field name="model">purchase.order.line</field>
+            <field name="type">graph</field>
+            <field name="arch" type="xml">
+                <graph stacked="True" string="Purchase line" type="pivot">
+                    <field name="product_id"/>
+                    <field name="product_qty" type="measure"/>
+                </graph>
+            </field>
+        </record>
+        <record id="view_purchase_line_pivot" model="ir.ui.view">
+            <field name="name">purchase.order.line.pivot</field>
+            <field name="model">purchase.order.line</field>
+            <field name="arch" type="xml">
+                <pivot string="Purchase line">
+                    <field name="product_id"/>
+                    <field name="partner_id"/>
+                    <field name="date_planned" type="measure"/>
+                    <field name="product_qty" type="measure"/>
+                    <field name="qty_received" type="measure"/>
+                    <field name="qty_invoiced" type="measure"/>
+                    <field name="price_subtotal" type="measure"/>
+                    <field name="price_tax" type="measure"/>
+                    <field name="price_total" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+        <record id="action_purchase_line" model="ir.actions.act_window">
+            <field name="name">Purchase line</field>
+            <field name="res_model">purchase.order.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,pivot,graph</field>
+            <field name="target">current</field>
+        </record>
+        <menuitem action="action_purchase_line" id="menu_purchase_line" name="Purchase line" parent="purchase.menu_procurement_management"/>
+    </data>
+    <!--         <record model="ir.ui.view" id="account_tax_report_conf_form_view"><field name="name">account.tax.report.conf.form</field><field name="model">account.tax.report.conf</field><field name="arch" type="xml"><form string="Configuracion para informes de impuestos"><sheet><group><field name="name"/><field name="tax_group_ids"/></group></sheet></form></field></record>-->
+</openerp>

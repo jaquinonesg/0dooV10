@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="account_account_consolidate_view">
+            <field name="name">account.account.consolidate.form</field>
+            <field name="model">account.account</field>
+            <field name="inherit_id" ref="account.view_account_form"/>
+            <field name="arch" type="xml">
+                <field name="deprecated" position="after">
+                    <field name="child_consol_ids" widget="many2many_tags" attrs="{'invisible':[('internal_type','!=','consolidation')]}"/>
+                    <field name="chart_account"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

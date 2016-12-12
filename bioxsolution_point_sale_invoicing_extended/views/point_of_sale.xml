@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="assets_extended" name="point_of_sale_assets_extended" inherit_id="point_of_sale.assets">
+        <xpath expr="//script[contains(@src,'screens.js')]" position="replace">
+         <script type="text/javascript" src="/bioxsolution_point_sale_invoicing_extended/static/src/js/screens.js"></script>
+          </xpath>
+        </template>
+    </data>
+</openerp>

@@ -1,0 +1,16 @@
+<openerp>
+  <data>
+
+    <record model="ir.ui.view"  id="view_account_journal_dian_form">
+      <field name="name">view.account.journal.dian.form</field>
+      <field name="inherit_id" ref="account.view_account_journal_form" />
+      <field name="model">account.journal</field>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='currency_id']" position="after">
+            <field name="dian_resolution" attrs="{'invisible': ['|',('type', 'not in', ['sale', 'purchase'])]}"/>
+        </xpath>
+      </field>
+    </record>
+
+  </data>
+</openerp>

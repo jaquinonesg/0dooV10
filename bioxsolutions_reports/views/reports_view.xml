@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="reports_view_tree" model="ir.ui.view">
+            <field name="name">reports.tree</field>
+            <field name="model">bx.reports</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Reports">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="reports_view_form" model="ir.ui.view">
+            <field name="name">reports.form</field>
+            <field name="model">bx.reports</field>
+            <field name="arch" type="xml">
+                <form string="Reports">
+                    <header>
+                        <button string="Validated" name="validated" states="draft" type="object" class="oe_highlight"/>
+                        <button string="draft" name="draft" states="validated" type="object" class="oe_highlight"/>
+                        <field name="state" statusbar_visible="draft,validated" widget="statusbar"/>
+                    </header>
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="code"/>
+                        <h1>
+                            <field name="name" widget="gauge"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="titles_sql"/>
+                        <field name="field_sql"/>
+                        <field name="send_mail"/>
+                        <field name="template_id"/>
+                        <field name="sql" attrs="{'readonly': [('state','=','validated')]}"/>
+                    </group>
+                    <notebook>
+                        <page string="Parametros">
+                            <field name="params_ids" nolabel="1" widget="one2many_list" options="{'reload_on_button': True}">
+                                <tree string="Parámetros" editable="bottom">
+                                    <field name="name"/>
+                                    <field name="code"/>
+                                    <field name="type"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <record id="act_reports" model="ir.actions.act_window">
+            <field name="name">Reports</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">bx.reports</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+        </record>
+
+        <!-- Reports export-->
+        <record id="reports_view_tree_generate" model="ir.ui.view">
+            <field name="name">reports.tree</field>
+            <field name="model">bx.reports.execute</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Reports">
+                    <field name="name"/>
+                    <button name="generate" string="Generar" type="object"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="report_export_wizard_view" model="ir.ui.view">
+            <field name="name">Report export</field>
+            <field name="model">bx.reports.execute</field>
+            <field name="arch" type="xml">
+                <form string="Reports export">
+                    <group name="param" string="Parameters">
+                        <field name="params_ids"  nolabel="1" widget="one2many_list">
+                            <tree string="Parameters">
+                                <field name="name" readonly="1" />
+                            </tree>
+                            <form>
+                                <group colspan="4">
+                                    <field name="name" readonly="1" />
+                                    <field name="type" invisible="1" />
+                                    <field name="selection" readonly="False" attrs="{'invisible': [('type', '!=', 'S')]}"/>
+                                    <field name="value" attrs="{'invisible': [('type', '!=', 'C')]}"/>
+                                    <field name="dates" attrs="{'invisible': [('type', '!=', 'D')]}"/>
+                                    <field name="numerics" attrs="{'invisible': [('type', '!=', 'N')]}"/> <!--    -->
+                                    <field name="logic" attrs="{'invisible': [('type', '!=', 'B')]}"/>
+                                </group>
+                            </form>
+                        </field>
+                    </group>
+                    <group>
+                        <field name="partner_ids" attrs="{'invisible': [('send_mail', '=', 'PQ')]}"/>
+                        <field name="format" required="True"/>
+                        <field name="send_mail" invisible="True"/>
+                    </group>
+                    <footer>
+                        <button name="export" string="Export" type="object" class="oe_highlight"  />
+                        <button name="sendmail" string="Send mail" type="object" class="oe_highlight"/>
+                        <button string="Cancelar" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="act_reports_export" model="ir.actions.act_window">
+            <field name="name">Reports export</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">bx.reports.execute</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="target">current</field>
+        </record>
+
+        <menuitem name='Reports' id='menu_reports' parent='base.menu_reporting_dashboard' sequence='20' groups="execute_reports"/>
+        <menuitem name='Reports' id='menu_reports_reports' parent='menu_reports' action='act_reports_export' sequence='10' groups="execute_reports"/>
+        <menuitem name='Configuration' id='menu_reports_conf' parent='menu_reports' sequence='30' groups="configuration_reports"/>
+        <menuitem name='Reports' id='menu_reports_conf_reports' parent='menu_reports_conf' action='act_reports' sequence='10' groups="configuration_reports"/>
+
+    </data>
+</openerp>

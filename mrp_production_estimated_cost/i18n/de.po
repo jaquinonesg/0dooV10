@@ -1,0 +1,288 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * mrp_production_estimated_cost
+# 
+# Translators:
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
+# Rudolf Schnapka <rs@techno-flex.de>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: manufacture (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-26 16:03+0000\n"
+"PO-Revision-Date: 2016-05-23 17:17+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: German (http://www.transifex.com/oca/OCA-manufacture-8-0/language/de/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: mrp_production_estimated_cost
+#: code:addons/mrp_production_estimated_cost/models/mrp_production.py:186
+#, python-format
+msgid "%s-%s Post-operation"
+msgstr "%s-%s Nachbereitung"
+
+#. module: mrp_production_estimated_cost
+#: code:addons/mrp_production_estimated_cost/models/mrp_production.py:174
+#, python-format
+msgid "%s-%s Pre-operation"
+msgstr "%s-%s Vorbereitung"
+
+#. module: mrp_production_estimated_cost
+#: code:addons/mrp_production_estimated_cost/models/mrp_production.py:202
+#, python-format
+msgid "%s-%s-C-%s"
+msgstr "%s-%s-C-%s"
+
+#. module: mrp_production_estimated_cost
+#: code:addons/mrp_production_estimated_cost/models/mrp_production.py:220
+#, python-format
+msgid "%s-%s-H-%s"
+msgstr "%s-%s-H-%s"
+
+#. module: mrp_production_estimated_cost
+#: field:mrp.production,active:0
+msgid "Active"
+msgstr "Aktiv"
+
+#. module: mrp_production_estimated_cost
+#: model:ir.model,name:mrp_production_estimated_cost.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Kostenposition"
+
+#. module: mrp_production_estimated_cost
+#: field:wiz.create.virtual.mo,analytic_account_id:0
+msgid "Analytic account"
+msgstr "Kostenstelle"
+
+#. module: mrp_production_estimated_cost
+#: view:wiz.create.virtual.mo:mrp_production_estimated_cost.wiz_create_virtual_mo_view
+msgid "Cancel"
+msgstr "Stornieren"
+
+#. module: mrp_production_estimated_cost
+#: help:mrp.production,product_cost:0
+msgid ""
+"Cost price of the product template used for standard stock valuation in "
+"accounting and used as a base price on purchase orders. Expressed in the "
+"default unit of measure of the product."
+msgstr ""
+
+#. module: mrp_production_estimated_cost
+#: view:mrp.production:mrp_production_estimated_cost.mrp_production_buttons_inh_estimatedcost
+msgid "Costs analysis"
+msgstr "Kostenrechnung"
+
+#. module: mrp_production_estimated_cost
+#: view:mrp.production:mrp_production_estimated_cost.mrp_production_form_view_inh_estimatedcost
+msgid "Create Estimated Costs"
+msgstr "Plankosten anlegen"
+
+#. module: mrp_production_estimated_cost
+#: view:product.product:mrp_production_estimated_cost.product_product_form_view_bom_button_inh_estimatedcost
+#: view:product.template:mrp_production_estimated_cost.product_template_form_view_bom_button_inh_estimatedcost
+msgid "Create Virtual MO"
+msgstr "Virtuellen FA anlegen"
+
+#. module: mrp_production_estimated_cost
+#: model:ir.actions.act_window,name:mrp_production_estimated_cost.act_product_create_virtual_mo
+#: model:ir.actions.act_window,name:mrp_production_estimated_cost.action_run_create_virtual_mo
+#: model:ir.actions.act_window,name:mrp_production_estimated_cost.action_run_template_create_virtual_mo
+#: view:wiz.create.virtual.mo:mrp_production_estimated_cost.wiz_create_virtual_mo_view
+msgid "Create virtual MO"
+msgstr "Virtuellen FA anlegen"
+
+#. module: mrp_production_estimated_cost
+#: field:wiz.create.virtual.mo,create_uid:0
+msgid "Created by"
+msgstr "Angelegt durch"
+
+#. module: mrp_production_estimated_cost
+#: field:wiz.create.virtual.mo,create_date:0
+msgid "Created on"
+msgstr "Angelegt am"
+
+#. module: mrp_production_estimated_cost
+#: field:wiz.create.virtual.mo,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: mrp_production_estimated_cost
+#: view:account.analytic.line:mrp_production_estimated_cost.estimated_cost_list_view
+#: view:account.analytic.line:mrp_production_estimated_cost.view_account_analytic_line_tree_inh_estimatedcost
+msgid "Estim. AVG"
+msgstr "Plan-MW"
+
+#. module: mrp_production_estimated_cost
+#: view:account.analytic.line:mrp_production_estimated_cost.estimated_cost_list_view
+#: view:account.analytic.line:mrp_production_estimated_cost.view_account_analytic_line_tree_inh_estimatedcost
+msgid "Estim. STD"
+msgstr "Plan-STD"
+
+#. module: mrp_production_estimated_cost
+#: field:account.analytic.line,estim_avg_cost:0
+#: field:mrp.production,avg_cost:0
+msgid "Estimated Average Cost"
+msgstr "Geplante durchschn. Kosten"
+
+#. module: mrp_production_estimated_cost
+#: field:mrp.production,unit_avg_cost:0
+msgid "Estimated Average Unit Cost"
+msgstr "Geplante durchschn. Einzelkosten"
+
+#. module: mrp_production_estimated_cost
+#: view:account.analytic.line:mrp_production_estimated_cost.estimated_cost_list_view
+#: field:mrp.production,created_estimated_cost:0
+msgid "Estimated Costs"
+msgstr "Geplante Kosten"
+
+#. module: mrp_production_estimated_cost
+#: field:account.analytic.line,estim_std_cost:0
+#: field:mrp.production,std_cost:0
+msgid "Estimated Standard Cost"
+msgstr "Geplante Standardkosten"
+
+#. module: mrp_production_estimated_cost
+#: field:mrp.production,unit_std_cost:0
+msgid "Estimated Standard Unit Cost"
+msgstr "Geplante Standard-Einzelkosten"
+
+#. module: mrp_production_estimated_cost
+#: model:ir.actions.act_window,name:mrp_production_estimated_cost.action_estimated_costs_per_production
+msgid "Estimated costs from manufacturing order"
+msgstr "Geplante Kosten aus Fertigungsauftrag"
+
+#. module: mrp_production_estimated_cost
+#: view:account.analytic.line:mrp_production_estimated_cost.view_account_analytic_line_form_inh_estimatedcost
+msgid "General Accounting"
+msgstr "Allgemeine Buchhaltung"
+
+#. module: mrp_production_estimated_cost
+#: field:wiz.create.virtual.mo,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: mrp_production_estimated_cost
+#: field:wiz.create.virtual.mo,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: mrp_production_estimated_cost
+#: field:wiz.create.virtual.mo,write_uid:0
+msgid "Last Updated by"
+msgstr "Zuletzt aktualisiert durch"
+
+#. module: mrp_production_estimated_cost
+#: field:wiz.create.virtual.mo,write_date:0
+msgid "Last Updated on"
+msgstr "Zuletzt aktualisiert am"
+
+#. module: mrp_production_estimated_cost
+#: view:mrp.production:mrp_production_estimated_cost.mrp_production_form_view_inh_estimatedcost
+msgid "Load Estimated Cost on Product"
+msgstr "Lade Plan-Produktkosten"
+
+#. module: mrp_production_estimated_cost
+#: field:wiz.create.virtual.mo,load_on_product:0
+msgid "Load cost on product"
+msgstr "Lade Produktkosten"
+
+#. module: mrp_production_estimated_cost
+#: field:product.product,manual_standard_cost:0
+#: field:product.template,manual_standard_cost:0
+msgid "Manual Standard Cost"
+msgstr "Manuelle Standardkosten"
+
+#. module: mrp_production_estimated_cost
+#: model:ir.model,name:mrp_production_estimated_cost.model_mrp_production
+msgid "Manufacturing Order"
+msgstr "Fertigungsauftrag"
+
+#. module: mrp_production_estimated_cost
+#: view:mrp.production:mrp_production_estimated_cost.mrp_production_form_view_inh_estimatedcost
+msgid "Manufacturing costs"
+msgstr "Fertigungskosten"
+
+#. module: mrp_production_estimated_cost
+#: code:addons/mrp_production_estimated_cost/models/mrp_production.py:159
+#, python-format
+msgid "One consume line has no product assigned."
+msgstr "Eine Verbrauchsposition hat kein zugeordnetes Produkt."
+
+#. module: mrp_production_estimated_cost
+#: model:ir.model,name:mrp_production_estimated_cost.model_product_product
+msgid "Product"
+msgstr "Produkt"
+
+#. module: mrp_production_estimated_cost
+#: field:mrp.production,product_cost:0
+msgid "Product Cost"
+msgstr ""
+
+#. module: mrp_production_estimated_cost
+#: field:mrp.production,product_manual_cost:0
+msgid "Product Manual Cost"
+msgstr ""
+
+#. module: mrp_production_estimated_cost
+#: model:ir.model,name:mrp_production_estimated_cost.model_product_template
+msgid "Product Template"
+msgstr "Produktvorlage"
+
+#. module: mrp_production_estimated_cost
+#: model:ir.actions.act_window,name:mrp_production_estimated_cost.action_show_production_anaytic_lines
+msgid "Production Analytic Lines"
+msgstr "Produktkostenpositionen"
+
+#. module: mrp_production_estimated_cost
+#: view:mrp.production:mrp_production_estimated_cost.mrp_production_buttons_inh_estimatedcost
+msgid "Production Costs"
+msgstr "Herstellkosten"
+
+#. module: mrp_production_estimated_cost
+#: view:account.analytic.line:mrp_production_estimated_cost.view_account_analytic_line_form_inh_estimatedcost
+msgid "Production Information"
+msgstr "Fertigungsinformation"
+
+#. module: mrp_production_estimated_cost
+#: field:wiz.create.virtual.mo,date_planned:0
+msgid "Scheduled Date"
+msgstr "Geplantes Datum"
+
+#. module: mrp_production_estimated_cost
+#: code:addons/mrp_production_estimated_cost/models/mrp_production.py:200
+#: code:addons/mrp_production_estimated_cost/models/mrp_production.py:217
+#, python-format
+msgid "There is at least this workcenter without product: %s"
+msgstr "Mindestens dieser Arbeitsplatz ist ohne Produkt: %s"
+
+#. module: mrp_production_estimated_cost
+#: view:mrp.production:mrp_production_estimated_cost.mrp_production_tree_view_inh_estimatedcost
+msgid "Total Estimated Cost"
+msgstr "Gesamte Plankosten"
+
+#. module: mrp_production_estimated_cost
+#: model:ir.actions.act_window,name:mrp_production_estimated_cost.mrp_virtual_production_action
+#: model:ir.ui.menu,name:mrp_production_estimated_cost.menu_mrp_virtual_production_action
+msgid "Virtual Manufacturing Orders to estimate costs"
+msgstr "Virtuelle Fertigungsaufträge zur Kostenplanung"
+
+#. module: mrp_production_estimated_cost
+#: code:addons/mrp_production_estimated_cost/models/mrp_production.py:135
+#, python-format
+msgid "You must define one Analytic Account for this MO: %s"
+msgstr "Sie müssen eine Kostenstelle für diesen FA anlegen: %s"
+
+#. module: mrp_production_estimated_cost
+#: view:wiz.create.virtual.mo:mrp_production_estimated_cost.wiz_create_virtual_mo_view
+msgid "or"
+msgstr "oder"
+
+#. module: mrp_production_estimated_cost
+#: view:mrp.production:mrp_production_estimated_cost.mrp_production_form_view_inh_estimatedcost
+msgid "{'invisible': ['|', ('active','=',False), ('state','!=','draft')]}"
+msgstr ""

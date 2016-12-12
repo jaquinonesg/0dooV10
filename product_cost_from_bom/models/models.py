@@ -14,5 +14,7 @@ class MrpBom(models.Model):
             for line in rec.bom_line_ids:
                 bom_cost += line.product_id.standard_price*line.product_qty
             self.product_tmpl_id.standard_price = bom_cost
-
+        
+        for item in sub_products:
+            print item
         return res

@@ -1,0 +1,57 @@
+<openerp>
+  <data>
+    <record model="ir.ui.view" id="account_report_balance_ib_view">
+      <field name="name">Trial Balance - initial balance</field>
+      <field name="model">account.balance.report</field>
+      <field name="inherit_id" ref="account.account_report_balance_view" />
+      <field name="arch" type="xml">
+        <data>
+          <xpath expr="//field[@name='display_account']" position="after">
+            <field name="initial_balance"/>
+          </xpath>
+        </data>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="account_pdf_reports.action_window">
+      <field name="name">account_pdf_reports window</field>
+      <field name="res_model">account_pdf_reports.account_pdf_reports</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="account_pdf_reports.action_server">
+      <field name="name">account_pdf_reports server</field>
+      <field name="model_id" ref="model_account_pdf_reports_account_pdf_reports"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="account_pdf_reports" id="account_pdf_reports.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="account_pdf_reports.menu_1" parent="account_pdf_reports.menu_root"/>
+    <menuitem name="Menu 2" id="account_pdf_reports.menu_2" parent="account_pdf_reports.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="account_pdf_reports.menu_1_list" parent="account_pdf_reports.menu_1"
+              action="account_pdf_reports.action_window"/>
+    <menuitem name="Server to list" id="account_pdf_reports" parent="account_pdf_reports.menu_2"
+              action="account_pdf_reports.action_server"/>
+    -->
+  </data>
+</openerp>

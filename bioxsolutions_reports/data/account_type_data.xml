@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="True">
+        <record id="account_account_type_consolidate_view" model="account.account.type">
+            <field name="name">Consolidation</field>
+            <field name="type">consolidation</field>
+            <field name="include_initial_balance">False</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,200 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* bioxsolution_account_report_extended
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-30 03:28+0000\n"
+"PO-Revision-Date: 2016-08-30 03:28+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_trialbalance_extended
+msgid ": Trial Balance"
+msgstr ": Balance de pruebas"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_financial
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_trialbalance_extended
+msgid "<strong>Date from :</strong>"
+msgstr "<strong>Desde :</strong>"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_financial
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_trialbalance_extended
+msgid "<strong>Date to :</strong>"
+msgstr "<strong>Hasta :</strong>"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_trialbalance_extended
+msgid "<strong>Display Account:</strong>"
+msgstr "<strong>Mostrar cuentas:</strong>"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_financial
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_trialbalance_extended
+msgid "<strong>Target Moves:</strong>"
+msgstr "<strong>Movimiento objetivo:</strong>"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.model,name:bioxsolution_account_report_extended.model_account_account
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_trialbalance_extended
+msgid "Account"
+msgstr "Cuentas"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.model,name:bioxsolution_account_report_extended.model_account_aged_trial_balance
+msgid "Account Aged Trial balance Report"
+msgstr "Account Aged Trial balance Report"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.model,name:bioxsolution_account_report_extended.model_account_account_type
+msgid "Account Type"
+msgstr "Tipo de cuenta"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.model,name:bioxsolution_account_report_extended.model_accounting_report
+msgid "Accounting Report"
+msgstr "Accounting Report"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_financial
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_trialbalance_extended
+msgid "All Entries"
+msgstr "Todos los movimientos"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_financial
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_trialbalance_extended
+msgid "All Posted Entries"
+msgstr "Todos los movimientos asentados"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_trialbalance_extended
+msgid "All accounts"
+msgstr "Todas las cuentas"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_financial
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_trialbalance_extended
+msgid "Balance"
+msgstr "Saldo"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_trialbalance_extended
+msgid "Code"
+msgstr "Codigo"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_financial
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_trialbalance_extended
+msgid "Credit"
+msgstr "Credito"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_financial
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_trialbalance_extended
+msgid "Debit"
+msgstr "Debito"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.account_aged_balance_extended_view
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.account_report_balance_extended_view
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.account_report_general_ledger_extended_view
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.accounting_report_extended_view
+msgid "EXPORT(XLSX)"
+msgstr "EXPORT(XLSX)"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.model,name:bioxsolution_account_report_extended.model_account_report_general_ledger
+msgid "General Ledger Report"
+msgstr "Libro Mayor"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_financial
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_trialbalance_extended
+msgid "Init Balance"
+msgstr "Saldo inicial"
+
+#. module: bioxsolution_account_report_extended
+#: code:addons/bioxsolution_account_report_extended/models/account_aged_trial_balance_extended.py:84
+#: code:addons/bioxsolution_account_report_extended/models/account_aged_trial_balance_extended.py:88
+#, python-format
+msgid "Init Date:"
+msgstr "Fecha inicial:"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.model,name:bioxsolution_account_report_extended.model_account_move_line
+msgid "Journal Item"
+msgstr "Entradas Asientos"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_financial
+msgid "Name"
+msgstr "Nombre"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_financial
+msgid "Nombre"
+msgstr "Nombre"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.model.fields,field_description:bioxsolution_account_report_extended.field_account_account_parent_id
+msgid "Parent account"
+msgstr "Cuenta padre"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.model,name:bioxsolution_account_report_extended.model_account_balance_report
+msgid "Trial Balance Report"
+msgstr "Balance de pruebas"
+
+#. module: bioxsolution_account_report_extended
+#: model:account.account.type,name:bioxsolution_account_report_extended.account_account_type_view
+msgid "View"
+msgstr "Vista"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_trialbalance_extended
+msgid "With balance not equal to zero"
+msgstr "Con saldo diferente de cero"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.ui.view,arch_db:bioxsolution_account_report_extended.report_trialbalance_extended
+msgid "With movements"
+msgstr "Con movimientos"
+
+#. module: bioxsolution_account_report_extended
+#: code:addons/bioxsolution_account_report_extended/models/account_report_general_ledger_extended.py:25
+#, python-format
+msgid "You must define a Start Date"
+msgstr "Debes definir una fecha inicial"
+
+#. module: bioxsolution_account_report_extended
+#: code:addons/bioxsolution_account_report_extended/models/account_aged_trial_balance_extended.py:40
+#, python-format
+msgid "You must set a period length greater than 0."
+msgstr "Debes indicar un periodo mayor a 0."
+
+#. module: bioxsolution_account_report_extended
+#: code:addons/bioxsolution_account_report_extended/models/account_aged_trial_balance_extended.py:42
+#, python-format
+msgid "You must set a start date."
+msgstr "Debes indicar una fecha inicial."
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.model,name:bioxsolution_account_report_extended.model_report_account_report_financial
+msgid "report.account.report_financial"
+msgstr "report.account.report_financial"
+
+#. module: bioxsolution_account_report_extended
+#: model:ir.model,name:bioxsolution_account_report_extended.model_report_account_report_trialbalance
+msgid "report.account.report_trialbalance"
+msgstr "report.account.report_trialbalance"
+
