@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record model="hr.holidays.status" id="PEMISO_REMUNERADO">
+            <field name="name">Permiso Remunerado</field>
+            <field name="code">PEMISO_REMUNERADO</field>
+            <field name="double_validation">True</field>
+            <field name="limit">True</field>
+            <field name="color_name">red</field>
+        </record>
+        
+        <record model="hr.holidays.status" id="INCAPACIDAD_SALUD">
+            <field name="name">Incapacidad Temporal (SALUD 66.67%)</field>
+            <field name="code">INCAPACIDAD_SALUD</field>
+            <field name="double_validation">True</field>
+            <field name="limit">True</field>
+            <field name="color_name">red</field>
+        </record>
+        
+        <record model="hr.holidays.status" id="INCAPACIDAD_SALUD_180">
+            <field name="name">Incapacidad Temporal > 180 días (SALUD 50%)</field>
+            <field name="code">INCAPACIDAD_SALUD_180</field>
+            <field name="double_validation">True</field>
+            <field name="limit">True</field>
+            <field name="color_name">red</field>
+        </record>
+
+        <record model="hr.holidays.status" id="LICENCIA_MATERNIDAD">
+            <field name="name">Licencia Maternidad (SALUD 100%)</field>
+            <field name="code">LICENCIA_MATERNIDAD</field>
+            <field name="double_validation">True</field>
+            <field name="limit">True</field>
+            <field name="color_name">red</field>
+        </record>
+
+        <record model="hr.holidays.status" id="SUBSIDIO_INCAPACIDAD_SALUD">
+            <field name="name">Subsidio (SALUD primeros 2 Días)</field>
+            <field name="code">SUBSIDIO_INCAPACIDAD_SALUD</field>
+            <field name="double_validation">True</field>
+            <field name="limit">True</field>
+            <field name="color_name">lavender</field>
+        </record>
+
+
+        <!-- Sick leave -->
+        <record model="hr.holidays.status" id="INCAPACIDAD_ARL">
+            <field name="name">Incapacidad Temporal (ARL)</field>
+            <field name="code">INCAPACIDAD_ARL</field>
+            <field name="double_validation">True</field>
+            <field name="limit">True</field>
+            <field name="color_name">red</field>
+        </record>
+
+        <!--Unpaid Leave -->
+        <record model="hr.holidays.status" id="AUSENCIAS">
+            <field name="name">Ausencias</field>
+            <field name="code">AUSENCIAS</field>
+            <field name="double_validation">True</field>
+            <field name="limit">True</field>
+            <field name="color_name">brown</field>
+        </record>
+
+        <!--Unpaid Leave -->
+        <record model="hr.holidays.status" id="VACACIONES">
+            <field name="name">Vacaciones</field>
+            <field name="code">VACACIONES</field>
+            <field name="double_validation">True</field>
+            <field name="limit">True</field>
+            <field name="color_name">brown</field>
+        </record>
+
+    </data>
+</openerp>

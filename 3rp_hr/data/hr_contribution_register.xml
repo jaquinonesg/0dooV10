@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <!-- CONTRIBUCIONES -->
+        
+        <record model='hr.contribution.register.template' id='REGISTER_COMPANIA'>
+                <field name='name'>Compañia</field>
+        </record> 
+
+        <record model='hr.contribution.register.template' id='REGISTER_EMPLEADO'>
+                <field name='name'>Empleado</field>
+        </record> 
+
+        <record model='hr.contribution.register.template' id='REGISTER_EPS'>
+                <field name='name'>EPS</field>
+        </record> 
+        
+        <record model='hr.contribution.register.template' id='REGISTER_ARL'>
+                <field name='name'>ARL</field>
+        </record> 
+
+        <record model='hr.contribution.register.template' id='REGISTER_AFP'>
+                <field name='name'>AFP</field>
+        </record> 
+        
+        <record model='hr.contribution.register.template' id='REGISTER_AFC'>
+                <field name='name'>AFC</field>
+        </record> 
+
+        <record model='hr.contribution.register.template' id='REGISTER_CAJACOMP'>
+                <field name='name'>CAJA_COMPENSACION</field>
+        </record> 
+
+        <record model='hr.contribution.register.template' id='REGISTER_SEGURO'>
+                <field name='name'>SEGURO</field>
+        </record> 
+
+        <record model='hr.contribution.register.template' id='REGISTER_PRESTAMO_INSTITUCIONAL'>
+                <field name='name'>Prestamo Institucional</field>
+        </record> 
+    </data>
+</openerp>

@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_entries_report_manager,account.entries.report,model_account_entries_report,account.group_account_manager,1,1,1,1
+access_account_entries_report_invoice,account.entries.report,model_account_entries_report,account.group_account_invoice,1,0,0,0
+access_account_entries_report_employee,account.entries.report employee,model_account_entries_report,base.group_user,1,0,0,0
+access_analytic_entries_report_manager,analytic.entries.report,model_analytic_entries_report,account.group_account_manager,1,0,0,0
+access_account_treasury_report_manager,account.treasury.report,model_account_treasury_report,account.group_account_manager,1,0,0,0

@@ -1,0 +1,1205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <!--                                                                                                                                    DEVENGADO -->
+        <!-- Salario -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_SALARIO_CONTRATO_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>SALARIO_CONTRATO_ADMIN</field>
+            <field name='name'>Salario en Contrato</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>1</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = contract.wage</field>
+
+            <field name='category_id' ref='CATEGORY_NETO'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+        </record>
+        
+        <record model='hr.salary.rule.template' id='COMERCIAL_SALARIO_BASICO_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>SALARIO_BASICO_ADMIN</field>
+            <field name='name'>Salario Básico</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>20</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.WORK100 and worked_days.WORK100.number_of_days )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = round(( contract.wage / 30 ) * worked_days.WORK100.number_of_days, 0) </field>
+
+            <field name='category_id' ref='CATEGORY_DEV'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+            <field name='account_debit' ref='3rp.ID_C510506'/>
+            <field name='account_credit' ref=''/>
+
+        </record>
+        
+        <!-- Incapacidad Salud -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_SUBSIDIO_INCAPACIDAD_SALUD_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>SUBSIDIO_INCAPACIDAD_SALUD_ADMIN</field>
+            <field name='name'>Subsidio Incapacidad por Salud</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>20</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.SUBSIDIO_INCAPACIDAD_SALUD and worked_days.SUBSIDIO_INCAPACIDAD_SALUD.number_of_days )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = round(( contract.wage / 30 ) * worked_days.SUBSIDIO_INCAPACIDAD_SALUD.number_of_days, 0)</field>
+
+            <field name='category_id' ref='CATEGORY_DEV'/>
+            <field name='register_id' ref='REGISTER_EPS'/>
+
+
+            <field name='account_debit' ref='3rp.ID_C520524'/>
+            <field name='account_credit' ref=''/>
+        </record>        
+
+        <!-- Permiso Remunerado -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_PEMISO_REMUNERADO_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>PEMISO_REMUNERADO_ADMIN</field>
+            <field name='name'>Permiso Remunerado</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>20</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.PEMISO_REMUNERADO and worked_days.PEMISO_REMUNERADO.number_of_days )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = round(( contract.wage / 30 ) * worked_days.PEMISO_REMUNERADO.number_of_days, 0)</field>
+
+            <field name='category_id' ref='CATEGORY_DEV'/>
+            <field name='register_id' ref='REGISTER_ARL'/>
+
+
+            <field name='account_debit' ref='3rp.ID_C237006'/>
+            <field name='account_credit' ref=''/>
+        </record>        
+        
+        <!-- Incapacidad Salud (EPS) -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_INCAPACIDAD_SALUD_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>INCAPACIDAD_SALUD_ADMIN</field>
+            <field name='name'>Incapacidad por Salud</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>25</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.INCAPACIDAD_SALUD and worked_days.INCAPACIDAD_SALUD.number_of_days )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+base = (( contract.wage * 0.6667 ) > payslip.period_id.fiscalyear_id.minimum_wages) and (( contract.wage / 30 ) * 0.6667 ) or ( payslip.period_id.fiscalyear_id.minimum_wages / 30 )
+result = round( base * worked_days.INCAPACIDAD_SALUD.number_of_days, 0 )]]></field>
+
+            <field name='category_id' ref='CATEGORY_DEV'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+            <field name='account_debit' ref='3rp.ID_C237005'/>
+            <field name='account_credit' ref=''/>
+        </record>
+        
+        <!-- Incapacidad Salud más de 180 dias (EPS) -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_INCAPACIDAD_SALUD_180_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>INCAPACIDAD_SALUD_180_ADMIN</field>
+            <field name='name'>Incapacidad por Salud > 180 días</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>25</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.INCAPACIDAD_SALUD_180 and worked_days.INCAPACIDAD_SALUD_180.number_of_days )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+base = (( contract.wage * 0.50 ) > payslip.period_id.fiscalyear_id.minimum_wages) and (( contract.wage / 30 ) * 0.50 ) or ( payslip.period_id.fiscalyear_id.minimum_wages / 30 )
+result = round( base * worked_days.INCAPACIDAD_SALUD_180.number_of_days, 0 )]]></field>
+
+            <field name='category_id' ref='CATEGORY_DEV'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+            <field name='account_debit' ref='3rp.ID_C237005'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <!-- Licencia Maternidad (EPS) -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_LICENCIA_MATERNIDAD_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>LICENCIA_MATERNIDAD_ADMIN</field>
+            <field name='name'>Incapacidad por Salud > 180 días</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>25</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.LICENCIA_MATERNIDAD and worked_days.LICENCIA_MATERNIDAD.number_of_days )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = round(( contract.wage / 30 ) * worked_days.LICENCIA_MATERNIDAD.number_of_days, 0)</field>
+
+            <field name='category_id' ref='CATEGORY_DEV'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+
+            <field name='account_debit' ref='3rp.ID_C237005'/>
+            <field name='account_credit' ref=''/>
+        </record>
+        
+        <!-- Incapacidad ARL -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_INCAPACIDAD_ARL_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>INCAPACIDAD_ARL_ADMIN</field>
+            <field name='name'>Subsidio Incapacidad Profesional</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>25</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.INCAPACIDAD_ARL and worked_days.INCAPACIDAD_ARL.number_of_days )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = round(( contract.wage / 30 ) * worked_days.INCAPACIDAD_ARL.number_of_days, 0)</field>
+
+            <field name='category_id' ref='CATEGORY_DEV'/>
+            <field name='register_id' ref='REGISTER_ARL'/>
+
+
+            <field name='account_debit' ref='3rp.ID_C237006'/>
+            <field name='account_credit' ref=''/>
+        </record>        
+        
+        <!-- Ajuste -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_AJUSTE_SALARIO_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>AJUSTE_SALARIO_ADMIN</field>
+            <field name='name'>Ajuste al Salario</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_AJUSTE_SALARIO_ADMIN.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_AJUSTE_SALARIO_ADMIN.amount</field>
+
+            <field name='category_id' ref='CATEGORY_DEV'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+
+            <field name='account_debit' ref='3rp.ID_C510506'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_AJUSTE_SALARIO_INPUT_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+            <field name='name'>Ajuste al Salario (PESOS)</field>
+            <field name='code'>INPUT_AJUSTE_SALARIO_ADMIN</field>
+            <field name='input_id' ref='COMERCIAL_AJUSTE_SALARIO_ADMIN'/>
+        </record>        
+
+        <!-- Comisiones -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_COMISIONES_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>COMISIONES_ADMIN</field>
+            <field name='name'>Comisiones</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>15</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_COMISIONES_ADMIN.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_COMISIONES_ADMIN.amount</field>
+
+            <field name='category_id' ref='CATEGORY_DEV'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+
+            <field name='account_debit' ref='3rp.ID_C510518'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_COMISIONES_INPUT_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+            <field name='name'>Comisiones (PESOS)</field>
+            <field name='code'>INPUT_COMISIONES_ADMIN</field>
+            <field name='input_id' ref='COMERCIAL_COMISIONES_ADMIN'/>
+        </record>
+
+        <!-- Bonificaciones -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_BONIFICACION_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>BONIFICACION_ADMIN</field>
+            <field name='name'>Bonificaciones (SALARIO)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>15</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_BONIFICACION_ADMIN.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_BONIFICACION_ADMIN.amount</field>
+
+            <field name='category_id' ref='CATEGORY_DEV'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+            <field name='account_debit' ref='3rp.ID_C510548'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_BONIFICACION_INPUT_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+            <field name='name'>Bonificacion (PESOS)</field>
+            <field name='code'>INPUT_BONIFICACION_ADMIN</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_BONIFICACION_ADMIN'/>
+        </record>
+
+        <!-- Horas Extras -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_HORAS_EXTRA_DIURNAS_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>HORAS_EXTRA_DIURNAS_ADMIN</field>
+            <field name='name'>Horas Extra Diurnas (PESO)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_HORAS_EXTRA_DIURNAS_ADMIN.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = round(inputs.INPUT_HORAS_EXTRA_DIURNAS_ADMIN.amount * ( contract.wage / 240 ) * 1.25, 0) </field>
+
+            <field name='category_id' ref='CATEGORY_DEV'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+
+            <field name='account_debit' ref='3rp.ID_C510515'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_HORAS_EXTRA_DIURNAS_INPUT_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+            <field name='name'>Horas Extra Diurnas (06:00am a 10:00pm)</field>
+            <field name='code'>INPUT_HORAS_EXTRA_DIURNAS_ADMIN</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_HORAS_EXTRA_DIURNAS_ADMIN'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_HORAS_EXTRA_NOCTURNAS_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>HORAS_EXTRA_NOCTURNAS_ADMIN</field>
+            <field name='name'>Horas Extra Nocturnas (PESO)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_HORAS_EXTRA_NOCTURNAS_ADMIN.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = round(inputs.INPUT_HORAS_EXTRA_NOCTURNAS_ADMIN.amount * ( contract.wage / 240 ) * 1.75, 0)</field>
+
+            <field name='category_id' ref='CATEGORY_DEV'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+            <field name='account_debit' ref='3rp.ID_C510515'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_HORAS_EXTRA_NOCTURNAS_INPUT_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+            <field name='name'>Horas Extra Nocturnas (10:00pm a 06:00am)</field>
+            <field name='code'>INPUT_HORAS_EXTRA_NOCTURNAS_ADMIN</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_HORAS_EXTRA_NOCTURNAS_ADMIN'/>
+        </record>        
+        
+        <!-- Viaticos -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_VIATICOS_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>VIATICOS_ADMIN</field>
+            <field name='name'>Viaticos (PESO)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_VIATICOS_ADMIN.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_VIATICOS_ADMIN.amount</field>
+
+            <field name='category_id' ref='CATEGORY_DEV'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+            <field name='account_debit' ref='3rp.ID_C261030'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_VIATICOS_INPUT_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+            <field name='name'>Viaticos (PESOS)</field>
+            <field name='code'>INPUT_VIATICOS_ADMIN</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_VIATICOS_ADMIN'/>
+        </record>
+
+        <!-- Vacaciones Disfrutadas -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_VACACIONES_DEVENGADAS_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>VACACIONES_DEVENGADAS_ADMIN</field>
+            <field name='name'>Vacaciones Devengadas (PESO)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>15</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool(inputs.INPUT_VACACIONES_DEVENGADAS_ADMIN.amount) or bool(worked_days.VACACIONES and worked_days.VACACIONES.number_of_days)</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = round(inputs.INPUT_VACACIONES_DEVENGADAS_ADMIN.amount or ( (contract.wage / 2 ) / 15 ) * worked_days.VACACIONES.number_of_days, 0)</field>
+
+            <field name='category_id' ref='CATEGORY_DEVAPORTES'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+
+            <field name='account_debit' ref='3rp.ID_C261015'/>
+            <field name='account_credit' ref='3rp.ID_C252501'/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_VACACIONES_DEVENGADAS_INPUT_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+            <field name='name'>Vacaciones Devengadas (PESOS)</field>
+            <field name='code'>INPUT_VACACIONES_DEVENGADAS_ADMIN</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_VACACIONES_DEVENGADAS_ADMIN'/>
+        </record>
+        
+
+        <!-- Primas Devengadas -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_PRIMA_DEVENGADAS_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>PRIMA_DEVENGADAS_ADMIN</field>
+            <field name='name'>Primas Devengadas (PESO)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>15</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_PRIMA_DEVENGADAS_ADMIN.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_PRIMA_DEVENGADAS_ADMIN.amount</field>
+
+            <field name='category_id' ref='CATEGORY_DEVAPORTES'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+
+            <field name='account_debit' ref='3rp.ID_C261020'/>
+            <field name='account_credit' ref='3rp.ID_C252001'/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_PRIMA_DEVENGADAS_INPUT_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+            <field name='name'>Primas Devengadas (PESO)</field>
+            <field name='code'>INPUT_PRIMA_DEVENGADAS_ADMIN</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_PRIMA_DEVENGADAS_ADMIN'/>
+        </record>        
+
+        <!-- Interes sobre Cesantias -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_INTERES_CESANTIAS_DEVENGADAS_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>INTERES_CESANTIAS_DEVENGADAS_ADMIN</field>
+            <field name='name'>Intereses Cesantias Devengadas (PESO)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>15</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_INTERES_CESANTIAS_DEVENGADAS_ADMIN.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_INTERES_CESANTIAS_DEVENGADAS_ADMIN.amount</field>
+
+            <field name='category_id' ref='CATEGORY_DEVAPORTES'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+            <field name='account_debit' ref='3rp.ID_C261010'/>
+            <field name='account_credit' ref='3rp.ID_C251501'/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_INTERES_CESANTIAS_DEVENGADAS_INPUT_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+            <field name='name'>Intereses Cesantias Devengadas (PESO)</field>
+            <field name='code'>INPUT_INTERES_CESANTIAS_DEVENGADAS_ADMIN</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_INTERES_CESANTIAS_DEVENGADAS_ADMIN'/>
+        </record>       
+        
+        <!-- Subsidios Salario -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_AUXILIOS_SALARIO_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>AUXILIOS_SALARIO_ADMIN</field>
+            <field name='name'>Auxilios / Subsidios</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>                               <!-- Secuencias luego de APORTES y DEDUCCIONES -->
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_AUXILIOS_SALARIO_ADMIN.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_AUXILIOS_SALARIO_ADMIN.amount</field>
+
+            <field name='category_id' ref='CATEGORY_DEV'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+            <field name='account_debit' ref='3rp.ID_C510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_AUXILIOS_SALARIO_INPUT_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+            <field name='name'>Auxilios / Subsidios (PESOS)</field>
+            <field name='code'>INPUT_AUXILIOS_SALARIO_ADMIN</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_AUXILIOS_SALARIO_ADMIN'/>
+        </record>        
+        
+        <!-- Subsidios No Salario -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_SUBSIDIOS_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>SUBSIDIOS_ADMIN</field>
+            <field name='name'>Auxilios / Subsidios (NO SALARIO)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>80</field>                               <!-- Secuencias luego de APORTES y DEDUCCIONES -->
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_SUBSIDIOS_ADMIN.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_SUBSIDIOS_ADMIN.amount</field>
+
+            <field name='category_id' ref='CATEGORY_DEV'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+            <field name='account_debit' ref='3rp.ID_C510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_SUBSIDIOS_INPUT_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+            <field name='name'>Auxilios / Subsidios NO SALARIO (PESOS)</field>
+            <field name='code'>INPUT_SUBSIDIOS_ADMIN</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_SUBSIDIOS_ADMIN'/>
+        </record>
+
+        <!-- Auxilio -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_AUXILIO_TRANSPORTE_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>AUXILIO_TRANSPORTE_ADMIN</field>
+            <field name='name'>Auxilio al Transporte</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>60</field>                               <!-- Secuencias luego de APORTES y DEDUCCIONES -->
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = (contract.employee_id.vehicle_distance &gt; 1) and (( categories.DEV / payslip.period_id.fiscalyear_id.minimum_wages ) &lt;= 2.0)</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = ( payslip.period_id.fiscalyear_id.transport_assistance / 30 ) * worked_days.WORK100.number_of_days </field>
+
+
+            <field name='category_id' ref='CATEGORY_DEV'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+
+            <field name='account_debit' ref='3rp.ID_C510527'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <!--                                                                                                                                    DEDUCCIONES -->
+        <!-- Anticipo -->
+        
+        <!-- Prestamos Laboral -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_PRESTAMO_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>PRESTAMO_ADMIN</field>
+            <field name='name'>Prestamo Laboral </field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>60</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_PRESTAMO_ADMIN.amount )</field>
+            
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_PRESTAMO_ADMIN.amount</field>
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref='3rp.ID_C136595'/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_PRESTAMO_INPUT_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+            <field name='name'>Prestamos Laboral(PESOS)</field>
+            <field name='code'>INPUT_PRESTAMO_ADMIN</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_PRESTAMO_ADMIN'/>
+        </record>
+        
+        <!-- Prestamos Intitucional -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_PRESTAMO_INSTITUCIONAL_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>PRESTAMO_INSTITUCIONAL_ADMIN</field>
+            <field name='name'>Prestamo Institucional</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>60</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_PRESTAMO_INSTITUCIONAL_ADMIN.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_PRESTAMO_INSTITUCIONAL_ADMIN.amount</field>
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_PRESTAMO_INSTITUCIONAL'/>
+
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref='3rp.ID_C237095'/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_PRESTAMO_INSTITUCIONAL_INPUT_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+            <field name='name'>Prestamo Institucional (PESOS)</field>
+            <field name='code'>INPUT_PRESTAMO_INSTITUCIONAL_ADMIN</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_PRESTAMO_INSTITUCIONAL_ADMIN'/>
+        </record>        
+
+        <!-- Seguro -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_SEGURO_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>SEGURO_ADMIN</field>
+            <field name='name'>Seguro</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>60</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_SEGURO_ADMIN.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_SEGURO_ADMIN.amount</field>
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_SEGURO'/>
+
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref='3rp.ID_C237095'/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_SEGURO_INPUT_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+            <field name='name'>Seguro (PESOS)</field>
+            <field name='code'>INPUT_SEGURO_ADMIN</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_SEGURO_ADMIN'/>
+        </record>
+
+        <!-- SALUD -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_IBC_SALUD_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>IBC_SALUD_ADMIN</field>
+            <field name='name'>IBC Salud</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>22</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+total_days = worked_days.INCAPACIDAD_SALUD and worked_days.INCAPACIDAD_SALUD.number_of_days or 0.0
+total_days += worked_days.INCAPACIDAD_SALUD_180 and worked_days.INCAPACIDAD_SALUD_180.number_of_days or 0.0
+total_days += worked_days.LICENCIA_MATERNIDAD and worked_days.LICENCIA_MATERNIDAD.number_of_days or 0.0
+result = ((contract.wage / 30) * total_days) + categories.DEV]]></field> 
+            <field name='category_id' ref='CATEGORY_DIAS'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+            
+        </record>        
+     
+        <record model='hr.salary.rule.template' id='COMERCIAL_SALUD_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>SALUD_ADMIN</field>
+            <field name='name'>Salud</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>23</field>
+
+            <field name='condition_select'>none</field>
+            
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>4.0</field>
+            <field name='amount_percentage_base'>IBC_SALUD_ADMIN</field>
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_EPS'/>
+
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref='3rp.ID_C237005'/>            <!-- Solo lleva CREDITO -->
+        </record>
+        
+        <record model='hr.salary.rule.template' id='COMERCIAL_SALUD_EMPLEADOR_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>SALUD_EMPLEADOR_ADMIN</field>
+            <field name='name'>Salud Empleador</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>23</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = not contract.employee_id.company_id.cree_liable</field>
+
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>8.5</field>
+            <field name='amount_percentage_base'>IBC_SALUD_ADMIN</field>
+
+            <field name='category_id' ref='CATEGORY_APORTES'/>
+            <field name='register_id' ref='REGISTER_EPS'/>
+
+            <field name='account_debit' ref='3rp.ID_C510569'/>
+            <field name='account_credit' ref='3rp.ID_C237005'/>
+        </record>
+        <!-- Pension -->
+
+        <!-- SALUD -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_IBC_PENSION_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>IBC_PENSION_ADMIN</field>
+            <field name='name'>IBC Pension</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>22</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+total_days = worked_days.INCAPACIDAD_SALUD and worked_days.INCAPACIDAD_SALUD.number_of_days or 0.0
+total_days += worked_days.INCAPACIDAD_SALUD_180 and worked_days.INCAPACIDAD_SALUD_180.number_of_days or 0.0
+total_days += worked_days.LICENCIA_MATERNIDAD and worked_days.LICENCIA_MATERNIDAD.number_of_days or 0.0
+result = ((contract.wage / 30) * total_days) + categories.DEV]]></field> 
+            <field name='category_id' ref='CATEGORY_DIAS'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+            
+        </record>        
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_PENSION_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>PENSION_ADMIN</field>
+            <field name='name'>Pension</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>23</field>
+            
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>4.0</field>
+            <field name='amount_percentage_base'>IBC_PENSION_ADMIN</field>
+            
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_AFP'/>
+
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref='3rp.ID_C238030'/>            <!-- Solo lleva CREDITO -->
+        </record>        
+        
+        <!-- Pension -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_PENSION_EMPLEADOR_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>PENSION_EMPLEADOR_ADMIN</field>
+            <field name='name'>Pensión Empleador</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>23</field>
+
+            <field name='amount_select'>code</field>
+ 
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>12.0</field>
+            <field name='amount_percentage_base'>IBC_PENSION_ADMIN</field>
+            
+            <field name='category_id' ref='CATEGORY_APORTES'/>
+            <field name='register_id' ref='REGISTER_AFP'/>
+
+            <field name='account_debit' ref='3rp.ID_C510570'/>
+            <field name='account_credit' ref='3rp.ID_C238030'/>
+         </record>        
+
+         <!-- Pension Voluntaria -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_PENSION_VOLUNTARIA_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>PENSION_VOLUNTARIA_ADMIN</field>
+            <field name='name'>Pension Voluntaria</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_PENSION_VOLUNTARIA_ADMIN.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_PENSION_VOLUNTARIA_ADMIN.amount</field>
+
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_AFP'/>
+
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref='3rp.ID_C238030'/>            <!-- Solo lleva CREDITO -->
+        </record>
+        
+        <record model='hr.rule.input.template' id='COMERCIAL_PENSION_VOLUNTARIA_INPUT_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+            <field name='name'>Pension Voluntaria (PESOS)</field>
+            <field name='code'>INPUT_PENSION_VOLUNTARIA_ADMIN</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_PENSION_VOLUNTARIA_ADMIN'/>
+        </record>           
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_FONDO_SOLIDARIDAD_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>FONDO_SOLIDARIDAD_ADMIN</field>
+            <field name='name'>Fondo Solidaridad</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>21</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = (categories.DEV + categories.DEVAPORTES) &gt;= (4 * payslip.period_id.fiscalyear_id.minimum_wages)</field>
+            
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+if (categories.DEV + categories.DEVAPORTES) < (16 * payslip.period_id.fiscalyear_id.minimum_wages):
+    result = round((categories.DEV + categories.DEVAPORTES) * 0.01, 0)
+elif (categories.DEV + categories.DEVAPORTES) < (17 * payslip.period_id.fiscalyear_id.minimum_wages):
+    result = round((categories.DEV + categories.DEVAPORTES) * 0.012, 0)
+elif (categories.DEV + categories.DEVAPORTES) < (18 * payslip.period_id.fiscalyear_id.minimum_wages):
+    result = round((categories.DEV + categories.DEVAPORTES) * 0.014, 0)
+elif (categories.DEV + categories.DEVAPORTES) < (19 * payslip.period_id.fiscalyear_id.minimum_wages):
+    result = round((categories.DEV + categories.DEVAPORTES) * 0.016, 0)
+elif (categories.DEV + categories.DEVAPORTES) < (20 * payslip.period_id.fiscalyear_id.minimum_wages):
+    result = round((categories.DEV + categories.DEVAPORTES) * 0.018, 0)
+elif (categories.DEV + categories.DEVAPORTES) > (20 * payslip.period_id.fiscalyear_id.minimum_wages):
+    result = round((categories.DEV + categories.DEVAPORTES) * 0.02, 0) ]]></field>
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref='3rp.ID_C237045'/>
+
+        </record>
+
+        <!--                                                                                                RETENCION EN LA FUENTE -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_RETENCION_FUENTE_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>RETENCION_FUENTE_ADMIN</field>
+            <field name='name'>Retencion en la Fuente</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>20</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_RETENCION_FUENTE_ADMIN.amount )</field>
+            
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_RETENCION_FUENTE_ADMIN.amount</field>
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref='3rp.ID_C236505'/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_RETENCION_FUENTE_INPUT_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+            <field name='name'>Retención en la Fuente (PESOS)</field>
+            <field name='code'>INPUT_RETENCION_FUENTE_ADMIN</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_RETENCION_FUENTE_ADMIN'/>
+        </record>
+
+        <!-- Cesantias -->
+
+        
+        <record model='hr.salary.rule.template' id='COMERCIAL_CESANTIAS_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>CESANTIAS_ADMIN</field>
+            <field name='name'>Cesantias</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>27</field>
+
+
+            <field name='amount_select'>code</field>
+ 
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>8.33</field>
+            <field name='amount_percentage_base'>categories.DEV</field>
+
+            <field name='category_id' ref='CATEGORY_APORTES'/>
+            <field name='register_id' ref='REGISTER_AFC'/>
+
+
+            <field name='account_debit' ref='3rp.ID_C510530'/>
+            <field name='account_credit' ref='3rp.ID_C238030'/>
+        </record>
+
+        <!-- Cesantias Intereses -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_INTERES_CESANTIAS_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>INTERES_CESANTIAS_ADMIN</field>
+            <field name='name'>Interes sobre la Cesantias</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>28</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>12.0</field>
+            <field name='amount_percentage_base'>CESANTIAS_ADMIN</field>
+
+            <field name='category_id' ref='CATEGORY_APORTES'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+
+            <field name='account_debit' ref='3rp.ID_C510533'/>
+            <field name='account_credit' ref='3rp.ID_C261010'/> 
+        </record>
+        
+        <record model='hr.salary.rule.template' id='COMERCIAL_PRIMA_SERVICIO_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>PRIMA_SERVICIO_ADMIN</field>
+            <field name='name'>Prima de Servicios</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>28</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>8.33</field>
+            <field name='amount_percentage_base'>categories.DEV</field>
+
+            <field name='category_id' ref='CATEGORY_APORTES'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+
+            <field name='account_debit' ref='3rp.ID_C510536'/>
+            <field name='account_credit' ref='3rp.ID_C261020'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_VACACIONES_PESO_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>VACACIONES_PESO_ADMIN</field>
+            <field name='name'>Vacaciones</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>28</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>4.17</field>
+            <field name='amount_percentage_base'>categories.DEV</field>
+
+            <field name='category_id' ref='CATEGORY_APORTES'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+
+            <field name='account_debit' ref='3rp.ID_C510539'/>
+            <field name='account_credit' ref='3rp.ID_C261015'/>
+        </record>
+
+        <!--                                                                                                                                    DEDUCCIONES -->
+        <!-- APORTES PARAFISCALES -->
+
+        
+        <!-- SENA
+        
+        <record model='hr.salary.rule.template' id='COMERCIAL_SENA_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>SENA_ADMIN</field>
+            <field name='name'>SENA</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = not contract.employee_id.company_id.cree_liable</field>
+
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>2.00</field>
+            <field name='amount_percentage_base'>categories.DEV + categories.DEVAPORTES</field>
+
+            <field name='category_id' ref='CATEGORY_APORTES'/>
+            <field name='register_id' ref='REGISTER_CAJACOMP'/>
+
+
+            <field name='account_debit' ref='3rp.ID_C510578'/>
+            <field name='account_credit' ref='3rp.ID_C237010'/>
+        </record> -->
+
+        <!-- ICBF
+        
+        <record model='hr.salary.rule.template' id='COMERCIAL_ICBF_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>ICBF_ADMIN</field>
+            <field name='name'>ICBF</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = not contract.employee_id.company_id.cree_liable</field>
+
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>3.00</field>
+            <field name='amount_percentage_base'>categories.DEV + categories.DEVAPORTES</field>
+
+            <field name='category_id' ref='CATEGORY_APORTES'/>
+            <field name='register_id' ref='REGISTER_CAJACOMP'/>
+
+
+            <field name='account_debit' ref='3rp.ID_C510575'/>
+            <field name='account_credit' ref='3rp.ID_C237010'/>
+        </record> -->
+        
+        <record model='hr.salary.rule.template' id='COMERCIAL_IBC_CAJA_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>IBC_CAJA_ADMIN</field>
+            <field name='name'>IBC Caja</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>21</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+total_days =  worked_days.WORK100.number_of_days
+total_days += worked_days.PEMISO_REMUNERADO and worked_days.PEMISO_REMUNERADO.number_of_days or 0.0
+total_days += worked_days.SUBSIDIO_INCAPACIDAD_SALUD and worked_days.SUBSIDIO_INCAPACIDAD_SALUD.number_of_days or 0.0
+total_days += worked_days.INCAPACIDAD_ARL and worked_days.INCAPACIDAD_ARL.number_of_days or 0.0
+#result = (contract.wage / 30) * total_days
+result = categories.DEV]]></field> 
+            <field name='category_id' ref='CATEGORY_DIAS'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+            
+        </record>     
+        
+        <record model='hr.salary.rule.template' id='COMERCIAL_CCF_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>CCF_ADMIN</field>
+            <field name='name'>Cajas de Compenzación Familiar</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>22</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>4.00</field>
+            <field name='amount_percentage_base'>IBC_CAJA_ADMIN</field>
+
+            <field name='category_id' ref='CATEGORY_APORTES'/>
+            <field name='register_id' ref='REGISTER_CAJACOMP'/>
+
+            <field name='account_debit' ref='3rp.ID_C510572'/>
+            <field name='account_credit' ref='3rp.ID_C237010'/>
+        </record>
+
+
+        <!-- SEGURIDAD SOCIAL -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_IBC_RIESGOS_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>IBC_RIESGOS_ADMIN</field>
+            <field name='name'>IBC Riesgos</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>21</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+total_days =  worked_days.WORK100.number_of_days
+total_days += worked_days.PEMISO_REMUNERADO and worked_days.PEMISO_REMUNERADO.number_of_days or 0.0
+total_days += worked_days.SUBSIDIO_INCAPACIDAD_SALUD and worked_days.SUBSIDIO_INCAPACIDAD_SALUD.number_of_days or 0.0
+total_days += worked_days.INCAPACIDAD_ARL and worked_days.INCAPACIDAD_ARL.number_of_days or 0.0
+#result = (contract.wage / 30) * total_days
+result = categories.DEV]]></field> 
+            <field name='category_id' ref='CATEGORY_DIAS'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+            
+        </record>     
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_ARL_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>ARL_ADMIN</field>
+            <field name='name'>A.R.L.</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>22</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+categoria = {2.0:1.044, 3.0:2.436, 4.0:4.350, 5.0: 6.960}            
+try:
+    result = (IBC_RIESGOS_ADMIN * categria[inputs.INPUT_ARL_ADMIN.admin]) / 100
+except:
+    result = (IBC_RIESGOS_ADMIN * 0.522) / 100.00]]></field>
+            
+            <field name='category_id' ref='CATEGORY_APORTES'/>
+            <field name='register_id' ref='REGISTER_ARL'/>
+
+            <field name='account_debit' ref='3rp.ID_C510568'/>
+            <field name='account_credit' ref='3rp.ID_C237006'/>
+         </record>
+
+
+        <record model='hr.rule.input.template' id='COMERCIAL_ARL_INPUT_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+            <field name='name'>ARL Categoria (defecto=1,2,3,4,5)</field>
+            <field name='code'>INPUT_ARL_ADMIN</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_ARL_ADMIN'/>
+        </record>         
+         
+        <!--                                                                                                    NETO DEVENGADO PARA CALCULO DE SEGURIDAD SOCIAL -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_NETO_PAGAR_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>NETO_PAGAR_ADMIN</field>
+            <field name='name'>Neto a PAGAR</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>100</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result =  - categories.DED + categories.DEV</field>
+
+            <field name='category_id' ref='CATEGORY_NETO'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref='3rp.ID_C250505'/>
+        </record>
+        
+        <record model='hr.salary.rule.template' id='COMERCIAL_PORCIENTO_DESCUENTOS_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>PORCIENTO_DESCUENTOS_ADMIN</field>
+            <field name='name'>Porciento Descuentos</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>998</field>
+
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = (categories.DED * 100) / (categories.DEVAPORTES + categories.DEV)</field>
+
+            <field name='category_id' ref='CATEGORY_NETO'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+            <field name='account_debit'></field>
+            <field name='account_credit'></field>
+        </record>        
+        
+        <!--                                                                                                    TOTAL DEVENGADO PARA CALCULO DE SEGURIDAD SOCIAL -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_TOTAL_PAGAR_ADMIN'>
+            <field name='chart_template_id' ref='3rp.l10n_co_comercial'/>
+
+            <field name='code'>TOTAL_PAGAR_ADMIN</field>
+            <field name='name'>Total a PAGAR</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>999</field>
+
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( categories.DEVAPORTES > 0.0 )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = categories.DEVAPORTES + categories.DEV - categories.DED</field>
+
+            <field name='category_id' ref='CATEGORY_NETO'/>
+            <field name='register_id' ref='REGISTER_EMPLEADO'/>
+
+            <field name='account_debit'></field>
+            <field name='account_credit'></field>
+        </record>
+        
+
+    </data>
+</openerp>

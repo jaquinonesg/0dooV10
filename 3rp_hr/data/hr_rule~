@@ -1,0 +1,4 @@
+ #!/bin/bash
+ 
+sed -e "/template/ s/'>/_PRODUCCION'>/g" \\
+    -e "/input_id/ s/'>/_PRODUCCION'>/g" -e 's/C51/C72/g' -e 's/ADMIN/PRODUCCION/g' hr_salary_rule_comercial_template.xml > hr_salary_rule_comercial_produccion_template.xml

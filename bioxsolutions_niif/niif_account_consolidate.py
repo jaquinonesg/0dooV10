@@ -23,6 +23,7 @@ class niif_account_consolidate(models.Model):
 
     child_consol_ids = fields.Many2many('account.account', 'account_account_consol_rel', 'child_id', 'parent_id', 'Consolidated Children',invisible=True)
     chart_account = fields.Many2one('account.account',string='Chart of Accounts', compute='_get_puc', store=True)
+    parent_id = fields.Many2one('account.account',string='Parent')
 
 class AccountAccountTypeExtended(models.Model):
     _inherit = "account.account.type"

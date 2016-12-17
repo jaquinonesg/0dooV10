@@ -1,0 +1,9 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_hr_attendance_user","resource.calendar.attendance","resource.model_resource_calendar_attendance","base.group_hr_manager",1,1,1,1
+access_hr_payroll_structure_template,access_hr_payroll_structure_template,model_hr_payroll_structure_template,,0,0,0,0
+access_hr_contribution_register_template,access_hr_contribution_register_template,model_hr_contribution_register_template,,0,0,0,0
+access_hr_salary_rule_category_template,access_hr_salary_rule_category_template,model_hr_salary_rule_category_template,,0,0,0,0
+access_hr_rule_input_template,access_hr_rule_input_template,model_hr_rule_input_template,,0,0,0,0
+access_hr_salary_rule_template,access_hr_salary_rule_template,model_hr_salary_rule_template,,0,0,0,0
+access_resource_calendar_template,access_resource_calendar_template,model_resource_calendar_template,,0,0,0,0
+access_resource_calendar_attendance_template,access_resource_calendar_attendance_template,model_resource_calendar_attendance_template,,0,0,0,0

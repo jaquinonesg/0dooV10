@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+         <!-- ESTRUCTURA SALARIAL CON TODOS LOS REQUISITOS -->
+
+                                                                                    
+        <record model='hr.payroll.structure.template' id='COMERCIAL_NOMINA_LEY_INTEGRAL'>
+            <field name='chart_template_id' ref='l10n_co_pucs.l10n_co_chart_template_comercial'/> 
+            <field name='code'>NOMINA_LEY_INTEGRAL</field>
+            <field name='name'>Nomina Integral</field>
+            <field name='parent_id' ref=''/>
+            <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [  
+                                                                                ref('COMERCIAL_IBC_SALUD_INTEGRAL'),
+                                                                                ref('COMERCIAL_IBC_PENSION_INTEGRAL'),
+                                                                                ref('COMERCIAL_IBC_CAJA_INTEGRAL'),
+                                                                                ref('COMERCIAL_IBC_RIESGOS_INTEGRAL'),
+                                                                                ref('COMERCIAL_SALARIO_CONTRATO_INTEGRAL'),
+                                                                                ref('COMERCIAL_SALARIO_BASICO_INTEGRAL'),
+                                                                                ref('COMERCIAL_SUBSIDIO_INCAPACIDAD_SALUD_INTEGRAL'),
+                                                                                ref('COMERCIAL_PEMISO_REMUNERADO_INTEGRAL'),
+                                                                                ref('COMERCIAL_INCAPACIDAD_SALUD_INTEGRAL'),
+                                                                                ref('COMERCIAL_INCAPACIDAD_SALUD_180_INTEGRAL'),
+                                                                                ref('COMERCIAL_LICENCIA_MATERNIDAD_INTEGRAL'),
+                                                                                ref('COMERCIAL_INCAPACIDAD_ARL_INTEGRAL'),
+                                                                                ref('COMERCIAL_AJUSTE_SALARIO_INTEGRAL'),
+                                                                                ref('COMERCIAL_COMISIONES_INTEGRAL'),
+                                                                                ref('COMERCIAL_VIATICOS_INTEGRAL'),
+                                                                                ref('COMERCIAL_VACACIONES_DEVENGADAS_INTEGRAL'),
+                                                                                ref('COMERCIAL_AUXILIOS_SALARIO_INTEGRAL'),
+                                                                                ref('COMERCIAL_SUBSIDIOS_INTEGRAL'),
+                                                                                ref('COMERCIAL_PRESTAMO_INTEGRAL'),
+                                                                                ref('COMERCIAL_SALUD_INTEGRAL'),
+                                                                                ref('COMERCIAL_PENSION_INTEGRAL'),
+                                                                                ref('COMERCIAL_PENSION_VOLUNTARIA_INTEGRAL'),
+                                                                                ref('COMERCIAL_FONDO_SOLIDARIDAD_INTEGRAL'),
+                                                                                ref('COMERCIAL_RETENCION_FUENTE_INTEGRAL'),
+                                                                                ref('COMERCIAL_SALUD_EMPLEADOR_INTEGRAL'),
+                                                                                ref('COMERCIAL_PENSION_EMPLEADOR_INTEGRAL'),
+                                                                                ref('COMERCIAL_VACACIONES_PESO_INTEGRAL'),
+                                                                                ref('COMERCIAL_CCF_INTEGRAL'),
+                                                                                ref('COMERCIAL_ARL_INTEGRAL'),
+                                                                                ref('COMERCIAL_IBC_SENA_ICBF_INTEGRAL'),
+                                                                                ref('COMERCIAL_SENA_INTEGRAL'),
+                                                                                ref('COMERCIAL_ICBF_INTEGRAL'),
+                                                                                ref('COMERCIAL_NETO_PAGAR_INTEGRAL'),
+                                                                                ref('COMERCIAL_PORCIENTO_DESCUENTOS_INTEGRAL'),
+                                                                                ref('COMERCIAL_TOTAL_PAGAR_INTEGRAL'),
+                                                                                ])]" />
+        </record>         
+        
+        <record model='hr.payroll.structure.template' id='COMERCIAL_NOMINA_SENA_LECTIVA'>
+            <field name='chart_template_id' ref='l10n_co_pucs.l10n_co_chart_template_comercial'/> 
+            <field name='code'>NOMINA_SENA_LECTIVA</field>
+            <field name='name'>Aprendiz SENA Etapa Lectiva</field>
+            <field name='parent_id' ref=''/>
+            <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [  
+                                                                                ref('COMERCIAL_SALARIO_CONTRATO_ADMIN'),
+                                                                                ref('COMERCIAL_SALARIO_BASICO_ADMIN'),
+                                                                                ref('COMERCIAL_SALUD_EMPLEADOR_ADMIN'),
+                                                                                ref('COMERCIAL_SUBSIDIO_INCAPACIDAD_SALUD_ADMIN'),
+                                                                                ref('COMERCIAL_PEMISO_REMUNERADO_ADMIN'),
+                                                                                ref('COMERCIAL_INCAPACIDAD_SALUD_ADMIN'),
+                                                                                ref('COMERCIAL_INCAPACIDAD_SALUD_180_ADMIN'),
+                                                                                ref('COMERCIAL_LICENCIA_MATERNIDAD_ADMIN'),
+                                                                                ref('COMERCIAL_NETO_PAGAR_ADMIN'),
+                                                                                ref('COMERCIAL_TOTAL_PAGAR_ADMIN'),
+                                                                                ])]" />
+        </record> 
+        
+        <record model='hr.payroll.structure.template' id='COMERCIAL_NOMINA_SENA_PRODUCTIVA'>
+            <field name='chart_template_id' ref='l10n_co_pucs.l10n_co_chart_template_comercial'/> 
+            <field name='code'>NOMINA_SENA_PRODUCTIVA</field>
+            <field name='name'>Aprendiz SENA Etapa Productiva</field>
+            <field name='parent_id' ref=''/>
+            <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [  
+                                                                                ref('COMERCIAL_IBC_RIESGOS_ADMIN'),
+                                                                                ref('COMERCIAL_SALARIO_CONTRATO_ADMIN'),
+                                                                                ref('COMERCIAL_SALARIO_BASICO_ADMIN'),
+                                                                                ref('COMERCIAL_SALUD_EMPLEADOR_ADMIN'),
+                                                                                ref('COMERCIAL_SUBSIDIO_INCAPACIDAD_SALUD_ADMIN'),
+                                                                                ref('COMERCIAL_PEMISO_REMUNERADO_ADMIN'),
+                                                                                ref('COMERCIAL_INCAPACIDAD_SALUD_ADMIN'),
+                                                                                ref('COMERCIAL_INCAPACIDAD_SALUD_180_ADMIN'),
+                                                                                ref('COMERCIAL_LICENCIA_MATERNIDAD_ADMIN'),
+                                                                                ref('COMERCIAL_INCAPACIDAD_ARL_ADMIN'),
+                                                                                ref('COMERCIAL_ARL_ADMIN'),
+                                                                                ref('COMERCIAL_NETO_PAGAR_ADMIN'),
+                                                                                ref('COMERCIAL_TOTAL_PAGAR_ADMIN'),
+                                                                                ])]" />
+        </record> 
+
+        <record model='hr.payroll.structure.template' id='COMERCIAL_NOMINA_LEY_PENSIONADO'>
+            <field name='chart_template_id' ref='l10n_co_pucs.l10n_co_chart_template_comercial'/> 
+            <field name='code'>NOMINA_LEY_PENSIONADO</field>
+            <field name='name'>Nomina Pensionados</field>
+            <field name='parent_id' ref=''/>
+            <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [  
+                                                                                ref('COMERCIAL_IBC_SALUD_ADMIN'),
+                                                                                ref('COMERCIAL_IBC_PENSION_ADMIN'),
+                                                                                ref('COMERCIAL_IBC_CAJA_ADMIN'),
+                                                                                ref('COMERCIAL_IBC_RIESGOS_ADMIN'),
+                                                                                ref('COMERCIAL_SALARIO_CONTRATO_ADMIN'),
+                                                                                ref('COMERCIAL_SALARIO_BASICO_ADMIN'),
+                                                                                ref('COMERCIAL_SUBSIDIO_INCAPACIDAD_SALUD_ADMIN'),
+                                                                                ref('COMERCIAL_PEMISO_REMUNERADO_ADMIN'),
+                                                                                ref('COMERCIAL_INCAPACIDAD_SALUD_ADMIN'),
+                                                                                ref('COMERCIAL_INCAPACIDAD_SALUD_180_ADMIN'),
+                                                                                ref('COMERCIAL_LICENCIA_MATERNIDAD_ADMIN'),
+                                                                                ref('COMERCIAL_INCAPACIDAD_ARL_ADMIN'),
+                                                                                ref('COMERCIAL_COMISIONES_ADMIN'),
+                                                                                ref('COMERCIAL_BONIFICACION_ADMIN'),
+                                                                                ref('COMERCIAL_HORAS_EXTRA_ADMIN'),
+                                                                                ref('COMERCIAL_VIATICOS_ADMIN'),
+                                                                                ref('COMERCIAL_VACACIONES_DEVENGADAS_ADMIN'),
+                                                                                ref('COMERCIAL_PRIMA_DEVENGADAS_ADMIN'),
+                                                                                ref('COMERCIAL_AUXILIOS_SALARIO_ADMIN'),
+                                                                                ref('COMERCIAL_SUBSIDIOS_ADMIN'),
+                                                                                ref('COMERCIAL_AUXILIO_TRANSPORTE_ADMIN'),
+                                                                                ref('COMERCIAL_PRESTAMO_ADMIN'),
+                                                                                ref('COMERCIAL_SALUD_ADMIN'),
+                                                                                ref('COMERCIAL_RETENCION_FUENTE_ADMIN'),
+                                                                                ref('COMERCIAL_SALUD_EMPLEADOR_ADMIN'),
+                                                                                ref('COMERCIAL_CESANTIAS_ADMIN'),
+                                                                                ref('COMERCIAL_INTERES_CESANTIAS_DEVENGADAS_ADMIN'),
+                                                                                ref('COMERCIAL_INTERES_CESANTIAS_ADMIN'),
+                                                                                ref('COMERCIAL_PRIMA_SERVICIO_ADMIN'),
+                                                                                ref('COMERCIAL_VACACIONES_PESO_ADMIN'),
+                                                                                ref('COMERCIAL_CCF_ADMIN'),
+                                                                                ref('COMERCIAL_ARL_ADMIN'),
+                                                                                ref('COMERCIAL_IBC_SENA_ICBF_ADMIN'),
+                                                                                ref('COMERCIAL_SENA_ADMIN'),
+                                                                                ref('COMERCIAL_ICBF_ADMIN'),
+                                                                                ref('COMERCIAL_NETO_PAGAR_ADMIN'),
+                                                                                ref('COMERCIAL_PORCIENTO_DESCUENTOS_ADMIN'),
+                                                                                ref('COMERCIAL_TOTAL_PAGAR_ADMIN'),
+                                                                                ])]" />
+        </record> 
+                                                                                    
+        <record model='hr.payroll.structure.template' id='COMERCIAL_NOMINA_LEY_ADMIN'>
+            <field name='chart_template_id' ref='l10n_co_pucs.l10n_co_chart_template_comercial'/> 
+            <field name='code'>NOMINA_LEY</field>
+            <field name='name'>Nomina Administrativa</field>
+            <field name='parent_id' ref=''/>
+            <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [  
+                                                                                ref('COMERCIAL_IBC_SALUD_ADMIN'),
+                                                                                ref('COMERCIAL_IBC_PENSION_ADMIN'),
+                                                                                ref('COMERCIAL_IBC_CAJA_ADMIN'),
+                                                                                ref('COMERCIAL_IBC_RIESGOS_ADMIN'),
+                                                                                ref('COMERCIAL_SALARIO_CONTRATO_ADMIN'),
+                                                                                ref('COMERCIAL_SALARIO_BASICO_ADMIN'),
+                                                                                ref('COMERCIAL_SUBSIDIO_INCAPACIDAD_SALUD_ADMIN'),
+                                                                                ref('COMERCIAL_PEMISO_REMUNERADO_ADMIN'),
+                                                                                ref('COMERCIAL_INCAPACIDAD_SALUD_ADMIN'),
+                                                                                ref('COMERCIAL_INCAPACIDAD_SALUD_180_ADMIN'),
+                                                                                ref('COMERCIAL_LICENCIA_MATERNIDAD_ADMIN'),
+                                                                                ref('COMERCIAL_INCAPACIDAD_ARL_ADMIN'),
+                                                                                ref('COMERCIAL_AJUSTE_SALARIO_ADMIN'),
+                                                                                ref('COMERCIAL_COMISIONES_ADMIN'),
+                                                                                ref('COMERCIAL_BONIFICACION_ADMIN'),
+                                                                                ref('COMERCIAL_HORAS_EXTRA_ADMIN'),
+                                                                                ref('COMERCIAL_VIATICOS_ADMIN'),
+                                                                                ref('COMERCIAL_VACACIONES_DEVENGADAS_ADMIN'),
+                                                                                ref('COMERCIAL_PRIMA_DEVENGADAS_ADMIN'),
+                                                                                ref('COMERCIAL_AUXILIOS_SALARIO_ADMIN'),
+                                                                                ref('COMERCIAL_SUBSIDIOS_ADMIN'),
+                                                                                ref('COMERCIAL_AUXILIO_TRANSPORTE_ADMIN'),
+                                                                                ref('COMERCIAL_PRESTAMO_ADMIN'),
+                                                                                ref('COMERCIAL_SALUD_ADMIN'),
+                                                                                ref('COMERCIAL_PENSION_ADMIN'),
+                                                                                ref('COMERCIAL_PENSION_VOLUNTARIA_ADMIN'),
+                                                                                ref('COMERCIAL_FONDO_SOLIDARIDAD_ADMIN'),
+                                                                                ref('COMERCIAL_RETENCION_FUENTE_ADMIN'),
+                                                                                ref('COMERCIAL_SALUD_EMPLEADOR_ADMIN'),
+                                                                                ref('COMERCIAL_PENSION_EMPLEADOR_ADMIN'),
+                                                                                ref('COMERCIAL_CESANTIAS_ADMIN'),
+                                                                                ref('COMERCIAL_INTERES_CESANTIAS_DEVENGADAS_ADMIN'),
+                                                                                ref('COMERCIAL_INTERES_CESANTIAS_ADMIN'),
+                                                                                ref('COMERCIAL_PRIMA_SERVICIO_ADMIN'),
+                                                                                ref('COMERCIAL_VACACIONES_PESO_ADMIN'),
+                                                                                ref('COMERCIAL_CCF_ADMIN'),
+                                                                                ref('COMERCIAL_ARL_ADMIN'),
+                                                                                ref('COMERCIAL_IBC_SENA_ICBF_ADMIN'),
+                                                                                ref('COMERCIAL_SENA_ADMIN'),
+                                                                                ref('COMERCIAL_ICBF_ADMIN'),
+                                                                                ref('COMERCIAL_NETO_PAGAR_ADMIN'),
+                                                                                ref('COMERCIAL_PORCIENTO_DESCUENTOS_ADMIN'),
+                                                                                ref('COMERCIAL_TOTAL_PAGAR_ADMIN'),
+                                                                                ])]" />
+        </record> 
+                
+        <record model='hr.payroll.structure.template' id='COMERCIAL_NOMINA_LEY_VENTAS'>
+            <field name='chart_template_id' ref='l10n_co_pucs.l10n_co_chart_template_comercial'/> 
+            <field name='code'>NOMINA_LEY_VENTAS</field>
+            <field name='name'>Nomina Venta</field>
+            <field name='parent_id' ref=''/>
+            <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [  
+                                                                                ref('COMERCIAL_IBC_SALUD_VENTAS'),
+                                                                                ref('COMERCIAL_IBC_PENSION_VENTAS'),
+                                                                                ref('COMERCIAL_IBC_CAJA_VENTAS'),
+                                                                                ref('COMERCIAL_IBC_RIESGOS_VENTAS'),
+                                                                                ref('COMERCIAL_SALARIO_CONTRATO_VENTAS'),
+                                                                                ref('COMERCIAL_SALARIO_BASICO_VENTAS'),
+                                                                                ref('COMERCIAL_SUBSIDIO_INCAPACIDAD_SALUD_VENTAS'),
+                                                                                ref('COMERCIAL_PEMISO_REMUNERADO_VENTAS'),
+                                                                                ref('COMERCIAL_INCAPACIDAD_SALUD_VENTAS'),
+                                                                                ref('COMERCIAL_INCAPACIDAD_SALUD_180_VENTAS'),
+                                                                                ref('COMERCIAL_LICENCIA_MATERNIDAD_VENTAS'),
+                                                                                ref('COMERCIAL_INCAPACIDAD_ARL_VENTAS'),
+                                                                                ref('COMERCIAL_AJUSTE_SALARIO_VENTAS'),
+                                                                                ref('COMERCIAL_COMISIONES_VENTAS'),
+                                                                                ref('COMERCIAL_BONIFICACION_VENTAS'),
+                                                                                ref('COMERCIAL_HORAS_EXTRA_VENTAS'),
+                                                                                ref('COMERCIAL_VIATICOS_VENTAS'),
+                                                                                ref('COMERCIAL_VACACIONES_DEVENGADAS_VENTAS'),
+                                                                                ref('COMERCIAL_PRIMA_DEVENGADAS_VENTAS'),
+                                                                                ref('COMERCIAL_AUXILIOS_SALARIO_VENTAS'),
+                                                                                ref('COMERCIAL_SUBSIDIOS_VENTAS'),
+                                                                                ref('COMERCIAL_AUXILIO_TRANSPORTE_VENTAS'),
+                                                                                ref('COMERCIAL_PRESTAMO_VENTAS'),
+                                                                                ref('COMERCIAL_SALUD_VENTAS'),
+                                                                                ref('COMERCIAL_PENSION_VENTAS'),
+                                                                                ref('COMERCIAL_PENSION_VOLUNTARIA_VENTAS'),
+                                                                                ref('COMERCIAL_FONDO_SOLIDARIDAD_VENTAS'),
+                                                                                ref('COMERCIAL_RETENCION_FUENTE_VENTAS'),
+                                                                                ref('COMERCIAL_SALUD_EMPLEADOR_VENTAS'),
+                                                                                ref('COMERCIAL_PENSION_EMPLEADOR_VENTAS'),
+                                                                                ref('COMERCIAL_CESANTIAS_VENTAS'),
+                                                                                ref('COMERCIAL_INTERES_CESANTIAS_DEVENGADAS_VENTAS'),
+                                                                                ref('COMERCIAL_INTERES_CESANTIAS_VENTAS'),
+                                                                                ref('COMERCIAL_PRIMA_SERVICIO_VENTAS'),
+                                                                                ref('COMERCIAL_VACACIONES_PESO_VENTAS'),
+                                                                                ref('COMERCIAL_CCF_VENTAS'),
+                                                                                ref('COMERCIAL_ARL_VENTAS'),
+                                                                                ref('COMERCIAL_IBC_SENA_ICBF_VENTAS'),
+                                                                                ref('COMERCIAL_SENA_VENTAS'),
+                                                                                ref('COMERCIAL_ICBF_VENTAS'),
+                                                                                ref('COMERCIAL_NETO_PAGAR_VENTAS'),
+                                                                                ref('COMERCIAL_PORCIENTO_DESCUENTOS_VENTAS'),
+                                                                                ref('COMERCIAL_TOTAL_PAGAR_VENTAS'),
+                                                                                ])]" />
+        </record> 
+                
+        <record model='hr.payroll.structure.template' id='COMERCIAL_NOMINA_LEY_PRODUCCION'>
+            <field name='chart_template_id' ref='l10n_co_pucs.l10n_co_chart_template_comercial'/> 
+            <field name='code'>NOMINA_LEY_PRODUCCION</field>
+            <field name='name'>Nomina Produccion</field>
+            <field name='parent_id' ref=''/>
+            <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [  
+                                                                                ref('COMERCIAL_IBC_SALUD_PRODUCCION'),
+                                                                                ref('COMERCIAL_IBC_PENSION_PRODUCCION'),
+                                                                                ref('COMERCIAL_IBC_CAJA_PRODUCCION'),
+                                                                                ref('COMERCIAL_IBC_RIESGOS_PRODUCCION'),
+                                                                                ref('COMERCIAL_SALARIO_CONTRATO_PRODUCCION'),
+                                                                                ref('COMERCIAL_SALARIO_BASICO_PRODUCCION'),
+                                                                                ref('COMERCIAL_SUBSIDIO_INCAPACIDAD_SALUD_PRODUCCION'),
+                                                                                ref('COMERCIAL_PEMISO_REMUNERADO_PRODUCCION'),
+                                                                                ref('COMERCIAL_INCAPACIDAD_SALUD_PRODUCCION'),
+                                                                                ref('COMERCIAL_INCAPACIDAD_SALUD_180_PRODUCCION'),
+                                                                                ref('COMERCIAL_LICENCIA_MATERNIDAD_PRODUCCION'),
+                                                                                ref('COMERCIAL_INCAPACIDAD_ARL_PRODUCCION'),
+                                                                                ref('COMERCIAL_AJUSTE_SALARIO_PRODUCCION'),
+                                                                                ref('COMERCIAL_COMISIONES_PRODUCCION'),
+                                                                                ref('COMERCIAL_BONIFICACION_PRODUCCION'),
+                                                                                ref('COMERCIAL_HORAS_EXTRA_PRODUCCION'),
+                                                                                ref('COMERCIAL_VIATICOS_PRODUCCION'),
+                                                                                ref('COMERCIAL_VACACIONES_DEVENGADAS_PRODUCCION'),
+                                                                                ref('COMERCIAL_PRIMA_DEVENGADAS_PRODUCCION'),
+                                                                                ref('COMERCIAL_AUXILIOS_SALARIO_PRODUCCION'),
+                                                                                ref('COMERCIAL_SUBSIDIOS_PRODUCCION'),
+                                                                                ref('COMERCIAL_AUXILIO_TRANSPORTE_PRODUCCION'),
+                                                                                ref('COMERCIAL_PRESTAMO_PRODUCCION'),
+                                                                                ref('COMERCIAL_SALUD_PRODUCCION'),
+                                                                                ref('COMERCIAL_PENSION_PRODUCCION'),
+                                                                                ref('COMERCIAL_PENSION_VOLUNTARIA_PRODUCCION'),
+                                                                                ref('COMERCIAL_FONDO_SOLIDARIDAD_PRODUCCION'),
+                                                                                ref('COMERCIAL_RETENCION_FUENTE_PRODUCCION'),
+                                                                                ref('COMERCIAL_SALUD_EMPLEADOR_PRODUCCION'),
+                                                                                ref('COMERCIAL_PENSION_EMPLEADOR_PRODUCCION'),
+                                                                                ref('COMERCIAL_CESANTIAS_PRODUCCION'),
+                                                                                ref('COMERCIAL_INTERES_CESANTIAS_DEVENGADAS_PRODUCCION'),
+                                                                                ref('COMERCIAL_INTERES_CESANTIAS_PRODUCCION'),
+                                                                                ref('COMERCIAL_PRIMA_SERVICIO_PRODUCCION'),
+                                                                                ref('COMERCIAL_VACACIONES_PESO_PRODUCCION'),
+                                                                                ref('COMERCIAL_CCF_PRODUCCION'),
+                                                                                ref('COMERCIAL_ARL_PRODUCCION'),
+                                                                                ref('COMERCIAL_IBC_SENA_ICBF_PRODUCCION'),
+                                                                                ref('COMERCIAL_SENA_PRODUCCION'),
+                                                                                ref('COMERCIAL_ICBF_PRODUCCION'),
+                                                                                ref('COMERCIAL_NETO_PAGAR_PRODUCCION'),
+                                                                                ref('COMERCIAL_PORCIENTO_DESCUENTOS_PRODUCCION'),
+                                                                                ref('COMERCIAL_TOTAL_PAGAR_PRODUCCION'),
+                                                                                ])]" />
+        </record> 
+        
+    </data>
+</openerp>

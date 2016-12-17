@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+ 
+        <!-- CATEGORIAS -->
+
+        <record model='hr.salary.rule.category.template' id='CATEGORY_DED'>
+                <field name='code'>DED</field>
+                <field name='name'>Deducciones</field>
+        </record> 
+
+        <record model='hr.salary.rule.category.template' id='CATEGORY_NETO'>
+                <field name='code'>NETO</field>
+                <field name='name'>Neto</field>
+        </record> 
+
+        <record model='hr.salary.rule.category.template' id='CATEGORY_APORTES'>
+                <field name='code'>APORTES</field>
+                <field name='name'>Aportes Parafiscales</field>
+        </record> 
+
+        <record model='hr.salary.rule.category.template' id='CATEGORY_DEVAPORTES'>
+                <field name='code'>DEVAPORTES</field>
+                <field name='name'>Devengados por Aportes</field>
+        </record> 
+
+        <record model='hr.salary.rule.category.template' id='CATEGORY_DEV'>
+                <field name='code'>DEV</field>
+                <field name='name'>Devengado</field>
+        </record> 
+       
+        <record model='hr.salary.rule.category.template' id='CATEGORY_DIAS'>
+                <field name='code'>DIAS</field>
+                <field name='name'>Dias cotización Salud/Pension</field>
+        </record> 
+        
+    </data>
+</openerp>

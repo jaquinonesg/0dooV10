@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+         <!-- ESTRUCTURA SALARIAL CON TODOS LOS REQUISITOS -->
+
+        <record model='hr.payroll.structure.template' id='COMERCIAL_CONFIGURACION'>
+                <field name='chart_template_id' ref='3rp.l10n_co_comercial'/> 
+                <field name='code'>CONFIGURACION</field>
+                <field name='name'>Configuracion</field>
+                <field name='parent_id'></field>
+                <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [ref('COMERCIAL_DIAS_TRABAJADOS'), 
+                                                                            ref('COMERCIAL_SODEXO_DATA'),
+                                                                            ref('COMERCIAL_ANTICIPO_DATA'),
+                                                                            ref('COMERCIAL_COMISIONES_DATA'),
+                                                                            ref('COMERCIAL_VIATICOS_DATA'),
+                                                                            ref('COMERCIAL_HORAS_EXTRAS_NOCTURNAS_DATA'),
+                                                                            ref('COMERCIAL_HORAS_EXTRAS_DIURNAS_DATA'),
+                                                                            ref('COMERCIAL_HORAS_NOCTURNAS_DATA'),
+                                                                             ])]" />
+        </record> 
+
+        <record model='hr.payroll.structure.template' id='COMERCIAL_NOMINA_LEY'>
+                <field name='chart_template_id' ref='3rp.l10n_co_comercial'/> 
+                <field name='code'>NOMINA_LEY</field>
+                <field name='name'>Nomina Administrativa</field>
+                <field name='parent_id' ref='COMERCIAL_CONFIGURACION'/>
+                <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [
+                                                                            ref('COMERCIAL_SODEXO'), 
+                                                                            ref('COMERCIAL_ANTICIPO'), 
+                                                                            ref('COMERCIAL_SALARIO_PAGAR'), 
+                                                                            ref('COMERCIAL_COMISIONES'), 
+                                                                            ref('COMERCIAL_VIATICOS'), 
+                                                                            ref('COMERCIAL_AUXILIO_TRANSPORTE'), 
+                                                                            ref('COMERCIAL_HORAS_EXTRAS_NOCTURNAS'), 
+                                                                            ref('COMERCIAL_HORAS_EXTRAS_DIURNAS'), 
+                                                                            ref('COMERCIAL_HORAS_NOCTURNAS'), 
+                                                                            ref('COMERCIAL_SALUD'), 
+                                                                            ref('COMERCIAL_PENSION'), 
+                                                                            ref('COMERCIAL_CESANTIAS'), 
+                                                                            ref('COMERCIAL_INTERES_CESANTIAS'), 
+                                                                            ref('COMERCIAL_PRIMA_SERVICIO'), 
+                                                                            ref('COMERCIAL_VACACIONES_PESO'), 
+                                                                            ref('COMERCIAL_SENA'), 
+                                                                            ref('COMERCIAL_ICBF'), 
+                                                                            ref('COMERCIAL_CCF'), 
+                                                                            ref('COMERCIAL_ARL'), 
+                                                                            ref('COMERCIAL_SALUD_EMPLEADOR'), 
+                                                                            ref('COMERCIAL_PENSION_EMPLEADOR'), 
+                                                                            ref('COMERCIAL_FONDO_SOLIDARIDAD'), 
+                                                                            ref('COMERCIAL_RETENCION_FUENTE'),
+                                                                            ref('COMERCIAL_PRESTAMO'),
+                                                                            ref('COMERCIAL_SUBSIDIOS'),
+                                                                            ref('COMERCIAL_NETO_PAGAR'), 
+                                                                             ])]" />
+        </record> 
+
+        <record model='hr.payroll.structure.template' id='COMERCIAL_NOMINA_LEY_PENSIONADO'>
+                <field name='chart_template_id' ref='3rp.l10n_co_comercial'/> 
+                <field name='code'>NOMINA_LEY_PENSIONADO</field>
+                <field name='name'>Nomina Pensionado</field>
+                <field name='parent_id' ref='COMERCIAL_CONFIGURACION'/>
+                <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [ref('COMERCIAL_SODEXO'), 
+                                                                            ref('COMERCIAL_ANTICIPO'), 
+                                                                            ref('COMERCIAL_SALARIO_PAGAR'), 
+                                                                            ref('COMERCIAL_COMISIONES'), 
+                                                                            ref('COMERCIAL_VIATICOS'), 
+                                                                            ref('COMERCIAL_AUXILIO_TRANSPORTE'), 
+                                                                            ref('COMERCIAL_HORAS_EXTRAS_NOCTURNAS'), 
+                                                                            ref('COMERCIAL_HORAS_EXTRAS_DIURNAS'), 
+                                                                            ref('COMERCIAL_HORAS_NOCTURNAS'), 
+                                                                            ref('COMERCIAL_SALUD'), 
+                                                                            ref('COMERCIAL_CESANTIAS'), 
+                                                                            ref('COMERCIAL_INTERES_CESANTIAS'), 
+                                                                            ref('COMERCIAL_PRIMA_SERVICIO'), 
+                                                                            ref('COMERCIAL_VACACIONES_PESO'), 
+                                                                            ref('COMERCIAL_SENA'), 
+                                                                            ref('COMERCIAL_ICBF'), 
+                                                                            ref('COMERCIAL_CCF'), 
+                                                                            ref('COMERCIAL_ARL'), 
+                                                                            ref('COMERCIAL_SALUD_EMPLEADOR'), 
+                                                                            ref('COMERCIAL_FONDO_SOLIDARIDAD'), 
+                                                                            ref('COMERCIAL_RETENCION_FUENTE'),
+                                                                            ref('COMERCIAL_PRESTAMO'),
+                                                                            ref('COMERCIAL_SUBSIDIOS'),
+                                                                            ref('COMERCIAL_NETO_PAGAR'), 
+                                                                             ])]" />
+        </record> 
+
+        <record model='hr.payroll.structure.template' id='COMERCIAL_NOMINA_LEY_VENTAS'>
+                <field name='chart_template_id' ref='3rp.l10n_co_comercial'/> 
+                <field name='code'>NOMINA_LEY_VENTAS</field>
+                <field name='name'>Nomina Ventas</field>
+                <field name='parent_id' ref='COMERCIAL_CONFIGURACION'/>
+                <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [ref('COMERCIAL_SODEXO_VENTAS'), 
+                                                                            ref('COMERCIAL_ANTICIPO'), 
+                                                                            ref('COMERCIAL_SALARIO_PAGAR_VENTAS'), 
+                                                                            ref('COMERCIAL_COMISIONES_VENTAS'), 
+                                                                            ref('COMERCIAL_VIATICOS_VENTAS'), 
+                                                                            ref('COMERCIAL_AUXILIO_TRANSPORTE_VENTAS'), 
+                                                                            ref('COMERCIAL_HORAS_EXTRAS_NOCTURNAS_VENTAS'), 
+                                                                            ref('COMERCIAL_HORAS_EXTRAS_DIURNAS_VENTAS'), 
+                                                                            ref('COMERCIAL_HORAS_NOCTURNAS_VENTAS'), 
+                                                                            ref('COMERCIAL_SALUD_VENTAS'), 
+                                                                            ref('COMERCIAL_PENSION_VENTAS'), 
+                                                                            ref('COMERCIAL_CESANTIAS_VENTAS'), 
+                                                                            ref('COMERCIAL_INTERES_CESANTIAS_VENTAS'), 
+                                                                            ref('COMERCIAL_PRIMA_SERVICIO_VENTAS'), 
+                                                                            ref('COMERCIAL_VACACIONES_PESO_VENTAS'), 
+                                                                            ref('COMERCIAL_SENA_VENTAS'), 
+                                                                            ref('COMERCIAL_ICBF_VENTAS'),
+                                                                            ref('COMERCIAL_CCF_VENTAS'), 
+                                                                            ref('COMERCIAL_ARL_VENTAS'), 
+                                                                            ref('COMERCIAL_SALUD_EMPLEADOR_VENTAS'), 
+                                                                            ref('COMERCIAL_PENSION_EMPLEADOR_VENTAS'), 
+                                                                            ref('COMERCIAL_FONDO_SOLIDARIDAD'), 
+                                                                            ref('COMERCIAL_RETENCION_FUENTE'),
+                                                                            ref('COMERCIAL_PRESTAMO'),
+                                                                            ref('COMERCIAL_SUBSIDIOS_VENTAS'),
+                                                                            ref('COMERCIAL_NETO_PAGAR'), 
+                                                                             ])]" />
+        </record> 
+        
+        
+        <record model='hr.payroll.structure.template' id='COMERCIAL_NOMINA_LEY_PRODUCCION'>
+                <field name='chart_template_id' ref='3rp.l10n_co_comercial'/> 
+                <field name='code'>NOMINA_LEY_PRODUCCION</field>
+                <field name='name'>Nomina Producción</field>
+                <field name='parent_id' ref='COMERCIAL_CONFIGURACION'/>
+                <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [ref('COMERCIAL_SODEXO_PRODUCCION'), 
+                                                                            ref('COMERCIAL_ANTICIPO'), 
+                                                                            ref('COMERCIAL_SALARIO_PAGAR_PRODUCCION'), 
+                                                                            ref('COMERCIAL_COMISIONES_PRODUCCION'), 
+                                                                            ref('COMERCIAL_VIATICOS_PRODUCCION'), 
+                                                                            ref('COMERCIAL_AUXILIO_TRANSPORTE_PRODUCCION'), 
+                                                                            ref('COMERCIAL_HORAS_EXTRAS_NOCTURNAS_PRODUCCION'), 
+                                                                            ref('COMERCIAL_HORAS_EXTRAS_DIURNAS_PRODUCCION'), 
+                                                                            ref('COMERCIAL_HORAS_NOCTURNAS_PRODUCCION'), 
+                                                                            ref('COMERCIAL_SALUD_PRODUCCION'), 
+                                                                            ref('COMERCIAL_PENSION_PRODUCCION'), 
+                                                                            ref('COMERCIAL_CESANTIAS_PRODUCCION'), 
+                                                                            ref('COMERCIAL_INTERES_CESANTIAS_PRODUCCION'), 
+                                                                            ref('COMERCIAL_PRIMA_SERVICIO_PRODUCCION'), 
+                                                                            ref('COMERCIAL_VACACIONES_PESO_PRODUCCION'), 
+                                                                            ref('COMERCIAL_SENA_PRODUCCION'), 
+                                                                            ref('COMERCIAL_ICBF_PRODUCCION'), 
+                                                                            ref('COMERCIAL_CCF_PRODUCCION'), 
+                                                                            ref('COMERCIAL_ARL_PRODUCCION'), 
+                                                                            ref('COMERCIAL_SALUD_EMPLEADOR_PRODUCCION'), 
+                                                                            ref('COMERCIAL_PENSION_EMPLEADOR_PRODUCCION'), 
+                                                                            ref('COMERCIAL_FONDO_SOLIDARIDAD'), 
+                                                                            ref('COMERCIAL_RETENCION_FUENTE'),
+                                                                            ref('COMERCIAL_PRESTAMO'),
+                                                                            ref('COMERCIAL_SUBSIDIOS'),
+                                                                            ref('COMERCIAL_NETO_PAGAR'), 
+                                                                             ])]" />
+        </record> 
+ 
+        <record model='hr.payroll.structure.template' id='COMERCIAL_NOMINA_LEY_INTEGRAL'>
+                <field name='chart_template_id' ref='3rp.l10n_co_comercial'/> 
+                <field name='code'>NOMINA_LEY_INTEGRAL</field>
+                <field name='name'>Nomina Integral</field>
+                <field name='parent_id' ref='COMERCIAL_CONFIGURACION'/>
+                <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [
+                                                                            ref('COMERCIAL_ANTICIPO'), 
+                                                                            ref('COMERCIAL_SALARIO_PAGAR_INTEGRAL'), 
+                                                                            ref('COMERCIAL_COMISIONES_INTEGRAL'), 
+                                                                            ref('COMERCIAL_VIATICOS_INTEGRAL'), 
+                                                                            ref('COMERCIAL_SALUD_INTEGRAL'), 
+                                                                            ref('COMERCIAL_SALUD_EMPLEADOR_INTEGRAL'), 
+                                                                            ref('COMERCIAL_PENSION_INTEGRAL'), 
+                                                                            ref('COMERCIAL_PENSION_EMPLEADOR_INTEGRAL'), 
+                                                                            ref('COMERCIAL_VACACIONES_PESO_INTEGRAL'), 
+                                                                            ref('COMERCIAL_CCF_INTEGRAL'), 
+                                                                            ref('COMERCIAL_ARL_INTEGRAL'), 
+                                                                            ref('COMERCIAL_FONDO_SOLIDARIDAD'),
+                                                                            ref('COMERCIAL_RETENCION_FUENTE'),
+                                                                            ref('COMERCIAL_NETO_PAGAR'), 
+                                                                             ])]" />
+        </record> 
+       
+    </data>
+</openerp>
