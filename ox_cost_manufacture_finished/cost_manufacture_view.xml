@@ -28,6 +28,7 @@
                         <tree editable="bottom" delete="0" default_order="is_done desc,sequence" decoration-muted="is_done" decoration-warning="quantity_done&gt;product_uom_qty" decoration-success="quantity_done==product_uom_qty" decoration-danger="quantity_available &lt; product_uom_qty" create="0">
                             <field name="product_id" required="1"/>
                             <field name="product_uom" groups="product.group_uom"/>
+                            <field name="inspection_id"/>
                             <field name="has_tracking" invisible="1"/>
                             <field name="is_done" invisible="1"/>
                             <field name="sequence" invisible="1"/>
@@ -65,6 +66,20 @@
             </field>
         </record>
 
+        <record model="ir.ui.view" id="qc_test_question_extended">
+            <field name="name">qc.test.question.extended.form</field>
+            <field name="model">qc.test.question</field>
+            <field name="inherit_id" ref="quality_control.qc_test_question_form_view"></field>
+            <field name="arch" type="xml">
+                <group name="qualitative" position="before">
+                    <group name="cost_manufacture">
+                        <field name="fat"/>
+                        <field name="density"/>
+                        <field name="sng"/>
+                    </group>
+                </group>
+            </field>
+        </record>       
         <record model="ir.ui.view" id="product_attribute_cost">
             <field name="name">product.attribute.cost</field>
             <field name="model">product.attribute</field>
@@ -77,7 +92,7 @@
                 </field>
             </field>
         </record>        
-        <record model="ir.ui.view" id="product_product_base_cost">
+      <!--  <record model="ir.ui.view" id="product_product_base_cost">
             <field name="name">product.product.base.cost</field>
             <field name="model">product.product</field>
             <field name="inherit_id" ref="product.product_normal_form_view"></field>
@@ -86,6 +101,6 @@
                     <field name="base"/>
                 </field>
             </field>
-        </record> 
+        </record> -->
     </data>
 </openerp>

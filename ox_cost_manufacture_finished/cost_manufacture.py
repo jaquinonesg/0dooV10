@@ -5,17 +5,24 @@ import logging
 
 _logger = logging.getLogger(__name__)
 
-class ProductProductBaseCost(models.Model):
-    _inherit = 'product.product'
-
-    base = fields.Boolean(string='Base cost', default=False)
-
 class ProductAttributeExtended(models.Model):
     _inherit = 'product.attribute'
 
     density = fields.Boolean(string='Density', default=False)
     fat = fields.Boolean(string='Fat', default=False)
     sng = fields.Boolean(string='S.N.G (%)', default=False)
+    
+class QCTestQuestionExtended(models.Model):
+    _inherit = 'qc.test.question'
+
+    density = fields.Boolean(string='Density', default=False)
+    fat = fields.Boolean(string='Fat', default=False)
+    sng = fields.Boolean(string='S.N.G (%)', default=False)
+
+class StockMoveQualityControl(models.Model):
+    _inherit = 'stock.move'
+
+    inspection_id = fields.Many2one('qc.inspection',string='QC Inspection')
 
 class CostManufacture(models.Model):
     _inherit = 'mrp.production'
@@ -32,22 +39,23 @@ class CostManufacture(models.Model):
     standard_price = fields.Float(string='Cost', default=0.0)
 
     def CalculateCost(self):
-        fat_general = 0
-        self.st, self.ov1, self.sng_percentage, self.st_percentage, self.gr_sl = 0, 0, 0, 0, 0
+        fat_general, self.st, self.ov1, self.sng_percentage, self.st_percentage, self.gr_sl = 0, 0, 0, 0, 0, 0
+        #Grasa producto terminado
         for att in self.product_id.attribute_value_ids:
             if att.attribute_id.fat:
                 fat_general = float(att.name.replace(',','.'))
+        #Valores materia prima
+        sng, fat, density = 0, 0, 0
+        for lines in self.move_raw_ids:
+            for ins in lines.inspection_id.inspection_lines:
+                if ins.test_line.sng:
+                    sng = float(ins.quantitative_value)
+                if ins.test_line.density:
+                    density = float(ins.quantitative_value)
+                if ins.test_line.fat:
+                    fat = float(ins.quantitative_value)
 
-        snf, fat, density = 0, 0, 0
-        for lines in self.bom_id.bom_line_ids:
-            for att in lines.product_id.attribute_value_ids:
-                if att.attribute_id.sng:
-                    sng = float(att.name.replace(',','.'))
-                if att.attribute_id.density:
-                    density = float(att.name.replace(',','.'))
-                if att.attribute_id.fat:
-                    fat = float(att.name.replace(',','.'))
-
+            _logger.info("Fat General: %s"%str(fat_general))
             _logger.info("Fat: %s"%fat)
             _logger.info("Density: %s"%density)
             _logger.info("SNG: %s"%sng)
@@ -68,11 +76,11 @@ class CostManufacture(models.Model):
             # gr_sl
             self.gr_sl += density * self.st_percentage/100
 
-            self.bom_id.product_id.standard_price = self.gr_sl * self.ov1
+            self.product_id.standard_price = self.gr_sl * self.ov1
             cost = 0
             for bl in self.bom_id.bom_line_ids:
                 _logger.info("Product: %s - Cost %s "%(bl.product_id,bl.product_id.standard_price))
-                if bl.product_id.base:
+                if bl.product_id.standard_price:
                     cost += bl.product_id.standard_price
 
             for sp in self.bom_id.sub_products:
@@ -81,8 +89,14 @@ class CostManufacture(models.Model):
                     if att.attribute_id.fat:
                         fat = float(att.name.replace(',','.'))
                 sp.product_id.standard_price = (cost / (self.st/100))  * fat
+                _logger.info("Cost: %s "%cost)
+                _logger.info("fat: %s "%fat)
                 _logger.info("sub-producto standard price: %s "%sp.product_id.standard_price)
 
+            for fi in self.move_finished_ids:
+                fi.price_unit = fi.product_id.standard_price
+            for fi in self.move_raw_ids:
+                fi.price_unit = fi.product_id.standard_price
 
         return True
 
