@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from openerp import models, fields, api
+from odoo import models, fields, api
+from odoo.exceptions import UserError
 import logging
 
 _logger = logging.getLogger(__name__)
@@ -62,6 +63,8 @@ class CostManufacture(models.Model):
             # st
             self.st += fat + sng
             # ov1
+            if not self.st:
+                raise UserError("Dede definir la grasa o sólidos no grasos en la inspección.")
             try:
                 self.ov1 += lines.product_id.standard_price / (density * self.st/100)
             except ZeroDivisionError:

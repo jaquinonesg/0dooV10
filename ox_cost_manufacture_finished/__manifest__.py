@@ -18,7 +18,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['mrp','product'],
+    'depends': ['mrp','mrp_byproduct','quality_control'],
 
     # always loaded
     'data': [
