@@ -7,8 +7,8 @@
                 <field name="model">hr.payslip</field>     
                 <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
                 <field name="arch" type="xml">
-		    <button name="action_payslip_cancel" position="attributes">
-                        <attribute name="states">draft,hr_check,confirm,verify,done</attribute>
+		            <button name="action_payslip_cancel" position="attributes">
+                        <attribute name="states">draft,verify,done</attribute>
                     </button>
                     <!--<xpath expr="//button[@string='Cancel Payslip']" position="attributes">
                         <attribute name="states">draft,hr_check,confirm,verify,done</attribute>
