@@ -27,7 +27,7 @@ class hr_salary_rule(models.Model):
     _inherit = 'hr.salary.rule'
 
     # Los siguientes procedimientos hacen que salga el code y name uno al lado del otro
-'''    def name_get(self):
+    def name_get(self):
         cr = self._cr
         uid = self.env.user.id
         ids = self.id
@@ -44,7 +44,7 @@ class hr_salary_rule(models.Model):
             if record['code']:
                 name = record['code'] + ' - ' + name
             res.append((record['id'], name))
-        return res   '''     
+        return res
     
 class hr_employee(models.Model):
     _inherit = "hr.employee"

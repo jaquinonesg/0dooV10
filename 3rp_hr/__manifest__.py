@@ -37,7 +37,7 @@ You can assign several contracts per employee.
     'website': 'http://www.3rp.co',
     'images': ['images/hr_contract.jpeg'],
     'depends': [
-            #'hr_evaluation',
+            'l10n_co_pucs',
             'hr_payroll_account',
     ],
     'data': [

@@ -29,12 +29,12 @@ class QcInspection(models.Model):
             self.product = False
 
     name = fields.Char(
-        string='Inspection number', required=True, default='/', select=True,
+        string='Inspection number', required=True, default='/', index=True,
         readonly=True, states={'draft': [('readonly', False)]}, copy=False)
     date = fields.Datetime(
         string='Date', required=True, readonly=True, copy=False,
         default=fields.Datetime.now,
-        states={'draft': [('readonly', False)]}, select=True)
+        states={'draft': [('readonly', False)]}, index=True)
     object_id = fields.Reference(
         string='Reference', selection=_links_get, readonly=True,
         states={'draft': [('readonly', False)]}, ondelete="set null")
@@ -43,7 +43,7 @@ class QcInspection(models.Model):
         help="Product associated with the inspection")
     qty = fields.Float(string="Quantity", default=1.0)
     test = fields.Many2one(
-        comodel_name='qc.test', string='Test', readonly=True, select=True)
+        comodel_name='qc.test', string='Test', readonly=True, index=True)
     inspection_lines = fields.One2many(
         comodel_name='qc.inspection.line', inverse_name='inspection_id',
         string='Inspection lines', readonly=True,
@@ -228,12 +228,12 @@ class QcInspectionLine(models.Model):
         if self.question_type == 'qualitative':
             self.success = self.qualitative_value.ok
         else:
-            if self.uom_id.id == self.test_uom_id.id:
-                amount = self.quantitative_value
-            else:
-                amount = self.env['product.uom']._compute_qty(
-                    self.uom_id.id, self.quantitative_value,
-                    self.test_uom_id.id)
+            # if self.uom_id.id == self.test_uom_id.id:
+            amount = self.quantitative_value
+            # else:
+            #     amount = self.env['product.uom']._compute_qty(
+            #         self.uom_id.id, self.quantitative_value,
+            #         self.test_uom_id.id)
             self.success = self.max_value >= amount >= self.min_value
 
     @api.one

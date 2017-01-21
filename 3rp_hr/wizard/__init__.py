@@ -21,7 +21,7 @@
 
 import wizard_hr_payroll
 import wizard_resource
-import hr_payroll_payslips_by_employees
+#import hr_payroll_payslips_by_employees
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 

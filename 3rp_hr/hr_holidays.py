@@ -38,7 +38,5 @@ class hr_holidays_status(models.Model):
     
     _inherit = "hr.holidays.status"
     _description = "Leave Type"
-
-    _columns = {
-        'code': fields.Char('Code', size=64, required=True, readonly=False),
-    }
+    
+    code = fields.Char('Code', size=64, required=True, readonly=False)

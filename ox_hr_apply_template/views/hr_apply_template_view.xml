@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+      <record model="ir.ui.view" id="view_hr_apply_template">
+          <field name="name">hr.payroll.apply.template.config.settings</field>
+          <field name="model">hr.payroll.config.settings</field>
+          <field name="inherit_id" ref="hr_payroll.view_hr_payroll_configuration"/>
+          <field name="arch" type="xml">
+            <div name="hr_payroll" position="after">
+              <div name="HRTemplate" string="HR Template">
+                <label for="apply_hr_template"/>
+                <button string="Apply hr template" type="object" name="apply_hr_template" class="oe_highlight"/>
+              </div>
+            </div>
+          </field>
+        </record>
+    </data>
+</odoo>

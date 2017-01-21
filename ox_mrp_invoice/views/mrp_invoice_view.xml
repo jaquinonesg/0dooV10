@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+      <record model="ir.ui.view" id="view_product_product_mrp_invoice_form">
+          <field name="name">product.product.mrp.invoice.form</field>
+          <field name="model">product.product</field>
+          <field name="inherit_id" ref="product.product_normal_form_view"/>
+          <field name="arch" type="xml">
+            <field name="default_code" position="after">
+              <field name="mrp_invoice"/>
+            </field>
+          </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_account_invoice_mrp_form">
+            <field name="name">account.invoice.mrp.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+              <button name="action_invoice_draft" position="after">
+                <button name="mrp_invoice" states="draft" string="Calculate manufacture" type="object"/>
+              </button>
+
+              <field name="date_invoice" position="attributes">
+                <attribute name="required">True</attribute>
+              </field>
+              <notebook position="inside">
+                <page string="Manufacture">
+                      <separator/>
+                      <label for="mim_id"/>
+                      <field name="mim_id">
+                        <tree delete="0" create="0">
+                          <field name="m1"/>
+                          <field name="m2"/>
+                          <field name="m3"/>
+                          <field name="m4"/>
+                          <field name="m5"/>
+                          <field name="m6"/>
+                          <field name="m7"/>
+                          <field name="m8"/>
+                          <field name="m9"/>
+                          <field name="m10"/>
+                          <field name="m11"/>
+                          <field name="m12"/>
+                        </tree>
+                      </field>
+                      <separator/>
+                      <label for="ci_id"/>
+                      <field name="ci_id">
+                        <tree delete="0" create="0">
+                          <field name="product_id"/>
+                          <field name="qc_question_id"/>
+                          <field name="qna1"/>
+                          <field name="qna2"/>
+                          <field name="qna3"/>
+                          <field name="avg"/>
+                        </tree>
+                      </field>
+                      <separator/>
+                      <label for="dr_id"/>
+                      <field name="dr_id">
+                        <tree delete="0" create="0">
+                          <field name="value"/>
+                          <field name="d1"/>
+                          <field name="d2"/>
+                          <field name="d3"/>
+                          <field name="d4"/>
+                          <field name="d5"/>
+                          <field name="d6"/>
+                          <field name="d7"/>
+                          <field name="d8"/>
+                          <field name="d9"/>
+                          <field name="d10"/>
+                          <field name="d11"/>
+                          <field name="d12"/>
+                          <field name="d13"/>
+                          <field name="d14"/>
+                          <field name="d15"/>
+                          <field name="total_value"/>
+                          <field name="total"/>
+                        </tree>
+                      </field>
+                      <separator/>
+                      <label for="cq_id"/>
+                      <field name="cq_id">
+                        <tree>
+                          <field name="code"/>
+                          <field name="name"/>
+                          <!-- <field name="sign"/> -->
+                          <field name="amount"/>
+                        </tree>
+                      </field>
+                      <separator/>
+                      <field name="amount_quality"/>
+                </page>
+              </notebook>
+            </field>
+        </record>
+    </data>
+</odoo>

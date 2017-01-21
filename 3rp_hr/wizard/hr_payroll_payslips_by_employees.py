@@ -19,62 +19,51 @@
 #
 ##############################################################################
 
-from openerp import models
-from openerp.tools.translate import _
+from odoo import models
+from odoo.exceptions import UserError
+from odoo.tools.translate import _
+import logging
+
+_logger = logging.getLogger(__name__)
 
 class hr_payslip_employees(models.TransientModel):
-
     _inherit ='hr.payslip.employees'
     
-    def _get_period(self, dt=None):
-        cr = self._cr
-        uid = self.env.user_id.id
-        context= self.env.context
-        period_obj = self.pool.get('account.period')
-        period_id = period_obj.find(cr, uid, dt=dt, context=context)
+    '''def _get_period(self, dt=None):
+        period_obj = self.env['account.period']
+        period_id = period_obj.search([()])
         if period_id:
             return period_id[0]
         return False
         
     def _get_default_period(self):
-        cr = self._cr
-        uid = self.env.user_id.id
-        context= self.env.context
-        return self._get_period(cr, uid, dt=None, context=context)    
+        return self._get_period(dt=None)    '''
         
-    def compute_sheet(self):
-        cr = self._cr
-        uid = self.env.user_id.id
-        ids = self.id
+'''    def compute_sheet(self):
+        res = super(hr_payslip_employees, self).compute_sheet()
         context= self.env.context
-        emp_pool = self.pool.get('hr.employee')
-        run_pool = self.pool.get('hr.payslip.run')
-        if context is None:
-            context = {}
-        if context and context.get('active_id', False):
-            run_data = run_pool.read(cr, uid, context['active_id'], ['period_id', 'date_start', 'date_end'])
+        emp_pool = self.env['hr.employee']
+        run_pool = self.env['hr.payslip.run']
+        _logger.info(run_pool)
+        _logger.info(self)
+        run_data = run_pool.read(['date_start', 'date_end'])
             
-        period_id = run_data.get('period_id', False)
-        date_start = run_data.get('date_start', False)
-        if date_start:
-            period_id = self._get_period(cr, uid, dt=date_start)
-        if period_id: 
-            context.update({'period_id': period_id})
-        print "Data Start: ", run_data.get('date_start', False), " Date End:", run_data.get('date_end', False)
-        print "Context: ", context, " Period :", period_id
-        data = self.read(cr, uid, ids, context=context)[0]
-        for emp in emp_pool.browse(cr, uid, data['employee_ids'], context=context):
+        #date_start = run_data.get('date_start', False)
+        #if date_start:
+            #period_id = self._get_period(sdt=date_start)
+        #if period_id: 
+            #context.update({'period_id': period_id})
+        data = self.read(context=context)[0]
+        for emp in emp_pool.browse(data['employee_ids']):
             if not emp.contract_id:
-                raise osv.except_osv(_("Warning!"), _("El empleado %s no tiene 'Contrato'") % (emp.name))
+                raise UserError("El empleado %s no tiene 'Contrato'"% emp.name)
             if not emp.address_home_id:
-                raise osv.except_osv(_("Warning!"), _("El empleado %s no tiene 'Empleado / Tercero'") % (emp.name))
+                raise UserError("El empleado %s no tiene 'Empleado / Tercero'"%emp.name)
             if not emp.contract_id.struct_id:
-                raise osv.except_osv(_("Warning!"), _("El contrato de %s no tiene 'Estructura Salarial'") % (emp.name))
+                raise UserError("El contrato de %s no tiene 'Estructura Salarial'"% emp.name)
             if not emp.contract_id.working_hours:
-                raise osv.except_osv(_("Warning!"), _("El contrato de %s no tiene 'Planificación de Trabajo'") % (emp.name))
+                raise UserError("El contrato de %s no tiene 'Planificación de Trabajo'"%emp.name)
                 
-        return super(hr_payslip_employees, self).compute_sheet(cr, uid, ids, context=context)
-
-hr_payslip_employees()
+        return res'''
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

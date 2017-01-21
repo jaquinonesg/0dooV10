@@ -9,7 +9,7 @@ class QcTrigger(models.Model):
     _name = 'qc.trigger'
     _description = 'Quality control trigger'
 
-    name = fields.Char(string='Name', required=True, select=True,
+    name = fields.Char(string='Name', required=True, index=True,
                        translate=True)
     active = fields.Boolean(string='Active', default=True)
     company_id = fields.Many2one(

@@ -42,13 +42,15 @@ class hr_payslip_run(models.Model):
     def onchange_payslip(self):
         
         cr = self._cr
-        uid = self.env.user_id.id
+        uid = self.env.user.id
         ids = self.id
         context= self.env.context
         """ Actualiza journal
         """
-        company_id = self.pool.get('res.users').browse(cr, uid, uid).company_id.id or False 
-        journal_id = self.pool.get('account.journal').search(cr, uid, [('code','=ilike','NOM'), ('company_id','=',company_id)], context=context)[0] or False        
+        #company_id = self.pool.get('res.users').browse(cr, uid, uid).company_id.id or False 
+        company_id = self.env.user.company_id.id
+        journal_id = self.env['account.journal'].search([('code','=ilike','NOM'), ('company_id','=',company_id)]) #.user.company_id.id
+        #journal_id = self.pool.get('account.journal').search(cr, uid, [('code','=ilike','NOM'), ('company_id','=',company_id)], context=context)[0] or False        
         res = {'value':{
                     'journal_id': journal_id,
                 }
@@ -97,7 +99,7 @@ class hr_payslip(models.Model):
         @return: returns a list of dict containing the input that should be applied for the given contract between date_from and date_to
         """
         cr = self._cr
-        uid = self.env.user_id.id
+        uid = self.env.user.id
         ids = self.id
         context= self.env.context
         
@@ -107,7 +109,7 @@ class hr_payslip(models.Model):
             
             return holidays_status_pool.browse(cr, uid, id).code or name
 
-        res = super(hr_payslip, self).get_worked_day_lines(cr, uid, contract_ids, date_from, date_to, context)
+        res = super(hr_payslip, self).get_worked_day_lines(contract_ids, date_from, date_to)
         d = parser.parse(date_from)
 
         last_day_of_month = calendar.monthrange(d.year, d.month)[1]
@@ -145,7 +147,7 @@ class hr_payslip(models.Model):
        
     def hr_verify_sheet(self):
         cr = self._cr
-        uid = self.env.user_id.id
+        uid = self.env.user.id
         ids = self.id
         context= self.env.context
         for payroll in self.browse(cr, uid, ids, context=context):
@@ -157,26 +159,12 @@ class hr_payslip(models.Model):
                     _('Warning'), _('This employee don´t have a working hours'))
         return super(hr_payslip, self).hr_verify_sheet(cr, uid, ids)    
         
-        
-    def onchange_employee_id(self, date_from, date_to, employee_id=False, contract_id=False):
-        
-        """ Actualiza periodo
-        """
-        
-        #period_pool = self.pool.get('account.period')
-        #res = super(hr_payslip, self).onchange_employee_id(cr, uid, ids, date_from, date_to, employee_id, contract_id, context=context)
-        #ctx = dict(context or {}, account_period_prefer_normal=True)
-        #search_periods = period_pool.find(cr, uid, date_to, context=ctx)
-        #res['value'].update({'period_id': search_periods[0]})
-        #return res        
-	pass
-        
     def onchange_contract_id(self, date_from, date_to, employee_id=False, contract_id=False):
         
         """ Actualiza journal en los slip
         """
         cr = self._cr
-        uid = self.env.user_id.id
+        uid = self.env.user.id
         ids = self.id
         context= self.env.context
         
@@ -192,7 +180,7 @@ class hr_payslip(models.Model):
         """ Buscar en account_move_line las lineas con account payable y que pertenezcan a el salary_rule a cambiar el partner y actualizarlas
         """
         cr = self._cr
-        uid = self.env.user_id.id
+        uid = self.env.user.id
         ids = self.id
         context= self.env.context
         

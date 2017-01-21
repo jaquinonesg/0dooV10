@@ -19,7 +19,7 @@ class QcTest(models.Model):
 
     active = fields.Boolean('Active', default=True)
     name = fields.Char(
-        string='Name', required=True, translate=True, select=True)
+        string='Name', required=True, translate=True, index=True)
     test_lines = fields.One2many(
         comodel_name='qc.test.question', inverse_name='test',
         string='Questions', copy=True)
@@ -30,7 +30,7 @@ class QcTest(models.Model):
     type = fields.Selection(
         [('generic', 'Generic'),
          ('related', 'Related')],
-        string='Type', select=True, required=True, default='generic')
+        string='Type', index=True, required=True, default='generic')
     category = fields.Many2one(
         comodel_name='qc.test.category', string='Category')
     company_id = fields.Many2one(
@@ -65,7 +65,7 @@ class QcTestQuestion(models.Model):
         string='Sequence', required=True, default="10")
     test = fields.Many2one(comodel_name='qc.test', string='Test')
     name = fields.Char(
-        string='Name', required=True, select=True, translate=True)
+        string='Name', required=True, index=True, translate=True)
     type = fields.Selection(
         [('qualitative', 'Qualitative'),
          ('quantitative', 'Quantitative')], string='Type', required=True)
@@ -85,7 +85,7 @@ class QcTestQuestionValue(models.Model):
     test_line = fields.Many2one(
         comodel_name="qc.test.question", string="Test question")
     name = fields.Char(
-        string='Name', required=True, select=True, translate=True)
+        string='Name', required=True, index=True, translate=True)
     ok = fields.Boolean(
         string='Correct answer?',
         help="When this field is marked, the answer is considered correct.")

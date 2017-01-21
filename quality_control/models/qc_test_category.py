@@ -34,7 +34,7 @@ class QcTestTemplateCategory(models.Model):
 
     name = fields.Char('Name', required=True, translate=True)
     parent_id = fields.Many2one(
-        comodel_name='qc.test.category', string='Parent category', select=True)
+        comodel_name='qc.test.category', string='Parent category', index=True)
     complete_name = fields.Char(
         compute="_get_complete_name", string='Full name')
     child_ids = fields.One2many(

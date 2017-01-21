@@ -44,16 +44,14 @@ class hr_payroll_structure_template(models.Model):
     """
     _name = 'hr.payroll.structure.template'
     _description = 'Salary Structure'
-    _columns = {
-        'name':fields.Char('Name', size=256, required=True),
-        'code':fields.Char('Reference', size=64, required=True),
-#        'company_id':fields.many2one('res.company', 'Company', required=True),
-        'note': fields.Text('Description'),
-        'parent_id':fields.Many2one('hr.payroll.structure.template', 'Parent'),
-        'children_ids':fields.One2many('hr.payroll.structure.template', 'parent_id', 'Children'),
-        'rule_ids':fields.Many2many('hr.salary.rule.template', 'hr_structure_salary_rule_rel_template', 'struct_id', 'rule_id', 'Salary Rules'),
-        'chart_template_id': fields.Many2one('account.chart.template', 'Chart Template'),
-    }
+
+    name=fields.Char('Name', size=256, required=True)
+    code=fields.Char('Reference', size=64, required=True)
+    note= fields.Text('Description')
+    parent_id=fields.Many2one('hr.payroll.structure.template', 'Parent')
+    children_ids=fields.One2many('hr.payroll.structure.template', 'parent_id', 'Children')
+    rule_ids=fields.Many2many('hr.salary.rule.template', 'hr_structure_salary_rule_rel_template', 'struct_id', 'rule_id', 'Salary Rules')
+    chart_template_id=fields.Many2one('account.chart.template', 'Chart Template')
 
 class hr_contribution_register_template(models.Model):
     '''
@@ -63,12 +61,8 @@ class hr_contribution_register_template(models.Model):
     _name = 'hr.contribution.register.template'
     _description = 'Contribution Register'
 
-    _columns = {
-#        'company_id':fields.many2one('res.company', 'Company'),
-#        'partner_id':fields.many2one('res.partner', 'Partner'),
-        'name':fields.Char('Name', size=256, required=True, readonly=False),
-        'note': fields.Text('Description'),
-    }
+    name = fields.Char('Name', size=256, required=True, readonly=False)
+    note = fields.Text('Description')
 
 
 class hr_salary_rule_category_template(models.Model):
@@ -78,16 +72,12 @@ class hr_salary_rule_category_template(models.Model):
 
     _name = 'hr.salary.rule.category.template'
     _description = 'Salary Rule Category Template'
-    _columns = {
-        'name':fields.Char('Name', size=64, required=True, readonly=False),
-        'code':fields.Char('Code', size=64, required=True, readonly=False),
-        'parent_id':fields.Many2one('hr.salary.rule.category.template', 'Parent', help="Linking a salary category to its parent is used only for the reporting purpose."),
-        'children_ids': fields.One2many('hr.salary.rule.category.template', 'parent_id', 'Children'),
-        'note': fields.Text('Description'),
-#       Actualizar compañia        
-#       'company_id':fields.many2one('res.company', 'Company', required=False),
 
-    }
+    name = fields.Char('Name', size=64, required=True, readonly=False)
+    code = fields.Char('Code', size=64, required=True, readonly=False)
+    parent_id = fields.Many2one('hr.salary.rule.category.template', 'Parent', help="Linking a salary category to its parent is used only for the reporting purpose.")
+    children_ids = fields.One2many('hr.salary.rule.category.template', 'parent_id', 'Children')
+    note = fields.Text('Description')
     
 class hr_rule_input_template(models.Model):
     '''
@@ -96,17 +86,12 @@ class hr_rule_input_template(models.Model):
 
     _name = 'hr.rule.input.template'
     _description = 'Salary Rule Input'
-    _columns = {
-        'name': fields.Char('Description', size=256, required=True),
-        'code': fields.Char('Code', size=52, required=True, help="The code that can be used in the salary rules"),
-        'assing_value': fields.Boolean('Assing Value in Contract'),
-        'input_id': fields.Many2one('hr.salary.rule.template', 'Salary Rule Input', required=True),
-        'chart_template_id': fields.Many2one('account.chart.template', 'Chart Template'),
-    }
     
-    _defaults = {
-        'assing_value' : False,
-    }
+    name = fields.Char('Description', size=256, required=True)
+    code =fields.Char('Code', size=52, required=True, help="The code that can be used in the salary rules")
+    assing_value = fields.Boolean('Assing Value in Contract', default=False)
+    input_id =fields.Many2one('hr.salary.rule.template', 'Salary Rule Input', required=True)
+    chart_template_id= fields.Many2one('account.chart.template', 'Chart Template')
     
 class hr_rule_input(models.Model):
     '''
@@ -114,70 +99,24 @@ class hr_rule_input(models.Model):
     '''
 
     _inherit = 'hr.rule.input'
-    _columns = {
-        'assing_value': fields.Boolean('Assing Value in Contract'),
-    }
-    
-    _defaults = {
-        'assing_value' : False,
-    }
+
+    assing_value = fields.Boolean('Assing Value in Contract',default=False)
     
 class hr_salary_rule_template(models.Model):
 
     _name = 'hr.salary.rule.template'
-    _columns = {
-        'name':fields.Char('Name', size=256, required=True, readonly=False),
-        'code':fields.Char('Code', size=64, required=True, help="The code of salary rules can be used as reference in computation of other rules. In that case, it is case sensitive."),
-        'sequence': fields.Integer('Sequence', required=True, help='Use to arrange calculation sequence', select=True),
-        'quantity': fields.Char('Quantity', size=256, help="It is used in computation for percentage and fixed amount.For e.g. A rule for Meal Voucher having fixed amount of 1€ per worked day can have its quantity defined in expression like worked_days.WORK100.number_of_days."),
-        'category_id':fields.Many2one('hr.salary.rule.category.template', 'Category', required=True),
-        'active':fields.Boolean('Active', help="If the active field is set to false, it will allow you to hide the salary rule without removing it."),
-        'appears_on_payslip': fields.Boolean('Appears on Payslip', help="Used to display the salary rule on payslip."),
-        'parent_rule_id':fields.Many2one('hr.salary.rule.template', 'Parent Salary Rule', select=True),
-#        'company_id':fields.many2one('res.company', 'Company', required=False),
-        'condition_select': fields.Selection([('none', 'Always True'),('range', 'Range'), ('python', 'Python Expression')], "Condition Based on", required=True),
-        'condition_range':fields.Char('Range Based on',size=1024, readonly=False, help='This will be used to compute the % fields values; in general it is on basic, but you can also use categories code fields in lowercase as a variable names (hra, ma, lta, etc.) and the variable basic.'),
-        'condition_python':fields.Text('Python Condition', required=True, readonly=False, help='Applied this rule for calculation if condition is true. You can specify condition like basic > 1000.'),
-        'condition_range_min': fields.Float('Minimum Range', required=False, help="The minimum amount, applied for this rule."),
-        'condition_range_max': fields.Float('Maximum Range', required=False, help="The maximum amount, applied for this rule."),
-        'amount_select':fields.Selection([
-            ('percentage','Percentage (%)'),
-            ('fix','Fixed Amount'),
-            ('code','Python Code'),
-        ],'Amount Type', select=True, required=True, help="The computation method for the rule amount."),
-        'amount_fix': fields.Float('Fixed Amount', digits_compute=dp.get_precision('Payroll'),),
-        'amount_percentage': fields.Float('Percentage (%)', digits_compute=dp.get_precision('Payroll Rate'), help='For example, enter 50.0 to apply a percentage of 50%'),
-        'amount_python_compute':fields.Text('Python Code'),
-        'amount_percentage_base':fields.Char('Percentage based on',size=1024, required=False, readonly=False, help='result will be affected to a variable'),
-        'child_ids':fields.One2many('hr.salary.rule.template', 'parent_rule_id', 'Child Salary Rule'),
-        'register_id':fields.Many2one('hr.contribution.register.template', 'Contribution Register', help="Eventual third party involved in the salary payment of the employees."),
-        'input_ids': fields.One2many('hr.rule.input.template', 'input_id', 'Inputs'),
-        'note':fields.Text('Description'),
-#        'analytic_account_id':fields.many2one('account.analytic.account', 'Analytic Account'),
-        'account_tax_id':fields.Many2one('account.tax.code.template', 'Tax Code'),
-        'account_debit': fields.Many2one('account.account.template', 'Debit Account'),
-        'account_credit': fields.Many2one('account.account.template', 'Credit Account'),
-        'chart_template_id': fields.Many2one('account.chart.template', 'Chart Template'),
-
-     }    
-     
-    _defaults = {
-        'amount_python_compute': '''
-# Available variables:
-#----------------------
-# payslip: object containing the payslips
-# employee: hr.employee object
-# contract: hr.contract object
-# rules: object containing the rules code (previously computed)
-# categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
-# worked_days: object containing the computed worked days.
-# inputs: object containing the computed inputs.
-
-# Note: returned value have to be set in the variable 'result'
-
-result = contract.wage * 0.10''',
-        'condition_python':
-'''
+    
+    name=fields.Char('Name', size=256, required=True, readonly=False)
+    code=fields.Char('Code', size=64, required=True, help="The code of salary rules can be used as reference in computation of other rules. In that case, it is case sensitive.")
+    sequence= fields.Integer('Sequence', required=True, help='Use to arrange calculation sequence', index=True,default=5)
+    quantity= fields.Char('Quantity', size=256, help="It is used in computation for percentage and fixed amount.For e.g. A rule for Meal Voucher having fixed amount of 1€ per worked day can have its quantity defined in expression like worked_days.WORK100.number_of_days.",default=1)
+    category_id=fields.Many2one('hr.salary.rule.category.template', 'Category', required=True)
+    active=fields.Boolean('Active', help="If the active field is set to false, it will allow you to hide the salary rule without removing it.",default=True)
+    appears_on_payslip= fields.Boolean('Appears on Payslip', help="Used to display the salary rule on payslip.",default=True)
+    parent_rule_id=fields.Many2one('hr.salary.rule.template', 'Parent Salary Rule', index=True)
+    condition_select= fields.Selection([('none', 'Always True'),('range', 'Range'), ('python', 'Python Expression')], "Condition Based on", required=True,default='none')
+    condition_range=fields.Char('Range Based on',size=1024, readonly=False, help='This will be used to compute the % fields values; in general it is on basic, but you can also use categories code fields in lowercase as a variable names (hra, ma, lta, etc.) and the variable basic.',default='contract.wage')
+    condition_python=fields.Text('Python Condition', required=True, readonly=False, help='Applied this rule for calculation if condition is true. You can specify condition like basic > 1000.',default='''
 # Available variables:
 #----------------------
 # payslip: object containing the payslips
@@ -190,18 +129,37 @@ result = contract.wage * 0.10''',
 
 # Note: returned value have to be set in the variable 'result'
 
-result = rules.NET > categories.NET * 0.10''',
-        'condition_range': 'contract.wage',
-        'sequence': 5,
-        'appears_on_payslip': True,
-        'active': True,
-        'condition_select': 'none',
-        'amount_select': 'fix',
-        'amount_fix': 0.0,
-        'amount_percentage': 0.0,
-        'quantity': '1.0',
-     }
-     
+result = rules.NET > categories.NET * 0.10''')
+    condition_range_min= fields.Float('Minimum Range', required=False, help="The minimum amount, applied for this rule.")
+    condition_range_max= fields.Float('Maximum Range', required=False, help="The maximum amount, applied for this rule.")
+    amount_select=fields.Selection([
+        ('percentage','Percentage (%)'),
+        ('fix','Fixed Amount'),
+        ('code','Python Code')
+    ],'Amount Type', index=True, required=True, help="The computation method for the rule amount.",default='fix')
+    amount_fix= fields.Float('Fixed Amount', digits=dp.get_precision('Payroll'),default=0)
+    amount_percentage= fields.Float('Percentage (%)', digits=dp.get_precision('Payroll Rate'), help='For example, enter 50.0 to apply a percentage of 50%',default=0)
+    amount_python_compute=fields.Text('Python Code',default=''' # Available variables:
+#----------------------
+# payslip: object containing the payslips
+# employee: hr.employee object
+# contract: hr.contract object
+# rules: object containing the rules code (previously computed)
+# categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+# worked_days: object containing the computed worked days.
+# inputs: object containing the computed inputs.
 
-        
+# Note: returned value have to be set in the variable 'result'
+
+result = contract.wage * 0.10''')
+    amount_percentage_base=fields.Char('Percentage based on',size=1024, required=False, readonly=False, help='result will be affected to a variable')
+    child_ids=fields.One2many('hr.salary.rule.template', 'parent_rule_id', 'Child Salary Rule')
+    register_id=fields.Many2one('hr.contribution.register.template', 'Contribution Register', help="Eventual third party involved in the salary payment of the employees.")
+    input_ids= fields.One2many('hr.rule.input.template', 'input_id', 'Inputs')
+    note=fields.Text('Description')
+    #account_tax_id=fields.Many2one('account.tax.code.template', 'Tax Code')
+    account_debit= fields.Many2one('account.account.template', 'Debit Account')
+    account_credit= fields.Many2one('account.account.template', 'Credit Account')
+    chart_template_id= fields.Many2one('account.chart.template', 'Chart Template')
+    
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
