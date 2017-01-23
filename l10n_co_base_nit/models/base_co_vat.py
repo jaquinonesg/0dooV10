@@ -25,12 +25,8 @@ import datetime
 import re
 _logger = logging.getLogger(__name__)
 
-from openerp.osv import fields, osv
-from openerp import fields, models
-from openerp.tools.misc import ustr
-from openerp.tools.translate import _
+from odoo import models, fields, api, _, exceptions
 
-#class res_partner(osv.osv):
 class res_partner(models.Model):
 
     _inherit = 'res.partner'
@@ -52,7 +48,10 @@ class res_partner(models.Model):
 
 
     def get_ref(self):
-        ids = self.id
+        
+    
+    @api.multi
+    def _get_ref(self):
         if isinstance(ids, (list, tuple)) and not len(ids):
             return []
         if isinstance(ids, (long, int)):
@@ -65,29 +64,10 @@ class res_partner(models.Model):
                 vat = records.vat
 
             res.append((records['id'], vat))
-            print(self)
-        return res
-    
-    def _get_ref(self)  :
-        res = self.get_ref([self.id])
-        return dict(res) 
-
-    vat_type = fields.Selection([('12','12 - Tarjeta de identidad'), 
-                                        ('13','13 - Cédula de ciudadanía'), 
-                                        ('21','21 - Tarjeta de extranjería'),
-                                        ('22','22 - Cédula de extranjería'), 
-                                        ('31','31 - NIT (Número de identificación tributaria)'), 
-                                        ('41','41 - Pasaporte'), 
-                                        ('42','42 - Documento de identificación extranjero'), 
-                                        ('43','43 - Sin identificación del exterior o para uso definido por la DIAN')],
-                                        string='Tipo documento',
-                                        help=u'Identificacion del Cliente, segun los tipos definidos por la DIAN. Si se trata de una persona natural y tiene RUT utilizar NIT',
-                                        default=31)
-    vat_vd = fields.Char(string='vd',size=1, help='Digito de verificación')
-    ref = fields.Char(compute='_get_ref', string='NIF', store=True )
+        return dict(res)
         
-    """_columns = {
-        'vat_type': fields.selection( (
+    
+    vat_type = fields.Selection( (
                                         ('12','12 - Tarjeta de identidad'), 
                                         ('13','13 - Cédula de ciudadanía'), 
                                         ('21','21 - Tarjeta de extranjería'),
@@ -96,19 +76,18 @@ class res_partner(models.Model):
                                         ('41','41 - Pasaporte'), 
                                         ('42','42 - Documento de identificación extranjero'), 
                                         ('43','43 - Sin identificación del exterior o para uso definido por la DIAN')), u'Tipo de Documento',  
-                                        help=u'Identificacion del Cliente, segun los tipos definidos por la DIAN. Si se trata de una persona natural y tiene RUT utilizar NIT'),
-        'vat_vd': fields.char('vd', size=1, help='Digito de verificación'),
-        'ref' : fields.function(_get_ref, type='char', string='NIF', store=True ),
-    } """
+                                        help=u'Identificacion del Cliente, segun los tipos definidos por la DIAN. Si se trata de una persona natural y tiene RUT utilizar NIT')
+    vat_vd = fields.Char('vd', size=1, help='Digito de verificación')
+    ref = fields.Char(compute="_get_ref", string='NIF', store=False )
 
-    """_defaults = {
+    _defaults = {
         'is_company': True,
         'vat_type': '31',
-    }"""
+    }
 
     def check_vat_co(self, vat, vat_vd):
  
-            # For new TVA numbers, do a mod11 check
+        # For new TVA numbers, do a mod11 check
         factor = ( 41, 37, 29, 23, 19, 17, 13, 7, 3 )
         csum = sum([int(vat[i]) * factor[i] for i in range(9)])
         check = csum % 11
@@ -120,10 +99,11 @@ class res_partner(models.Model):
     def onerror_msg(self, msg):
         return {'warning': {'title': _('Error!'), 'message': _(msg)}}
 
-    def onchange_vat_type(self, vat_type):
+    def onchange_vat_type(self, cr, uid, ids, vat_type, context=None):
         return {'value': {'is_company': vat_type == '31'}}
 
-    def onchange_vat(self, vat_type, vat, vat_vd):
+    def onchange_vat(self, cr, uid, ids, vat_type, vat, vat_vd, context=None):
+        
         msg_error = ''
         
         # Validaciones

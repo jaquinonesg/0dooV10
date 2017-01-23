@@ -25,11 +25,9 @@ import datetime
 import re
 _logger = logging.getLogger(__name__)
 
-from openerp.osv import fields, osv
-from openerp.tools.misc import ustr
-from openerp.tools.translate import _
+from odoo import models, fields, api, _, exceptions
 
-class res_partner(osv.osv):
+class res_partner(models.Model):
 
         _inherit = 'res.partner'
         
@@ -48,23 +46,20 @@ class res_partner(osv.osv):
                     http://www.dian.gov.co/descargas/normatividad/Factura_Electronica/Anexo_001_R14465.pdf
         """
 
-            
-        def _get_ref(self, cr, uid, ids, _field_name, _args, context=None):
-            result = dict.fromkeys(ids, False)
-            for partner in self.browse(cr, uid, ids, context=context):
-                
+        @api.multi
+        def _get_ref(self):
+            result = {}
+            for partner in self:
                 if partner.vat and partner.vat_type == '31' and len(partner.vat) == 9 and partner.vat_vd:
                     result[partner.id] = partner.vat[:3] + '.' + partner.vat[3:6] + '.' + partner.vat[6:9] + '-' + partner.vat_vd 
                 else:
                     result[partner.id] = partner.vat
                     
-                self.write(cr, uid, ids, {'ref': result[partner.id]}, context=context)       
+                self.write({'ref': result[partner.id]})
                     
             return result
             
-        _columns = {
-            'vat_type': fields.selection( (
-                                            ('12',u'12 - Tarjeta de identidad'), 
+        vat_type =  fields.Selection( (     ('12',u'12 - Tarjeta de identidad'), 
                                             ('13',u'13 - Cédula de ciudadanía'), 
                                             ('21',u'21 - Tarjeta de extranjería'),
                                             ('22',u'22 - Cédula de extranjería'), 
@@ -72,10 +67,9 @@ class res_partner(osv.osv):
                                             ('41',u'41 - Pasaporte'), 
                                             ('42',u'42 - Documento de identificación extranjero'), 
                                             ('43',u'43 - Sin identificación del exterior o para uso definido por la DIAN')), u'Tipo de Documento',  
-                                            help=u'Identificacion del Cliente, segun los tipos definidos por la DIAN. Si se trata de una persona natural y tiene RUT utilizar NIT'),
-            'vat_vd': fields.char('vd', size=1, help='Digito de verificación'),
-            'ref2': fields.function(_get_ref, type='char', string='NIF2', store=False ),
-        }
+                                            help=u'Identificacion del Cliente, segun los tipos definidos por la DIAN. Si se trata de una persona natural y tiene RUT utilizar NIT')
+        vat_vd = fields.Char('vd', size=1, help='Digito de verificación')
+        ref2 = fields.Char(compute="_get_ref", string='NIF2', store=False )
 
 #        _defaults = {
 #            'is_company': True,
@@ -92,6 +86,10 @@ class res_partner(osv.osv):
                 return False
                 
             factor = ( 41, 37, 29, 23, 19, 17, 13, 7, 3 )
+            print "vat"
+            print vat
+            print "factor"
+            print factor
             csum = sum([int(vat[i]) * factor[i] for i in range(9)])
             check = csum % 11
             if check > 1:
@@ -102,44 +100,49 @@ class res_partner(osv.osv):
         def onerror_msg(self, msg):
             return {'warning': {'title': _('Error!'), 'message': _(msg)}}
 
-        def onchange_vat_type(self, cr, uid, ids, vat_type, context=None):
-            return {'value': {'is_company': vat_type == '31'}}
+        @api.onchange('vat_type')
+        def onchange_vat_type(self):
 
-        def onchange_vat(self, cr, uid, ids, vat_type, vat, company_id, context=None):
-            
+            return {'value': {'is_company': self.vat_type == '31'}}
+
+        @api.onchange('vat')
+        def onchange_vat(self):
+            print self
+            print self.vat, self.vat_type, self.vat_vd
             # Validaciones
-            if not vat_type:
+            if not self.vat_type:
                 return True
                 
-            if not vat:
-                return self.onerror_msg( u'La identificación NO debe tener seer NULA, rectifique')
+            if not self.vat:
+                return self.onerror_msg( u'La identificación NO debe ser NULA, rectifique')
 
-            if len(vat) < 6:
+            if len(self.vat) < 6:
                 return self.onerror_msg( u'La identificación debe tener al menos 6 digitos, rectifique')
 
-            if not vat.isdigit() and vat_type != '41':
+            if not self.vat.isdigit() and self.vat_type != '41':
                 return self.onerror_msg( u'Solo se aceptan numeros en la identificación, rectifique')
 
-            if vat_type != '31':
+            if self.vat_type != '31':
                 return {'value': {'vat_vd': ''}}                
                 
-            if len(vat) != 9:
+            if len(self.vat) != 9:
                 return self.onerror_msg( u'La identificación debe tener 9 digitos para compañia')            
             
             return True
 
-        def onchange_vat_vd(self, cr, uid, ids, vat_type, vat, vat_vd, context=None):
+        @api.onchange('vat_vd')
+        def onchange_vat_vd(self):
             
-            if vat_type == '31':
-                if not vat_vd:
+            if self.vat_type == '31':
+                if not self.vat_vd:
                     return self.onerror_msg( u'El dígito de verificación NO debe tener seer NULO, rectifique')                
                     
-                if not self.check_vat_co(vat_type, vat, vat_vd):
+                if not self.check_vat_co(self.vat_type, self.vat, self.vat_vd):
                     return self.onerror_msg( u'NIT suministrado no supera la prueba del dígito de verificacion!')
             
             return True            
 
-        def _commercial_fields(self, cr, uid, context=None):
+        def _commercial_fields(self):
             """ Returns the list of fields that are managed by the commercial entity
             to which a partner belongs. These fields are meant to be hidden on
             partners that aren't `commercial entities` themselves, and will be
@@ -147,26 +150,26 @@ class res_partner(osv.osv):
             extended by inheriting classes. """
             return ['website']
 
-        def copy(self, cr, uid, id, default=None, context=None):
-            partner_dic = self.read(cr, uid, id, ['name','vat',], context)
+        def copy(self):
+            partner_dic = self.read(['name','vat',])
             default = default or {}
             default.update({
                 'name': '(copy) ' + partner_dic['name'],
                 'vat': '(copy) ' + partner_dic['vat'],
             })
-            return super(res_partner, self).copy(cr, uid, id, default, context)
+            return super(res_partner, self).copy(default)
             
             
-        def _check_vat(self, cr, uid, ids, context=None):
+        def _check_vat(self):
             
-            obj = self.browse(cr, uid, ids[0], context=context)
-            if obj.company_id and obj.vat and self.search(cr, uid, [('company_id','=',obj.company_id.id),('vat','=ilike',obj.vat),('parent_id','=', None)]) != ids:
+            obj = self.browse()
+            if obj.company_id and obj.vat and self.search([('company_id','=',obj.company_id.id),('vat','=ilike',obj.vat),('parent_id','=', None)]) != ids:
                 return False
             return True
             
-        def _check_vat_vd(self, cr, uid, ids, context=None):
+        def _check_vat_vd(self):
             
-            obj = self.browse(cr, uid, ids[0], context=context)
+            obj = self.browse
             if obj.vat_type == '31' and not self.check_vat_co(obj.vat_type, obj.vat, obj.vat_vd):
                 return False
             return True

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    OpenERP, Open Source Management Solution
-#    Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
+#    OpenERP, Open Source Business Applications
+#    Copyright (c) 2011 OpenERP S.A. <http://openerp.com>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,26 +19,12 @@
 #
 ##############################################################################
 
-{
-    'name': 'NIT Colombia Number Validation',
-    'version': '1.0',
-    'category': 'Hidden/Dependency',
-    'description': """
-NIT validation for Partner's Colombia.
-=========================================
+from odoo import models, fields
 
-
-    """,
-    'author': '3RP SAS',
-    'website': 'http://3rp.com',
-    'depends': ['base'],
-    'data': [
-            'res_partner_view.xml',
-            'res_company_view.xml',
-            ],
-    'installable': True,
-    'auto_install': False,
-    'images': ['images/1_partner_vat.jpeg'],
-}
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+class res_company(models.Model):
+        _inherit = 'res.company'
+        
+        
+        vat_type = fields.Reference([('partner_id', 'vat_type')])
+        vat_vd = fields.Reference([('partner_id', 'vat_vd')])
+        company_registry = fields.Char('Company Registry', related='partner_id.ref2', size=64)

@@ -19,6 +19,26 @@
 #
 ##############################################################################
 
-import models
+{
+    'name': 'NIT Colombia Number Validation',
+    'version': '1.0',
+    'category': 'Hidden/Dependency',
+    'description': """
+NIT validation for Partner's Colombia.
+=========================================
+
+
+    """,
+    'author': '3RP SAS',
+    'website': 'http://3rp.com',
+    'depends': ['base'],
+    'data': [
+            'views/res_partner_view.xml',
+            'views/res_company_view.xml',
+            ],
+    'installable': True,
+    'auto_install': False,
+    'images': ['images/1_partner_vat.jpeg'],
+}
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
