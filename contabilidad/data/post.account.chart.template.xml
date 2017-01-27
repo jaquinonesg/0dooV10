@@ -1,0 +1,78 @@
+<!-- Comercial -->
+    <record id="co_puc_com_0" model="account.account.template">
+        <field name="chart_template_id" ref="l10n_co_chart_template_comercial"/>
+    </record>
+    <record id="co_puc_com_1" model="account.account.template">
+        <field name="chart_template_id" ref="l10n_co_chart_template_comercial"/>
+        <field name="parent_id" ref="co_puc_com_0" />
+    </record>
+    <record id="co_puc_com_11" model="account.account.template">
+        <field name="chart_template_id" ref="l10n_co_chart_template_comercial"/>
+        <field name="parent_id" ref="co_puc_com_1" />
+    </record>
+    <record id="co_puc_com_1105" model="account.account.template">
+        <field name="chart_template_id" ref="l10n_co_chart_template_comercial"/>
+        <field name="parent_id" ref="co_puc_com_11" />
+    </record>
+    <record id="co_puc_com_110599" model="account.account.template">
+        <field name="parent_id" ref="co_puc_com_1105" />
+    </record>
+    <!-- Solidario -->
+    <record id="co_puc_sol_0" model="account.account.template">
+        <field name="chart_template_id" ref="l10n_co_chart_template_solidario"/>
+    </record>
+    <record id="co_puc_sol_1" model="account.account.template">
+        <field name="chart_template_id" ref="l10n_co_chart_template_solidario"/>
+        <field name="parent_id" ref="co_puc_sol_0" />
+    </record>
+    <record id="co_puc_sol_11" model="account.account.template">
+        <field name="chart_template_id" ref="l10n_co_chart_template_solidario"/>
+        <field name="parent_id" ref="co_puc_sol_1" />
+    </record>
+    <record id="co_puc_sol_1105" model="account.account.template">
+        <field name="chart_template_id" ref="l10n_co_chart_template_solidario"/>
+        <field name="parent_id" ref="co_puc_sol_11" />
+    </record>
+    <record id="co_puc_sol_110599" model="account.account.template">
+        <field name="parent_id" ref="co_puc_sol_1105" />
+    </record>
+    <!-- Financiero -->
+    <record id="co_puc_fin_0" model="account.account.template">
+        <field name="chart_template_id" ref="l10n_co_chart_template_financiero"/>
+    </record>
+    <record id="co_puc_fin_1" model="account.account.template">
+        <field name="chart_template_id" ref="l10n_co_chart_template_financiero"/>
+        <field name="parent_id" ref="co_puc_fin_0" />
+    </record>
+    <record id="co_puc_fin_11" model="account.account.template">
+        <field name="chart_template_id" ref="l10n_co_chart_template_financiero"/>
+        <field name="parent_id" ref="co_puc_fin_1" />
+    </record>
+    <record id="co_puc_fin_1105" model="account.account.template">
+        <field name="chart_template_id" ref="l10n_co_chart_template_financiero"/>
+        <field name="parent_id" ref="co_puc_fin_11" />
+    </record>
+    <record id="co_puc_fin_110599" model="account.account.template">
+        <field name="parent_id" ref="co_puc_fin_1105" />
+    </record>
+    <!-- NIIF Financiero -->
+    <record id="co_niif_fin_0" model="account.account.template">
+        <field name="chart_template_id" ref="l10n_co_chart_template_niif_financiero"/>
+        <field name="parent_id" ref="co_niif_fin_1105" />
+    </record>
+    <record id="co_niif_fin_1" model="account.account.template">
+        <field name="chart_template_id" ref="l10n_co_chart_template_niif_financiero"/>
+        <field name="parent_id" ref="co_niif_fin_0" />
+    </record>
+    <record id="co_niif_fin_11" model="account.account.template">
+        <field name="chart_template_id" ref="l10n_co_chart_template_niif_financiero"/>
+        <field name="parent_id" ref="co_niif_fin_1" />
+    </record>
+    <record id="co_niif_fin_1105" model="account.account.template">
+        <field name="chart_template_id" ref="l10n_co_chart_template_niif_financiero"/>
+        <field name="parent_id" ref="co_niif_fin_11" />
+    </record>
+    <record id="co_niif_fin_110599" model="account.account.template">
+        <field name="parent_id" ref="co_niif_fin_1105" />
+    </record>
+</odoo>
