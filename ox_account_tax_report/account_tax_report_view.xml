@@ -68,7 +68,9 @@
             <field name="arch" type="xml">
                 <tree string="Configuracion para informes de impuestos">
         					<field name="account_id"/>
-        					<field name="partner_id"/>
+        					<field name="account_fiscal_position_id"/>
+                  <field name="partner_id"/>
+                  <field name="product_type"/>
         					<field name="invoice_id"/>
         					<field name="fecha"/>
         					<field name="tax_group_id"/>

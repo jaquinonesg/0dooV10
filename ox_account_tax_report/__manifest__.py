@@ -24,6 +24,7 @@
     'data': [
         # 'security/ir.model.access.csv',
         'account_tax_report_view.xml',
+        'report/account_tax_report_pdf.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

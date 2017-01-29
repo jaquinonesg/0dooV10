@@ -3,6 +3,9 @@
 from odoo import models, fields, api
 import xlsxwriter
 from datetime import datetime
+import logging
+
+_logger = logging.getLogger(__name__)
 
 class AccountTaxReportConf(models.Model):
     _name='account.tax.report.conf'
@@ -29,6 +32,8 @@ class AccountTaxReportLine(models.Model):
 
     account_id = fields.Many2one('account.account', string='Cuenta contable')
     partner_id = fields.Many2one('res.partner', string='Tercero')
+    account_fiscal_position_id = fields.Many2one('account.fiscal.position', string='Posicion fiscal')
+    product_type = fields.Selection([('product', 'Producto'), ('consu', 'Consumible'), ('service', 'Service')], string='Tipo de producto')
     tax_id = fields.Many2one('account.tax', string='Impuesto')
     tax_group_id = fields.Many2one('account.tax.group', string='Grupo de Impuesto')
     amount = fields.Float(string='Tasa de impuesto')
@@ -56,15 +61,14 @@ class AccountTaxReportWizard(models.TransientModel):
 		except ValueError:
 			compose_tree_id = False
 		return {
-		'name': 'Declaracion de Impuestos',
-		'res_model': 'account.tax.report.line',
-		'type': 'ir.actions.act_window',
-		'view_id': compose_tree_id,
-		'view_mode': 'tree',
-		'view_type': 'form',
-		#'domain': dominio,
-		'target': 'current'
-			}
+    		'name': 'Declaracion de Impuestos',
+    		'res_model': 'account.tax.report.line',
+    		'type': 'ir.actions.act_window',
+    		'view_id': compose_tree_id,
+    		'view_mode': 'tree',
+    		'view_type': 'form',
+    		'target': 'current'
+        }
 
     @api.multi
     def imprimir(self, data=None):
@@ -74,13 +78,9 @@ class AccountTaxReportWizard(models.TransientModel):
         ids = []
         for res in datos:
             ids.append(res[0])
-        print ids
         report_obj = self.env['report']
         report = report_obj._get_report_from_name('bioxsolution_account_tax_report.account_tax_report_pdf')
-        print datos
         obj = self.env['account.tax.report.line'].browse(ids)
-        print 'encabezado'
-        print obj
         docargs = {'doc_ids': ids,'doc_model': report.model,'docs': obj,}
         return report_obj.render('bioxsolution_account_tax_report.account_tax_report_pdf', docargs)
 
@@ -122,10 +122,13 @@ class AccountTaxReportWizard(models.TransientModel):
         worksheet.write('C7', 'TASA',bold)
         worksheet.write('D7', 'BASE IMPONIBLE',bold)
         worksheet.write('E7', 'MONTO',bold)
+        _logger.info(self.detalle)
         if self.detalle:
-			worksheet.write('F7', 'TERCERO',bold)
-			worksheet.write('G7', 'REFERENCIA',bold)
-			worksheet.write('H7', 'FECHA',bold)
+			worksheet.write('F7', 'TIPO DE TERCERO',bold)
+			worksheet.write('G7', 'TERCERO',bold)
+			worksheet.write('H7', 'TIPO DE PRODUCTO',bold)
+			worksheet.write('I7', 'REFERENCIA',bold)
+			worksheet.write('J7', 'FECHA',bold)
         tax_report_line = self.env['account.tax.report.line'].search([('encabezado_id','=',ids[0])])
         x = 8
         grupos = list(set([ z.tax_group_id for z in tax_report_line]))
@@ -158,9 +161,14 @@ class AccountTaxReportWizard(models.TransientModel):
 							partner_name = line.partner_id.ref
 						if line.partner_id.name:
 							partner_name = partner_name + '-' + line.partner_id.name
-						worksheet.write('F'+str(x), partner_name)
-						worksheet.write('G'+str(x), line.invoice_id.number)
-						worksheet.write('H'+str(x), line.fecha)
+
+						_logger.info(line.account_fiscal_position_id.name)
+						_logger.info(line.product_type)
+						worksheet.write('F'+str(x), line.account_fiscal_position_id.name)
+						worksheet.write('G'+str(x), partner_name)
+						worksheet.write('H'+str(x), str(line.product_type))
+						worksheet.write('I'+str(x), line.invoice_id.number)
+						worksheet.write('J'+str(x), line.fecha)
 					x += 1
         workbook.close()
         return {'type' : 'ir.actions.act_url','url': str(url),'target': 'self'}
@@ -174,25 +182,31 @@ class AccountTaxReportWizard(models.TransientModel):
 			for imp in impuesto:
 				#INSERT account.tax.report.line
 				if self.detalle:
-					sql = " INSERT INTO account_tax_report_line(account_id,tax_id, amount,base,impuesto,encabezado_id,partner_id,fecha,invoice_id, tax_group_id) "\
+					sql = " INSERT INTO account_tax_report_line(account_id,tax_id, amount,base,impuesto,encabezado_id,partner_id,fecha,invoice_id, tax_group_id, account_fiscal_position_id, product_type) "\
 					" SELECT ait.account_id, ailt.tax_id, at.amount, sum(price_subtotal)as price_subtotal, sum(ait.amount) as amount, %s, "\
-					" ail.partner_id, ai.date_invoice, ai.id, %s"\
+					" ail.partner_id, ai.date_invoice, ai.id, %s, substring(ip.value_reference from position(',' in ip.value_reference)+1 for length(ip.value_reference))::integer, pt.type "\
 					" from account_invoice_line_tax ailt "\
 					" inner join account_invoice_line  ail on ail.id = ailt.invoice_line_id "\
+                    " inner join product_product pp on pp.id = ail.product_id "\
+                    " inner join product_template pt on pp.product_tmpl_id = pt.id "\
 					" inner join account_invoice ai on ai.id = ail.invoice_id "\
+                    " left join ir_property ip on ip.name = 'property_account_position_id' and ip.res_id = 'res.partner,'||ai.partner_id " \
 					" inner join account_invoice_tax ait on ait.tax_id = ailt.tax_id and ail.invoice_id = ait.invoice_id "\
 					" inner join account_tax at on at.id = ailt.tax_id "\
 					" WHERE ai.state NOT IN ('draft','cancel') AND ai.date_invoice BETWEEN '%s' AND '%s' AND at.id = %s "\
-					" GROUP BY ait.account_id, ail.partner_id,ailt.tax_id, at.amount, ai.date_invoice, ai.id "%(tax_report.id, grupo.id, self.desde, self.hasta,imp.id)
+					" GROUP BY ait.account_id, ail.partner_id,ailt.tax_id, at.amount, ai.date_invoice, ai.id, ip.value_reference, pt.type "%(tax_report.id, grupo.id, self.desde, self.hasta,imp.id)
 				else:
-					sql = " INSERT INTO account_tax_report_line(account_id, tax_id, amount, base, impuesto, encabezado_id, tax_group_id) "\
+					sql = " INSERT INTO account_tax_report_line(account_id, tax_id, amount, base, impuesto, encabezado_id, tax_group_id, account_fiscal_position_id, product_type) "\
 					" SELECT ait.account_id, at.id as tax_id, at.amount, sum(price_subtotal)as price_subtotal, sum(ait.amount) as amount, "\
-					" %s, %s from account_invoice_line_tax ailt "\
+					" %s, %s, substring(ip.value_reference from position(',' in ip.value_reference)+1 for length(ip.value_reference))::integer, pt.type from account_invoice_line_tax ailt "\
 					" inner join account_invoice_line  ail on ail.id = ailt.invoice_line_id "\
+                    " inner join product_product pp on pp.id = ail.product_id "\
+                    " inner join product_template pt on pp.product_tmpl_id = pt.id "\
 					" inner join account_invoice ai on ai.id = ail.invoice_id "\
+                    " left join ir_property ip on ip.name = 'property_account_position_id' and ip.res_id = 'res.partner,'||ai.partner_id " \
 					" inner join account_invoice_tax ait on ait.tax_id = ailt.tax_id and ail.invoice_id = ait.invoice_id "\
 					" inner join account_tax at on at.id = ailt.tax_id "\
 					" WHERE ai.state NOT IN ('draft','cancel') AND ai.date_invoice BETWEEN '%s' AND '%s' AND at.id = %s "\
-					" GROUP BY ait.account_id, at.id, at.amount "%(tax_report.id, grupo.id, self.desde, self.hasta,imp.id)
+					" GROUP BY ait.account_id, at.id, at.amount, ip.value_reference, pt.type "%(tax_report.id, grupo.id, self.desde, self.hasta,imp.id)
 				self.env.cr.execute(sql)
 		return True

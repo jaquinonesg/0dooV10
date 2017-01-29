@@ -3,8 +3,8 @@
 	<data>
 		<report id="act_account_tax_report_pdf" model="account.tax.report.line"
 			string="Declaración de impuestos" report_type="qweb-pdf"
-			name="bioxsolution_account_tax_report.account_tax_report_pdf" 
-			file="bioxsolution_account_tax_report.account_tax_report_pdf" />
+			name="ox_account_tax_report.account_tax_report_pdf"
+			file="ox_account_tax_report.account_tax_report_pdf" />
 
 		<template id="account_tax_report_pdf">
 			<t t-call="report.external_layout">
@@ -52,8 +52,14 @@
 								<th>
 									<strong>Monto impuesto</strong>
 								</th>
+								<th t-if="docs[0].account_fiscal_position_id">
+									<strong>Tipo de Tercero</strong>
+								</th>
 								<th t-if="docs[0].partner_id">
 									<strong>Tercero</strong>
+								</th>
+								<th t-if="docs[0].product_type">
+									<strong>Tipo de producto</strong>
 								</th>
                                 <th t-if="docs[0].invoice_id">
 									<strong>Factura</strong>
@@ -81,7 +87,9 @@
     						            <td></td>
     						            <td align="right"><strong><span t-esc="base_total"/></strong></td>
     						            <td align="right"><strong><span t-esc="impuesto_total"/></strong></td>
+										<td t-if="docs[0].account_fiscal_position_id"></td>
     						            <td t-if="docs[0].partner_id"></td>
+										<td t-if="docs[0].product_type"></td>
     						            <td t-if="docs[0].invoice_id"></td>
     						            <td t-if="docs[0].fecha"></td>
     						          </tr>
