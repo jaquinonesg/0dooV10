@@ -158,19 +158,15 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<t t-foreach="o.cq_id" t-as="concepts">
-											<tr>
-												<td><span t-field="concepts.code"/></td>
-												<td><span t-field="concepts.name"/></td>
-												<td colspan="6"><span t-field="concepts.amount"/></td>
-											</tr>
-										</t>
+									<tr t-foreach="o.cq_id" t-as="concepts">
+										<td><span t-field="concepts.code"/></td>
+										<td><span t-field="concepts.name"/></td>
+										<td colspan="6"><span t-field="concepts.amount"/></td>
 									</tr>
 								</tbody>
 							</table>
 						</div>
-						<t t-set="net_amount" t-value="0"/>
+						<t t-set="net_amount" t-value="t_total"/>
 						<div align="center" style="font-size:12px;">
 							<center><strong>Detalle de liquidación</strong></center>
 							<table class="table table-condensed">
@@ -187,17 +183,19 @@
 									</tr>
 								</thead>
 								<tbody>
+								<t t-set="net_amount" t-value="t_total"/>
+								<t t-foreach="o.invoice_line_ids" t-as="lines">
+									<t t-set="product" t-value="lines.product_id"/>
+								</t>
 									<tr>
-										<t t-foreach="o.invoice_line_ids" t-as="lines">
-											<td><span t-field="lines.product_id.default_code"/></td>
-											<td><span t-field="lines.name"/></td>
-											<td><span t-field="lines.invoice_id.date_invoice"/></td>
-											<td><span t-field="lines.quantity"/></td>
-											<td><span t-field="lines.price_unit"/></td>
-											<td>0</td>
-											<t t-set="net_amount" t-value="net_amount+lines.price_subtotal"/>
-											<td><span t-field="lines.price_subtotal"/></td>
-										</t>
+										<td><span t-field="docs.invoice_line_ids[0].product_id.code"/></td>
+										<td><span t-field="docs.invoice_line_ids[0].product_id.name"/></td>
+										<td><span t-field="docs[0].date_invoice"/></td>
+										<td><span t-esc="t_total_value"/></td>
+										<td><span t-esc="t_value"/></td>
+										<td>0</td>
+										<td><span t-esc="t_total"/></td>
+										<td>0</td>
 									</tr>
 								</tbody>
 							</table>

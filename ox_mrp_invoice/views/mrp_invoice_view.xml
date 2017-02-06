@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-      <record model="ir.ui.view" id="view_product_product_mrp_invoice_form">
-          <field name="name">product.product.mrp.invoice.form</field>
-          <field name="model">product.product</field>
-          <field name="inherit_id" ref="product.product_normal_form_view"/>
-          <field name="arch" type="xml">
-            <field name="default_code" position="after">
-              <field name="mrp_invoice"/>
-            </field>
-          </field>
-        </record>
 
         <record model="ir.ui.view" id="view_account_invoice_mrp_form">
             <field name="name">account.invoice.mrp.form</field>
@@ -42,6 +32,7 @@
                           <field name="m10"/>
                           <field name="m11"/>
                           <field name="m12"/>
+                          <field name="accumulated"/>                          
                         </tree>
                       </field>
                       <separator/>
@@ -76,17 +67,27 @@
                           <field name="d13"/>
                           <field name="d14"/>
                           <field name="d15"/>
+                          <field name="d16"/>
                           <field name="total_value"/>
                           <field name="total"/>
                         </tree>
                       </field>
                       <separator/>
                       <label for="cq_id"/>
+                      <group>
+                        <field name="type_test"/>
+                        <field name="hygienic_quality"/>
+                        <field name="temperature"/>
+                        <field name="sanitary_quality"/>
+                        <field name="certificate"/>
+                        <field name="distance"/>
+                        <field name="transport"/>
+                        <button name="calculate" string="Calculate" type="object" class="oe_highlight" />
+                      </group>
                       <field name="cq_id">
                         <tree>
                           <field name="code"/>
                           <field name="name"/>
-                          <!-- <field name="sign"/> -->
                           <field name="amount"/>
                         </tree>
                       </field>
@@ -94,6 +95,20 @@
                       <field name="amount_quality"/>
                 </page>
               </notebook>
+            </field>
+        </record>
+         <record model="ir.ui.view" id="concepts_quality_view">
+            <field name="name">concepts.quality.form.view</field>
+            <field name="model">concepts.quality</field>
+            <field name="arch" type="xml">
+              <form string="Concepts Quality">
+                <group>
+                  <field name="code"/>
+                  <field name="name"/>
+                  <field name="amount"/>
+                  <field name="code_python"/>
+                </group>
+              </form>
             </field>
         </record>
     </data>

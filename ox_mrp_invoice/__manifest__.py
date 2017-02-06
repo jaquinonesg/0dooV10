@@ -13,6 +13,7 @@
     'depends' : ['account_accountant','quality_control'],
     'data': [
         'views/mrp_invoice_view.xml',
+        'data/concepts_quality_data.xml',
         'reports/report_mrp_invoice.xml',
     ],
     'demo': [],

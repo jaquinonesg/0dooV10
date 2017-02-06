@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data >
+        <record id="concepts_quality000" model="concepts.quality">
+            <field name="code">000</field>
+            <field name="name">PAGO POR CALIDAD COMPOSICIONAL</field>
+            <field name="amount">0</field>
+            <field name="code_python">protein, fat, st = 0, 0, 0
+protein_total, fat_total = 0, 0
+protein_gr_total, fat_gr_total, st_total = 0, 0, 0
+if invoice.partner_id.state_id.code == '01': #region 1
+    protein = 19.40
+    fat = 6.46
+    st = 6.86
+elif invoice.partner_id.state_id.code == '02': #region 2:
+    protein = 17.50
+    fat = 5.83
+    st = 6.51
+
+for ci in invoice.ci_id:
+    if invoice.type_test == 1:
+        if ci.qc_question_id.fat:
+            fat_total = ci.qna3
+        if ci.qc_question_id.protein:
+            protein_total = ci.qna3
+    elif invoice.type_test ==2:
+        if ci.qc_question_id.st:
+            st_total = ci.qna3
+if fat_total > 0:
+    fat_gr_total = (fat_total * 10.32) + fat
+if protein_total > 0:
+    protein_gr_total = (protein_total * 10.32) + protein
+
+total = fat_gr_total + protein_gr_total + st_total
+result = total</field>
+        </record>
+
+        <record id="concepts_quality001" model="concepts.quality">
+            <field name="code">001</field>
+            <field name="name">CALIDAD HIGIENICA</field>
+            <field name="amount">0</field>
+            <field name="code_python">total = 0
+if invoice.hygienic_quality:
+    if invoice.hygienic_quality == 1:
+        total = 79
+    elif invoice.hygienic_quality == 2:
+        total = 67
+    elif invoice.hygienic_quality == 3:
+        total = 54
+    elif invoice.hygienic_quality == 4:
+        total = 40
+    elif invoice.hygienic_quality == 5:
+        total = 25
+    elif invoice.hygienic_quality == 6:
+        total = 0
+    elif invoice.hygienic_quality == 7:
+        total = -14
+    elif invoice.hygienic_quality == 8:
+        total = -25
+    elif invoice.hygienic_quality == 9:
+        total = -40
+    elif invoice.hygienic_quality == 10:
+        total = -54
+    elif invoice.hygienic_quality == 11:
+        total = -67
+
+if invoice.temperature:
+    if invoice.temperature == 1:
+        total += 10
+    elif invoice.temperature == 2:
+        total += 20
+result = total</field>
+        </record>
+
+        <record id="concepts_quality002" model="concepts.quality">
+            <field name="code">002</field>
+            <field name="name">CALIDAD SANITARIA</field>
+            <field name="amount">0</field>
+            <field name="code_python">total = 0
+if invoice.sanitary_quality:
+    if invoice.sanitary_quality == 1:
+        total = 10
+    elif invoice.sanitary_quality == 2:
+        total = 20
+    elif invoice.sanitary_quality == 3:
+        total = 0
+if invoice.certificate:
+    if invoice.certificate == 1:
+        total += 10
+    elif invoice.certificate == 2:
+        total += 0
+
+result = total</field>
+        </record>
+        <record id="concepts_quality003" model="concepts.quality">
+            <field name="code">003</field>
+            <field name="name">TRANSPORTE</field>
+            <field name="amount">0</field>
+            <field name="code_python">total = 0
+if invoice.transport:
+    if invoice.transport == 1:
+        if invoice.distance == 1:
+            total = -10
+        elif invoice.distance == 2:
+            total = -10
+        elif invoice.distance == 3:
+            total = -11
+        elif invoice.distance == 4:
+            total = -13
+        elif invoice.distance == 5:
+            total = -13
+        elif invoice.distance == 6:
+            total = -16
+        elif invoice.distance == 7:
+            total = -17
+        elif invoice.distance == 8:
+            total = -18
+        elif invoice.distance == 9:
+            total = -20
+        elif invoice.distance == 10:
+            total = -23
+        elif invoice.distance == 11:
+            total = -23
+        elif invoice.distance == 12:
+            total = -25
+        elif invoice.distance == 13:
+            total = -27
+        elif invoice.distance == 14:
+            total = -30
+        elif invoice.distance == 15:
+            total = -31
+        elif invoice.distance == 16:
+            total = -31
+    elif invoice.transport == 2:
+        if invoice.distance == 1:
+            total = -17
+        elif invoice.distance == 2:
+            total = -23
+        elif invoice.distance == 3:
+            total = -27
+        elif invoice.distance == 4:
+            total = -31
+        elif invoice.distance == 5:
+            total = -33
+        elif invoice.distance == 6:
+            total = -36
+        elif invoice.distance == 7:
+            total = -41
+        elif invoice.distance == 8:
+            total = -45
+        elif invoice.distance == 9:
+            total = -47
+        elif invoice.distance == 10:
+            total = -51
+        elif invoice.distance == 11:
+            total = -54
+        elif invoice.distance == 12:
+            total = -57
+        elif invoice.distance == 13:
+            total = -62
+        elif invoice.distance == 14:
+            total = -65
+        elif invoice.distance == 15:
+            total = -67
+        elif invoice.distance == 16:
+            total = -71
+    if invoice.transport == 3:
+        if invoice.distance == 1:
+            total = -27
+        elif invoice.distance == 2:
+            total = -32
+        elif invoice.distance == 3:
+            total = -36
+        elif invoice.distance == 4:
+            total = -42
+        elif invoice.distance == 5:
+            total = -47
+        elif invoice.distance == 6:
+            total = -53
+        elif invoice.distance == 7:
+            total = -56
+        elif invoice.distance == 8:
+            total = -62
+        elif invoice.distance == 9:
+            total = -66
+        elif invoice.distance == 10:
+            total = -71
+        elif invoice.distance == 11:
+            total = -78
+        elif invoice.distance == 12:
+            total = -82
+        elif invoice.distance == 13:
+            total = -89
+        elif invoice.distance == 14:
+            total = -92
+        elif invoice.distance == 15:
+            total = -97
+        elif invoice.distance == 16:
+            total = -103
+    if invoice.transport == 4:
+        if invoice.distance == 1:
+            total = -35
+        elif invoice.distance == 2:
+            total = -42
+        elif invoice.distance == 3:
+            total = -49
+        elif invoice.distance == 4:
+            total = -56
+        elif invoice.distance == 5:
+            total = -65
+        elif invoice.distance == 6:
+            total = -71
+        elif invoice.distance == 7:
+            total = -80
+        elif invoice.distance == 8:
+            total = -86
+        elif invoice.distance == 9:
+            total = -92
+        elif invoice.distance == 10:
+            total = -99
+        elif invoice.distance == 11:
+            total = -110
+        elif invoice.distance == 12:
+            total = -114
+        elif invoice.distance == 13:
+            total = -122
+        elif invoice.distance == 14:
+            total = -132
+        elif invoice.distance == 15:
+            total = -138
+        elif invoice.distance == 16:
+            total = -145
+    if invoice.transport == 5:
+        if invoice.distance == 1:
+            total = -58
+        elif invoice.distance == 2:
+            total = -75
+        elif invoice.distance == 3:
+            total = -86
+        elif invoice.distance == 4:
+            total = -98
+        elif invoice.distance == 5:
+            total = -112
+        elif invoice.distance == 6:
+            total = -123
+        elif invoice.distance == 7:
+            total = -138
+        elif invoice.distance == 8:
+            total = -149
+        elif invoice.distance == 9:
+            total = -164
+        elif invoice.distance == 10:
+            total = -176
+        elif invoice.distance == 11:
+            total = -188
+        elif invoice.distance == 12:
+            total = -203
+        elif invoice.distance == 13:
+            total = -215
+        elif invoice.distance == 14:
+            total = -227
+        elif invoice.distance == 15:
+            total = -242
+        elif invoice.distance == 16:
+            total = -255
+result = total</field>
+        </record>
+    </data>
+</odoo>

@@ -7,8 +7,8 @@
             <field name="inherit_id" ref="mrp.mrp_production_form_view"></field>
             <field name="arch" type="xml">
                 <button name="button_mark_done" position="after">
-                    <button name="CalculateCost" string="Calculate Cost" type="object" class="oe_highlight"/>    
-                </button>                
+                    <button name="CalculateCost" string="Calculate Cost" type="object" class="oe_highlight" attrs="{'invisible': [('state', '!=' , 'confirmed')]}"/>
+                </button>
                 <notebook position="inside">
                     <page string="Cost Manufacture">
                         <group>
@@ -61,7 +61,7 @@
                             <button name="split_move_lot" string="Register lots" type="object" icon="fa-list"
                                 attrs="{'invisible': [('has_tracking', 'not in', ['lot','serial'])]}"/>
                         </tree>
-                    </field>                
+                    </field>
                 </field>
             </field>
         </record>
@@ -76,10 +76,12 @@
                         <field name="fat"/>
                         <field name="density"/>
                         <field name="sng"/>
+                        <field name="protein"/>
+                        <field name="st"/>
                     </group>
                 </group>
             </field>
-        </record>       
+        </record>
         <record model="ir.ui.view" id="product_attribute_cost">
             <field name="name">product.attribute.cost</field>
             <field name="model">product.attribute</field>
@@ -87,20 +89,18 @@
             <field name="arch" type="xml">
                 <field name="name" position="after">
                     <field name="fat"/>
-                    <field name="density"/>
-                    <field name="sng"/>
                 </field>
             </field>
-        </record>        
-      <!--  <record model="ir.ui.view" id="product_product_base_cost">
+        </record>
+        <record model="ir.ui.view" id="product_product_base_cost">
             <field name="name">product.product.base.cost</field>
             <field name="model">product.product</field>
             <field name="inherit_id" ref="product.product_normal_form_view"></field>
             <field name="arch" type="xml">
                 <field name="default_code" position="after">
-                    <field name="base"/>
+                    <field name="cost_special"/>
                 </field>
             </field>
-        </record> -->
+        </record>
     </data>
 </openerp>
