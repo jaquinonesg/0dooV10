@@ -1,30 +1,29 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Informes para Impuestos",
+    'name': "Purchase line (pivot, graph)",
 
-    'summary': """Informes configurables para declaración de impuestos""",
+    'summary': """Purchase line (pivot, graph)""",
 
     'description': """
-        Este módulo permite configurar informes por categorías de impuestos y cuentas contables
+        Este módulo agrega la opción de analizar las lineas de los pedidos de compras mediante pivot y gráficos
     """,
 
-    'author': "BioxSolutions",
-    'website': "http://www.bioxsolutions.com",
+    'author': "OxSoft SAS",
+    'website': "http://www.oxsoft.com.co",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/openerp/addons/base/module/module_data.xml
     # for the full list
-    'category': 'Account',
+    'category': 'Purchase',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['account'],
+    'depends': ['purchase'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'account_tax_report_view.xml',
-        'report/account_tax_report_pdf.xml',
+        'purchase_extended_pivot_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
