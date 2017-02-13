@@ -30,8 +30,8 @@
         #'data/post.account.chart.template.xml',
         'data/account.account.template.csv',
         'data/account.tax.template.csv',
-        'data/account.fiscal.position.template.csv',
-        'data/account.fiscal.position.tax.template.csv',
+        #'data/account.fiscal.position.template.csv',
+        #'data/account.fiscal.position.tax.template.csv',
         #'data/account.account.template.parent.id.xml',
     ],
     # only loaded in demonstration mode

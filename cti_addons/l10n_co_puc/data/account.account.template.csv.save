@@ -1,5 +1,0 @@
-id,code,name,reconcile,user_type_id:id
-l10n_co_pucs.co_puc_com_root,0,CO PUC COMERCIAL ROOT,,FALSE,account.data_account_type_view
-l10n_co_pucs.co_puc_com_1,1,ACTIVO,l10n_co_pucs.co_puc_com_root,FALSE,account.data_account_type_asset
-l10n_co_pucs.co_puc_com_11,11,DISPONIBLE,l10n_co_pucs.co_puc_com_1,FALSE,account.data_account_type_asset
-
