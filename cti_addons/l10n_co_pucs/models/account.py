@@ -10,4 +10,4 @@ class account(models.Model):
 class contabilidad(models.Model):
     _inherit = 'account.account.template'
 
-    parent_id = fields.Many2one('account.account', string='Parent ID')
+    parent_id = fields.Many2one('account.account.template', string='Parent ID')
