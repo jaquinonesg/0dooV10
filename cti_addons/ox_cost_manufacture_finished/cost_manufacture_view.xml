@@ -102,5 +102,39 @@
                 </field>
             </field>
         </record>
+        <record model="ir.ui.view" id="mrp_workorder_cost">
+            <field name="name">mrp.workorder.cost</field>
+            <field name="model">mrp.workorder</field>
+            <field name="inherit_id" ref="mrp.mrp_production_workcenter_form_view_inherit"></field>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Cost">
+                        <group>
+                            <field name="default_cost"/>
+                            <field name="default_cost_per_labor"/>
+                            <field name="real_cost"/>
+                            <field name="real_cost_per_labor"/>
+                            <field name="total_cost" class="oe_subtotal_footer_separator"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="mrp_routing_workcenter_cost_form_view">
+            <field name="name">mrp.routing.workcenter.cost</field>
+            <field name="model">mrp.routing.workcenter</field>
+            <field name="inherit_id" ref="mrp.mrp_routing_workcenter_form_view"></field>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Cost">
+                        <group>
+                            <field name="default_cost"/>
+                            <field name="default_cost_per_labor"/>
+                            <field name="total_cost" class="oe_subtotal_footer_separator"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
     </data>
 </openerp>
